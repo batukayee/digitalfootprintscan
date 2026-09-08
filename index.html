@@ -197,148 +197,6 @@
       background: var(--line-2);
     }
 
-    .nav-menu {
-      position: relative;
-      flex-shrink: 0;
-    }
-
-    .menu-toggle {
-      width: 42px;
-      height: 42px;
-      padding: 0;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      background: rgba(255, 255, 255, .86);
-      color: var(--ink);
-      display: grid;
-      place-items: center;
-      cursor: pointer;
-      box-shadow: var(--shadow-sm);
-      transition: background .2s var(--ease), border-color .2s var(--ease), transform .2s var(--ease);
-    }
-
-    .menu-toggle:hover {
-      background: var(--paper);
-      border-color: #d6dce6;
-      transform: translateY(-1px);
-    }
-
-    .menu-toggle:focus-visible {
-      outline: 2px solid var(--signal);
-      outline-offset: 3px;
-    }
-
-    .menu-toggle-lines,
-    .menu-toggle-lines::before,
-    .menu-toggle-lines::after {
-      display: block;
-      width: 18px;
-      height: 1.8px;
-      border-radius: 999px;
-      background: currentColor;
-      transition: transform .25s var(--ease), opacity .2s var(--ease);
-    }
-
-    .menu-toggle-lines {
-      position: relative;
-    }
-
-    .menu-toggle-lines::before,
-    .menu-toggle-lines::after {
-      content: '';
-      position: absolute;
-      left: 0;
-    }
-
-    .menu-toggle-lines::before { top: -6px; }
-    .menu-toggle-lines::after { top: 6px; }
-
-    .menu-toggle[aria-expanded="true"] .menu-toggle-lines {
-      background: transparent;
-    }
-
-    .menu-toggle[aria-expanded="true"] .menu-toggle-lines::before {
-      transform: translateY(6px) rotate(45deg);
-    }
-
-    .menu-toggle[aria-expanded="true"] .menu-toggle-lines::after {
-      transform: translateY(-6px) rotate(-45deg);
-    }
-
-    .menu-panel {
-      position: absolute;
-      top: calc(100% + 10px);
-      right: 0;
-      width: 250px;
-      padding: 8px;
-      background: rgba(255, 255, 255, .97);
-      backdrop-filter: saturate(180%) blur(14px);
-      -webkit-backdrop-filter: saturate(180%) blur(14px);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      box-shadow: var(--shadow-md);
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(-6px) scale(.98);
-      transform-origin: top right;
-      transition: opacity .2s var(--ease), transform .2s var(--ease), visibility .2s var(--ease);
-    }
-
-    .menu-panel.open {
-      opacity: 1;
-      visibility: visible;
-      transform: none;
-    }
-
-    .menu-panel a {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 11px 12px;
-      border-radius: 9px;
-      color: var(--slate);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      transition: color .2s var(--ease), background .2s var(--ease);
-    }
-
-    .menu-panel a::after {
-      content: '→';
-      color: var(--slate-2);
-      font-size: 14px;
-      transition: transform .2s var(--ease), color .2s var(--ease);
-    }
-
-    .menu-panel a:hover {
-      color: var(--ink);
-      background: var(--line-2);
-    }
-
-    .menu-panel a:hover::after {
-      color: var(--ink);
-      transform: translateX(3px);
-    }
-
-    .menu-panel .menu-divider {
-      height: 1px;
-      margin: 6px 4px;
-      background: var(--line-2);
-    }
-
-    @media (max-width: 720px) {
-      .nav-menu {
-        position: absolute;
-        top: 14px;
-        right: 20px;
-      }
-
-      .menu-panel {
-        width: min(250px, calc(100vw - 40px));
-      }
-    }
-
     /* ---------- Hero ---------- */
 
     .hero {
@@ -1120,6 +978,12 @@
         gap: 10px;
       }
 
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 2px;
+        margin-left: -12px;
+      }
+
       .hero { padding: 72px 20px 0; }
 
       .hero p { font-size: 17px; }
@@ -1180,43 +1044,23 @@
       >
     </a>
 
-    <div class="nav-menu">
+    <div class="nav-links">
 
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-label="Open navigation menu"
-        aria-expanded="false"
-        aria-controls="site-menu"
-      >
-        <span class="menu-toggle-lines" aria-hidden="true"></span>
-      </button>
+      <a href="/digital-footprint-check/">
+        Digital Footprint
+      </a>
 
-      <div class="menu-panel" id="site-menu">
+      <a href="/data-broker-removal/">
+        Data Brokers
+      </a>
 
-        <a href="/digital-footprint-check/">
-          Digital Footprint
-        </a>
+      <a href="/email-exposure-check/">
+        Email Exposure
+      </a>
 
-        <a href="/data-broker-removal/">
-          Data Brokers
-        </a>
-
-        <a href="/email-exposure-check/">
-          Email Exposure
-        </a>
-
-        <a href="/phone-number-exposure-check/">
-          Phone Exposure
-        </a>
-
-        <div class="menu-divider" aria-hidden="true"></div>
-
-        <a href="/blog/">
-          Blog
-        </a>
-
-      </div>
+      <a href="/phone-number-exposure-check/">
+        Phone Exposure
+      </a>
 
     </div>
 
@@ -1815,43 +1659,6 @@
   </div>
 
 </footer>
-
-<script>
-  (function () {
-    var toggle = document.querySelector('.menu-toggle');
-    var panel = document.querySelector('.menu-panel');
-
-    if (!toggle || !panel) return;
-
-    function closeMenu() {
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.setAttribute('aria-label', 'Open navigation menu');
-      panel.classList.remove('open');
-    }
-
-    toggle.addEventListener('click', function () {
-      var isOpen = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!isOpen));
-      toggle.setAttribute('aria-label', isOpen ? 'Open navigation menu' : 'Close navigation menu');
-      panel.classList.toggle('open', !isOpen);
-    });
-
-    document.addEventListener('click', function (event) {
-      if (!event.target.closest('.nav-menu')) closeMenu();
-    });
-
-    document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') {
-        closeMenu();
-        toggle.focus();
-      }
-    });
-
-    panel.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', closeMenu);
-    });
-  })();
-</script>
 
 <script>
   (function () {
