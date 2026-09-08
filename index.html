@@ -340,12 +340,27 @@
 
     .scan-disclaimer {
       margin: 0;
-      padding: 10px 20px;
+      padding: 14px 20px 15px;
       color: var(--slate);
       background: #fbfcfd;
       border-bottom: 1px solid var(--line-2);
-      font-size: 12px;
-      font-style: italic;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .scan-disclaimer strong {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--ink);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -.01em;
+    }
+
+    .scan-disclaimer span {
+      display: block;
+      color: var(--slate);
+      font-size: 13px;
     }
 
     .scan-status {
@@ -979,6 +994,10 @@
         text-align: left;
       }
 
+      .scan-disclaimer {
+        padding: 13px 16px 14px;
+      }
+
       .button { width: 100%; justify-content: center; text-align: center; }
 
       .scan { margin-top: 56px; }
@@ -1089,7 +1108,8 @@
         <span class="mono scan-status">Example exposure overview</span>
       </div>
       <p class="scan-disclaimer">
-        Illustration of the types of information a digital footprint check may uncover.
+        <strong>Example exposure overview</strong>
+        <span>Shows the types of information a digital footprint check may uncover.</span>
       </p>
       <div class="scan-grid">
         <div class="scan-cell">
