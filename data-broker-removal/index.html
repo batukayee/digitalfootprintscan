@@ -28,147 +28,594 @@
   <meta property="og:url" content="https://digitalfootprintscan.com/data-broker-removal/">
   <meta property="og:image" content="https://digitalfootprintscan.com/og-image.png">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
   <style>
-    * { box-sizing: border-box; }
+
+    :root {
+      --ink: #0b1220;
+      --secondary-ink: #1c2536;
+      --body-text: #5b6472;
+      --muted-text: #8a93a2;
+      --border: #e4e8ef;
+      --subtle-border: #eef1f5;
+      --white: #ffffff;
+      --page-background: #f6f8fb;
+      --primary-teal: #0e7c86;
+      --soft-teal: #e6f4f5;
+      --shadow: 0 6px 20px rgba(11, 18, 32, 0.035);
+      --shadow-hover: 0 10px 26px rgba(11, 18, 32, 0.06);
+      --radius-small: 10px;
+      --radius-medium: 14px;
+      --radius-large: 18px;
+      --site-width: 1120px;
+      --article-width: 760px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      color: #172033;
-      background: #f7f9fc;
+      font-family: "Inter", Arial, sans-serif;
+      color: var(--secondary-ink);
+      background: var(--page-background);
       line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
     }
 
     header {
-      background: #fff;
-      border-bottom: 1px solid #e5e9f0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
 
     nav {
-      max-width: 1050px;
-      margin: auto;
-      padding: 18px 20px;
+      width: 100%;
+      max-width: var(--site-width);
+      min-height: 70px;
+      margin: 0 auto;
+      padding: 14px 24px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      gap: 30px;
     }
 
     .logo {
-      font-size: 20px;
-      font-weight: 700;
-      color: #172033;
+      display: flex;
+      align-items: center;
+      width: 176px;
+      flex-shrink: 0;
       text-decoration: none;
     }
 
-    nav a {
-      color: #526070;
+    .logo img {
+      display: block;
+      width: 176px;
+      height: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 3px;
+    }
+
+    nav > div {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 3px;
+    }
+
+    nav > div a,
+    .nav-links a {
+      color: var(--body-text);
       text-decoration: none;
-      margin-left: 20px;
       font-size: 14px;
+      line-height: 1;
+      font-weight: 500;
+      padding: 10px 11px;
+      border-radius: 8px;
+      transition: color 160ms ease, background-color 160ms ease, transform 160ms ease;
+    }
+
+    nav > div a:hover,
+    .nav-links a:hover {
+      color: var(--ink);
+      background: #f3f5f8;
+      transform: translateY(-1px);
     }
 
     main {
-      max-width: 850px;
-      margin: auto;
-      padding: 55px 20px 80px;
-      background: #fff;
+      width: 100%;
+      max-width: var(--site-width);
+      margin: 0 auto;
+      padding: 70px 24px 90px;
+    }
+
+    main > .container,
+    .article-shell {
+      width: 100%;
+      max-width: var(--article-width);
+      margin: 0 auto;
     }
 
     .eyebrow {
-      font-size: 14px;
-      font-weight: 700;
-      color: #526070;
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--primary-teal);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      line-height: 1.2;
+      font-weight: 500;
+      letter-spacing: 0.055em;
       text-transform: uppercase;
-      letter-spacing: .05em;
     }
 
     h1 {
-      font-size: 44px;
-      line-height: 1.15;
-      margin: 12px 0 20px;
-    }
-
-    h2 {
-      font-size: 29px;
-      margin-top: 45px;
-      line-height: 1.25;
-    }
-
-    h3 {
-      font-size: 21px;
-      margin-top: 30px;
-    }
-
-    p {
-      color: #394658;
+      max-width: 800px;
+      margin: 18px 0 20px;
+      color: var(--ink);
+      font-size: clamp(40px, 6vw, 58px);
+      line-height: 1.07;
+      letter-spacing: -0.035em;
+      font-weight: 700;
     }
 
     .intro {
+      max-width: 760px;
+      margin: 0 0 24px;
+      color: var(--body-text);
+      font-size: 18px;
+      line-height: 1.75;
+      font-weight: 400;
+    }
+
+    p {
+      color: var(--body-text);
+    }
+
+    h2 {
+      margin: 58px 0 18px;
+      color: var(--ink);
+      font-size: 29px;
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+      font-weight: 700;
+    }
+
+    h3 {
+      margin: 32px 0 10px;
+      color: var(--secondary-ink);
       font-size: 19px;
-      color: #526070;
+      line-height: 1.4;
+      letter-spacing: -0.015em;
+      font-weight: 600;
+    }
+
+    main p {
+      margin-top: 0;
+      margin-bottom: 24px;
+      font-size: 16px;
+      line-height: 1.8;
     }
 
     .box {
-      background: #f1f4f8;
-      padding: 25px;
-      border-radius: 10px;
-      margin: 30px 0;
+      position: relative;
+      margin: 36px 0;
+      padding: 24px 26px 24px 29px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-medium);
+      box-shadow: var(--shadow);
+    }
+
+    .box::before {
+      content: "";
+      position: absolute;
+      top: 18px;
+      bottom: 18px;
+      left: 0;
+      width: 3px;
+      background: var(--primary-teal);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .box strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.45;
+      font-weight: 600;
+    }
+
+    .box p {
+      margin: 0;
+      color: var(--body-text);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    ul,
+    ol {
+      color: var(--body-text);
+    }
+
+    main ul {
+      margin: 22px 0 28px;
+      padding-left: 24px;
+    }
+
+    main ul li {
+      margin-bottom: 10px;
+      padding-left: 4px;
+      font-size: 16px;
+      line-height: 1.7;
     }
 
     .steps {
-      padding-left: 25px;
+      margin: 30px 0 12px;
     }
 
-    .steps li {
-      margin-bottom: 22px;
+    ol.steps {
+      list-style: none;
+      padding: 0;
+      counter-reset: footprint-step;
+    }
+
+    ol.steps li {
+      position: relative;
+      margin: 0;
+      padding: 0 0 31px 58px;
+      border-bottom: 1px solid var(--subtle-border);
+      counter-increment: footprint-step;
+    }
+
+    ol.steps li + li {
+      padding-top: 31px;
+    }
+
+    ol.steps li:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    ol.steps li::before {
+      content: counter(footprint-step, decimal-leading-zero);
+      position: absolute;
+      top: 1px;
+      left: 0;
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--soft-teal);
+      color: var(--primary-teal);
+      border-radius: 9px;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      line-height: 1;
+      font-weight: 600;
+    }
+
+    ol.steps li + li::before {
+      top: 31px;
+    }
+
+    ol.steps li > strong {
+      display: block;
+      margin: 0 0 8px;
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.45;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    ol.steps li p {
+      margin: 0 0 15px;
+      color: var(--body-text);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    ol.steps li p:last-child {
+      margin-bottom: 0;
+    }
+
+    main a {
+      color: var(--primary-teal);
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(14, 124, 134, 0.25);
+      transition: color 160ms ease, border-color 160ms ease;
+    }
+
+    main a:hover {
+      color: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .faq-section {
+      margin-top: 62px;
+    }
+
+    .faq-item {
+      padding: 21px 0;
+      border-top: 1px solid var(--subtle-border);
+    }
+
+    .faq-item:last-child {
+      border-bottom: 1px solid var(--subtle-border);
+    }
+
+    .faq-item h3 {
+      margin: 0 0 8px;
+      color: var(--ink);
+      font-size: 18px;
+      line-height: 1.45;
+      font-weight: 600;
+    }
+
+    .faq-item p {
+      margin: 0;
+      color: var(--body-text);
+      font-size: 15.5px;
+      line-height: 1.75;
     }
 
     .related {
-      margin-top: 55px;
-      padding-top: 30px;
-      border-top: 1px solid #e5e9f0;
+      margin-top: 68px;
+      padding-top: 36px;
+      border-top: 1px solid var(--border);
+    }
+
+    .related h2 {
+      margin-top: 0;
+      margin-bottom: 24px;
     }
 
     .related a {
-      display: block;
-      color: #172033;
-      font-weight: 700;
-      margin: 12px 0;
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-height: 96px;
+      margin: 0 0 12px;
+      padding: 20px 48px 20px 20px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-medium);
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.5;
+      font-weight: 600;
       text-decoration: none;
+      box-shadow: 0 5px 18px rgba(11, 18, 32, 0.025);
+      transition: transform 170ms ease, box-shadow 170ms ease, border-color 170ms ease, background-color 170ms ease;
+    }
+
+    .related a::after {
+      content: "→";
+      position: absolute;
+      right: 19px;
+      top: 50%;
+      color: var(--primary-teal);
+      font-size: 18px;
+      font-weight: 500;
+      transform: translateY(-50%);
+      transition: transform 170ms ease;
+    }
+
+    .related a:hover {
+      background: #fbfcfd;
+      border-color: #d9e0e8;
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+
+    .related a:hover::after {
+      transform: translate(2px, -50%);
     }
 
     footer {
-      background: #172033;
-      color: #fff;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      padding: 42px 24px 38px;
+      color: var(--body-text);
       text-align: center;
-      padding: 30px 20px;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    footer > p:first-child {
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.4;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    footer > p:nth-child(2) {
+      margin: 8px 0 20px;
     }
 
     footer a {
-      color: #fff;
-      margin: 0 8px;
-      font-size: 14px;
+      display: inline-block;
+      padding: 6px 9px;
+      color: var(--body-text);
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 0;
+      border-radius: 7px;
+      transition: color 160ms ease, background-color 160ms ease;
+    }
+
+    footer a:hover {
+      color: var(--ink);
+      background: #f3f5f8;
     }
 
     .disclosure {
-      font-size: 12px;
-      opacity: .7;
       max-width: 650px;
-      margin: 15px auto 0;
+      margin: 0 auto;
+      color: var(--muted-text);
+      font-size: 11.5px;
+      line-height: 1.65;
     }
 
-    @media (max-width: 700px) {
-      h1 { font-size: 35px; }
+    @media (max-width: 760px) {
 
       nav {
-        flex-direction: column;
-        gap: 12px;
+        padding: 14px 20px;
       }
 
-      nav a {
-        margin: 0 7px;
+      .logo,
+      .logo img {
+        width: 160px;
+      }
+
+      nav > div a {
+        font-size: 13px;
+        padding: 9px 7px;
+      }
+
+      main {
+        padding: 54px 20px 72px;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .intro {
+        font-size: 17px;
+      }
+
+      h2 {
+        font-size: 26px;
+        margin-top: 50px;
       }
     }
+
+    @media (max-width: 560px) {
+
+      header {
+        position: relative;
+      }
+
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        padding: 14px 17px;
+      }
+
+      .logo,
+      .logo img {
+        width: 155px;
+      }
+
+      nav > div {
+        width: 100%;
+        flex-wrap: wrap;
+      }
+
+      nav > div a {
+        margin-right: 3px;
+      }
+
+      main {
+        padding: 43px 17px 60px;
+      }
+
+      h1 {
+        font-size: 36px;
+        line-height: 1.1;
+      }
+
+      .intro {
+        font-size: 17px;
+        line-height: 1.7;
+      }
+
+      main p {
+        font-size: 16px;
+      }
+
+      .box {
+        padding: 21px 20px 21px 23px;
+      }
+
+      ol.steps li {
+        padding-left: 49px;
+      }
+
+      ol.steps li + li {
+        padding-top: 28px;
+      }
+
+      ol.steps li + li::before {
+        top: 28px;
+      }
+
+      ol.steps li::before {
+        width: 30px;
+        height: 30px;
+      }
+
+      .related a {
+        min-height: auto;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+
   </style>
 
   <script type="application/ld+json">
@@ -191,252 +638,260 @@
 
 <header>
   <nav>
-    <a class="logo" href="/">DigitalFootprintScan</a>
+
+    <a class="logo" href="/" aria-label="DigitalFootprintScan home">
+      <img src="/logo-horizontal.png" alt="DigitalFootprintScan">
+    </a>
 
     <div>
       <a href="/">Home</a>
       <a href="/digital-footprint-check/">Digital Footprint</a>
       <a href="/about.html">About</a>
     </div>
+
   </nav>
 </header>
 
 <main>
 
-  <div class="eyebrow">Privacy Guide</div>
+  <div class="article-shell">
 
-  <h1>Data Broker Removal: How to Remove Your Personal Information</h1>
+    <div class="eyebrow">Privacy Guide</div>
 
-  <p class="intro">
-    Data brokers collect information about people from a variety of sources
-    and may create searchable profiles containing personal details. Removing
-    these listings can reduce the amount of information publicly available
-    about you.
-  </p>
+    <h1>Data Broker Removal: How to Remove Your Personal Information</h1>
 
-  <p>
-    The process can be confusing because there is no single database that
-    contains everyone's information. Different companies collect different
-    types of data and have different removal procedures.
-  </p>
-
-  <div class="box">
-    <strong>TL;DR — How data broker removal works:</strong>
-    <p>
-      Find your listings, locate each site's opt-out or removal process,
-      submit the required request, record what you removed and check again
-      later. Manual removal can work for a small number of listings, while
-      specialized data removal services may help manage searches and
-      requests across multiple sources.
+    <p class="intro">
+      Data brokers collect information about people from a variety of sources
+      and may create searchable profiles containing personal details. Removing
+      these listings can reduce the amount of information publicly available
+      about you.
     </p>
-  </div>
 
-  <h2>What Is a Data Broker?</h2>
+    <p>
+      The process can be confusing because there is no single database that
+      contains everyone's information. Different companies collect different
+      types of data and have different removal procedures.
+    </p>
 
-  <p>
-    A data broker is a company that collects, combines, analyzes or sells
-    information about individuals. Sources can include public records,
-    websites, marketing databases and other commercially available data.
-  </p>
-
-  <p>
-    Depending on the company and applicable laws, a profile may contain
-    information such as your name, approximate location, age range, phone
-    number, relatives or other publicly available details.
-  </p>
-
-  <h2>Why Does Data Broker Removal Matter?</h2>
-
-  <p>
-    Information collected by data brokers can make it easier for strangers,
-    marketers and other organizations to find information associated with
-    you.
-  </p>
-
-  <p>
-    Reducing unnecessary public exposure can be one part of improving your
-    overall digital privacy. It does not, however, guarantee that all
-    information about you will disappear from the internet.
-  </p>
-
-  <h2>How to Remove Yourself From Data Broker Sites</h2>
-
-  <ol class="steps">
-
-    <li>
-      <strong>Find your listings.</strong>
+    <div class="box">
+      <strong>TL;DR — How data broker removal works:</strong>
       <p>
-        Search for your name, phone number, email address and other relevant
-        information on people-search and data broker websites.
+        Find your listings, locate each site's opt-out or removal process,
+        submit the required request, record what you removed and check again
+        later. Manual removal can work for a small number of listings, while
+        specialized data removal services may help manage searches and
+        requests across multiple sources.
       </p>
-    </li>
+    </div>
 
-    <li>
-      <strong>Locate the opt-out process.</strong>
-      <p>
-        Look for links such as "Opt Out", "Do Not Sell My Information",
-        "Privacy Choices" or "Remove My Information".
-      </p>
-    </li>
+    <h2>What Is a Data Broker?</h2>
 
-    <li>
-      <strong>Submit the removal request.</strong>
-      <p>
-        Follow the site's instructions. Some websites may require you to
-        verify that you control the information or email address involved.
-      </p>
-    </li>
+    <p>
+      A data broker is a company that collects, combines, analyzes or sells
+      information about individuals. Sources can include public records,
+      websites, marketing databases and other commercially available data.
+    </p>
 
-    <li>
-      <strong>Record what you removed.</strong>
-      <p>
-        Keep track of the website, profile and date of your request. This
-        makes future checks easier.
-      </p>
-    </li>
+    <p>
+      Depending on the company and applicable laws, a profile may contain
+      information such as your name, approximate location, age range, phone
+      number, relatives or other publicly available details.
+    </p>
 
-    <li>
-      <strong>Check again later.</strong>
-      <p>
-        Information can reappear or new information can be added. Periodic
-        checks are therefore useful.
-      </p>
-    </li>
+    <h2>Why Does Data Broker Removal Matter?</h2>
 
-  </ol>
+    <p>
+      Information collected by data brokers can make it easier for strangers,
+      marketers and other organizations to find information associated with
+      you.
+    </p>
 
-  <h2>Why Manual Removal Can Take Time</h2>
+    <p>
+      Reducing unnecessary public exposure can be one part of improving your
+      overall digital privacy. It does not, however, guarantee that all
+      information about you will disappear from the internet.
+    </p>
 
-  <p>
-    There can be many different data brokers and people-search websites.
-    Each can have its own website, search system, verification requirements
-    and removal process.
-  </p>
+    <h2>How to Remove Yourself From Data Broker Sites</h2>
 
-  <p>
-    This means manually removing information can become a repetitive process,
-    particularly when you want to check multiple databases.
-  </p>
+    <ol class="steps">
 
-  <p>
-    People-search sites are closely related to data broker exposure. Learn
-    more about
-    <a href="/people-search-sites/">how people-search sites work</a>
-    and how to check whether your information appears there.
-  </p>
+      <li>
+        <strong>Find your listings.</strong>
+        <p>
+          Search for your name, phone number, email address and other relevant
+          information on people-search and data broker websites.
+        </p>
+      </li>
 
-  <h2>Using a Data Removal Service</h2>
+      <li>
+        <strong>Locate the opt-out process.</strong>
+        <p>
+          Look for links such as "Opt Out", "Do Not Sell My Information",
+          "Privacy Choices" or "Remove My Information".
+        </p>
+      </li>
 
-  <p>
-    Privacy-focused data removal services offer an alternative to doing every
-    search manually. Depending on the provider, they may search multiple
-    data broker websites, identify matching profiles and submit removal
-    requests for you.
-  </p>
+      <li>
+        <strong>Submit the removal request.</strong>
+        <p>
+          Follow the site's instructions. Some websites may require you to
+          verify that you control the information or email address involved.
+        </p>
+      </li>
 
-  <p>
-    Coverage varies significantly between services, so don't assume that one
-    provider removes your information from every website. Check exactly what
-    databases, countries and types of information a service covers before
-    purchasing.
-  </p>
+      <li>
+        <strong>Record what you removed.</strong>
+        <p>
+          Keep track of the website, profile and date of your request. This
+          makes future checks easier.
+        </p>
+      </li>
 
-  <p>
-    You can also compare manual removal with other ways of reducing your
-    broader
-    <a href="/personal-information-exposure/">personal information exposure</a>.
-  </p>
+      <li>
+        <strong>Check again later.</strong>
+        <p>
+          Information can reappear or new information can be added. Periodic
+          checks are therefore useful.
+        </p>
+      </li>
 
-  <h2>Can Data Brokers Put Your Information Back?</h2>
+    </ol>
 
-  <p>
-    In some cases, information can reappear after it has been removed.
-    Data sources can change and companies may create new records over time.
-  </p>
+    <h2>Why Manual Removal Can Take Time</h2>
 
-  <p>
-    For that reason, privacy protection is better viewed as an ongoing
-    process rather than a one-time cleanup.
-  </p>
+    <p>
+      There can be many different data brokers and people-search websites.
+      Each can have its own website, search system, verification requirements
+      and removal process.
+    </p>
 
-  <h2>How Data Broker Removal Fits Into Your Digital Footprint</h2>
+    <p>
+      This means manually removing information can become a repetitive process,
+      particularly when you want to check multiple databases.
+    </p>
 
-  <p>
-    Data broker listings are only one part of an online footprint. You should
-    also review old accounts, social profiles, email exposure, phone-number
-    listings and other publicly available information.
-  </p>
+    <p>
+      People-search sites are closely related to data broker exposure. Learn
+      more about
+      <a href="/people-search-sites/">how people-search sites work</a>
+      and how to check whether your information appears there.
+    </p>
 
-  <p>
-    Start with our
-    <a href="/digital-footprint-check/">digital footprint check guide</a>
-    to work through the broader process.
-  </p>
+    <h2>Using a Data Removal Service</h2>
 
-  <p>
-    You can also review your
-    <a href="/email-exposure-check/">email exposure</a>
-    and
-    <a href="/phone-number-exposure-check/">phone number exposure</a>
-    separately.
-  </p>
+    <p>
+      Privacy-focused data removal services offer an alternative to doing every
+      search manually. Depending on the provider, they may search multiple
+      data broker websites, identify matching profiles and submit removal
+      requests for you.
+    </p>
 
-  <h2>Frequently Asked Questions</h2>
+    <p>
+      Coverage varies significantly between services, so don't assume that one
+      provider removes your information from every website. Check exactly what
+      databases, countries and types of information a service covers before
+      purchasing.
+    </p>
 
-  <h3>How do I remove my information from data brokers?</h3>
+    <p>
+      You can also compare manual removal with other ways of reducing your
+      broader
+      <a href="/personal-information-exposure/">personal information exposure</a>.
+    </p>
 
-  <p>
-    Find the relevant data broker listing, locate the site's opt-out or
-    removal process, follow its verification requirements and submit the
-    request. Keep a record of the request and check again later.
-  </p>
+    <h2>Can Data Brokers Put Your Information Back?</h2>
 
-  <h3>Can I remove my information from data brokers for free?</h3>
+    <p>
+      In some cases, information can reappear after it has been removed.
+      Data sources can change and companies may create new records over time.
+    </p>
 
-  <p>
-    Many data brokers provide an opt-out process that you can complete
-    yourself. The exact process varies by website and may require identity
-    or email verification.
-  </p>
+    <p>
+      For that reason, privacy protection is better viewed as an ongoing
+      process rather than a one-time cleanup.
+    </p>
 
-  <h3>Will removing my information from one data broker remove it everywhere?</h3>
+    <h2>How Data Broker Removal Fits Into Your Digital Footprint</h2>
 
-  <p>
-    No. Different companies maintain different databases. Removing one
-    listing does not automatically remove information held by other data
-    brokers, websites or public sources.
-  </p>
+    <p>
+      Data broker listings are only one part of an online footprint. You should
+      also review old accounts, social profiles, email exposure, phone-number
+      listings and other publicly available information.
+    </p>
 
-  <h3>Can data brokers add my information again?</h3>
+    <p>
+      Start with our
+      <a href="/digital-footprint-check/">digital footprint check guide</a>
+      to work through the broader process.
+    </p>
 
-  <p>
-    Information can reappear in some cases when new data is collected or
-    another record is created. Periodic checking may therefore be necessary.
-  </p>
+    <p>
+      You can also review your
+      <a href="/email-exposure-check/">email exposure</a>
+      and
+      <a href="/phone-number-exposure-check/">phone number exposure</a>
+      separately.
+    </p>
 
-  <div class="related">
+    <h2>Frequently Asked Questions</h2>
 
-    <h2>Related Privacy Guides</h2>
+    <h3>How do I remove my information from data brokers?</h3>
 
-    <a href="/digital-footprint-check/">
-      How to Check Your Digital Footprint →
-    </a>
+    <p>
+      Find the relevant data broker listing, locate the site's opt-out or
+      removal process, follow its verification requirements and submit the
+      request. Keep a record of the request and check again later.
+    </p>
 
-    <a href="/personal-information-exposure/">
-      Find Personal Information Exposed Online →
-    </a>
+    <h3>Can I remove my information from data brokers for free?</h3>
 
-    <a href="/people-search-sites/">
-      Learn About People-Search Sites →
-    </a>
+    <p>
+      Many data brokers provide an opt-out process that you can complete
+      yourself. The exact process varies by website and may require identity
+      or email verification.
+    </p>
 
-    <a href="/email-exposure-check/">
-      Check Email Exposure →
-    </a>
+    <h3>Will removing my information from one data broker remove it everywhere?</h3>
 
-    <a href="/phone-number-exposure-check/">
-      Check Phone Number Exposure →
-    </a>
+    <p>
+      No. Different companies maintain different databases. Removing one
+      listing does not automatically remove information held by other data
+      brokers, websites or public sources.
+    </p>
+
+    <h3>Can data brokers add my information again?</h3>
+
+    <p>
+      Information can reappear in some cases when new data is collected or
+      another record is created. Periodic checking may therefore be necessary.
+    </p>
+
+    <div class="related">
+
+      <h2>Related Privacy Guides</h2>
+
+      <a href="/digital-footprint-check/">
+        How to Check Your Digital Footprint →
+      </a>
+
+      <a href="/personal-information-exposure/">
+        Find Personal Information Exposed Online →
+      </a>
+
+      <a href="/people-search-sites/">
+        Learn About People-Search Sites →
+      </a>
+
+      <a href="/email-exposure-check/">
+        Check Email Exposure →
+      </a>
+
+      <a href="/phone-number-exposure-check/">
+        Check Phone Number Exposure →
+      </a>
+
+    </div>
 
   </div>
 
