@@ -15,20 +15,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>People Search Sites: What They Know About You | Digital Footprint Scan</title>
+  <title>Email Exposure Check: Find Where Your Email Is Online</title>
 
-  <meta name="description" content="Learn what people-search sites are, how they collect personal information, how to check your listings, and practical ways to reduce your online exposure.">
+  <meta name="description" content="Learn how to check where your email address appears online, find old accounts, discover public exposure and reduce unnecessary personal information exposure.">
 
-  <link rel="canonical" href="https://digitalfootprintscan.com/people-search-sites/">
+  <link rel="canonical" href="https://digitalfootprintscan.com/email-exposure-check/">
   <link rel="icon" type="image/png" href="/favicon.png">
 
-  <meta property="og:title" content="People Search Sites: What They Know About You">
-  <meta property="og:description" content="Learn how people-search sites collect personal information and how to find and reduce your online exposure.">
+  <meta property="og:title" content="Email Exposure Check: Find Where Your Email Is Online">
+  <meta property="og:description" content="Learn how to check where your email address appears online, find old accounts and reduce unnecessary email exposure.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://digitalfootprintscan.com/people-search-sites/">
+  <meta property="og:url" content="https://digitalfootprintscan.com/email-exposure-check/">
   <meta property="og:image" content="https://digitalfootprintscan.com/og-image.png">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
   <style>
+
+    :root {
+      --ink: #0b1220;
+      --secondary-ink: #1c2536;
+      --body-text: #5b6472;
+      --muted-text: #8a93a2;
+      --border: #e4e8ef;
+      --subtle-border: #eef1f5;
+      --white: #ffffff;
+      --page-background: #f6f8fb;
+      --primary-teal: #0e7c86;
+      --soft-teal: #e6f4f5;
+      --shadow: 0 6px 20px rgba(11, 18, 32, 0.035);
+      --shadow-hover: 0 10px 26px rgba(11, 18, 32, 0.06);
+      --radius-medium: 14px;
+      --site-width: 1120px;
+      --article-width: 760px;
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -39,184 +62,511 @@
 
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #111827;
-      background: #ffffff;
+      font-family: "Inter", Arial, sans-serif;
+      color: var(--secondary-ink);
+      background: var(--page-background);
       line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
     }
 
     a {
-      color: #111827;
-    }
-
-    .container {
-      width: min(1100px, 92%);
-      margin: 0 auto;
+      color: inherit;
     }
 
     header {
-      border-bottom: 1px solid #e5e7eb;
-      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
 
     nav {
-      min-height: 76px;
+      width: 100%;
+      max-width: var(--site-width);
+      min-height: 70px;
+      margin: 0 auto;
+      padding: 14px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 30px;
     }
 
+    .logo {
+      display: flex;
+      align-items: center;
+      width: 176px;
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+
     .logo img {
       display: block;
-      width: 190px;
+      width: 176px;
       height: auto;
     }
 
-    .nav-links {
+    nav > div {
       display: flex;
-      flex-wrap: wrap;
-      gap: 22px;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 3px;
     }
 
-    .nav-links a {
+    nav > div a {
+      color: var(--body-text);
       text-decoration: none;
       font-size: 14px;
-      font-weight: 600;
+      line-height: 1;
+      font-weight: 500;
+      padding: 10px 11px;
+      border-radius: 8px;
+      transition: color 160ms ease, background-color 160ms ease, transform 160ms ease;
+    }
+
+    nav > div a:hover {
+      color: var(--ink);
+      background: #f3f5f8;
+      transform: translateY(-1px);
     }
 
     main {
-      padding: 70px 0 90px;
+      width: 100%;
+      max-width: var(--site-width);
+      margin: 0 auto;
+      padding: 70px 24px 90px;
+    }
+
+    .article-shell {
+      width: 100%;
+      max-width: var(--article-width);
+      margin: 0 auto;
     }
 
     .eyebrow {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 1.2px;
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--primary-teal);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      line-height: 1.2;
+      font-weight: 500;
+      letter-spacing: 0.055em;
       text-transform: uppercase;
-      margin-bottom: 14px;
     }
 
     h1 {
-      max-width: 850px;
-      margin: 0 0 22px;
-      font-size: clamp(38px, 6vw, 60px);
-      line-height: 1.08;
-      letter-spacing: -1.5px;
+      max-width: 800px;
+      margin: 18px 0 20px;
+      color: var(--ink);
+      font-size: clamp(40px, 6vw, 58px);
+      line-height: 1.07;
+      letter-spacing: -0.035em;
+      font-weight: 700;
     }
 
     .intro {
-      max-width: 780px;
-      font-size: 19px;
-      color: #4b5563;
-      margin-bottom: 35px;
-    }
-
-    section {
-      max-width: 800px;
-      margin-bottom: 55px;
+      max-width: 760px;
+      margin: 0 0 24px;
+      color: var(--body-text);
+      font-size: 18px;
+      line-height: 1.75;
     }
 
     h2 {
-      font-size: 30px;
-      line-height: 1.2;
-      margin: 0 0 18px;
+      margin: 58px 0 18px;
+      color: var(--ink);
+      font-size: 29px;
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+      font-weight: 700;
     }
 
     h3 {
-      font-size: 21px;
-      line-height: 1.3;
-      margin: 28px 0 10px;
-    }
-
-    p {
-      margin: 0 0 18px;
-    }
-
-    ul,
-    ol {
-      padding-left: 23px;
-    }
-
-    li {
-      margin-bottom: 10px;
-    }
-
-    .box {
-      border: 1px solid #e5e7eb;
-      padding: 24px 28px;
-      background: #f8fafc;
-      margin: 0 0 55px;
-    }
-
-    .steps {
-      border: 1px solid #e5e7eb;
-      padding: 28px;
-      background: #f8fafc;
-    }
-
-    .note {
-      border-left: 3px solid #111827;
-      padding: 18px 22px;
-      background: #f8fafc;
-      margin-top: 25px;
-    }
-
-    .related {
-      border-top: 1px solid #e5e7eb;
-      padding-top: 30px;
-    }
-
-    .related a {
-      display: block;
-      margin-bottom: 10px;
+      margin: 32px 0 10px;
+      color: var(--secondary-ink);
+      font-size: 19px;
+      line-height: 1.4;
+      letter-spacing: -0.015em;
       font-weight: 600;
     }
 
-    footer {
-      border-top: 1px solid #e5e7eb;
-      padding: 35px 0;
-      color: #6b7280;
-      font-size: 14px;
+    p {
+      color: var(--body-text);
+      margin-top: 0;
+      margin-bottom: 24px;
+      font-size: 16px;
+      line-height: 1.8;
     }
 
-    .footer-links {
+    .box {
+      position: relative;
+      margin: 36px 0;
+      padding: 24px 26px 24px 29px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-medium);
+      box-shadow: var(--shadow);
+    }
+
+    .box::before {
+      content: "";
+      position: absolute;
+      top: 18px;
+      bottom: 18px;
+      left: 0;
+      width: 3px;
+      background: var(--primary-teal);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .box strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.45;
+      font-weight: 600;
+    }
+
+    .box p {
+      margin: 0;
+      color: var(--body-text);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    ul {
+      margin: 22px 0 28px;
+      padding-left: 24px;
+      color: var(--body-text);
+    }
+
+    ul li {
+      margin-bottom: 10px;
+      padding-left: 4px;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .steps {
+      margin: 30px 0 12px;
+      padding: 0;
+      list-style: none;
+      counter-reset: footprint-step;
+    }
+
+    .steps li {
+      position: relative;
+      margin: 0;
+      padding: 0 0 31px 58px;
+      border-bottom: 1px solid var(--subtle-border);
+      counter-increment: footprint-step;
+    }
+
+    .steps li + li {
+      padding-top: 31px;
+    }
+
+    .steps li:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .steps li::before {
+      content: counter(footprint-step, decimal-leading-zero);
+      position: absolute;
+      top: 1px;
+      left: 0;
+      width: 34px;
+      height: 34px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      margin-bottom: 14px;
+      align-items: center;
+      justify-content: center;
+      background: var(--soft-teal);
+      color: var(--primary-teal);
+      border-radius: 9px;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      line-height: 1;
+      font-weight: 600;
     }
 
-    .footer-links a {
-      color: #374151;
+    .steps li + li::before {
+      top: 31px;
+    }
+
+    .steps li > strong {
+      display: block;
+      margin: 0 0 8px;
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.45;
+      font-weight: 600;
+    }
+
+    .steps li p {
+      margin: 0 0 15px;
+      color: var(--body-text);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    main a {
+      color: var(--primary-teal);
       text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(14, 124, 134, 0.25);
+      transition: color 160ms ease, border-color 160ms ease;
+    }
+
+    main a:hover {
+      color: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .related {
+      margin-top: 68px;
+      padding-top: 36px;
+      border-top: 1px solid var(--border);
+    }
+
+    .related h2 {
+      margin-top: 0;
+      margin-bottom: 24px;
+    }
+
+    .related a {
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-height: 96px;
+      margin-bottom: 12px;
+      padding: 20px 48px 20px 20px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-medium);
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.5;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 5px 18px rgba(11, 18, 32, 0.025);
+      transition: transform 170ms ease, box-shadow 170ms ease, border-color 170ms ease;
+    }
+
+    .related a::after {
+      content: "→";
+      position: absolute;
+      right: 19px;
+      top: 50%;
+      color: var(--primary-teal);
+      font-size: 18px;
+      font-weight: 500;
+      transform: translateY(-50%);
+      transition: transform 170ms ease;
+    }
+
+    .related a:hover {
+      background: #fbfcfd;
+      border-color: #d9e0e8;
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+
+    .related a:hover::after {
+      transform: translate(2px, -50%);
+    }
+
+    footer {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      padding: 42px 24px 38px;
+      color: var(--body-text);
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    footer > p:first-child {
+      color: var(--ink);
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    footer > p:nth-child(2) {
+      margin: 8px 0 20px;
+    }
+
+    footer a {
+      display: inline-block;
+      padding: 6px 9px;
+      color: var(--body-text);
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 0;
+      border-radius: 7px;
+      transition: color 160ms ease, background-color 160ms ease;
+    }
+
+    footer a:hover {
+      color: var(--ink);
+      background: #f3f5f8;
+    }
+
+    .disclosure {
+      max-width: 650px;
+      margin: 0 auto;
+      color: var(--muted-text);
+      font-size: 11.5px;
+      line-height: 1.65;
     }
 
     @media (max-width: 760px) {
+
       nav {
-        padding: 18px 0;
-        align-items: flex-start;
-        flex-direction: column;
+        padding: 14px 20px;
       }
 
-      .nav-links {
-        gap: 14px;
+      .logo,
+      .logo img {
+        width: 160px;
+      }
+
+      nav > div a {
+        font-size: 13px;
+        padding: 9px 7px;
       }
 
       main {
-        padding: 50px 0 65px;
+        padding: 54px 20px 72px;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .intro {
+        font-size: 17px;
+      }
+
+      h2 {
+        font-size: 26px;
+        margin-top: 50px;
       }
     }
+
+    @media (max-width: 560px) {
+
+      header {
+        position: relative;
+      }
+
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        padding: 14px 17px;
+      }
+
+      .logo,
+      .logo img {
+        width: 155px;
+      }
+
+      nav > div {
+        width: 100%;
+        flex-wrap: wrap;
+      }
+
+      nav > div a {
+        margin-right: 3px;
+      }
+
+      main {
+        padding: 43px 17px 60px;
+      }
+
+      h1 {
+        font-size: 36px;
+        line-height: 1.1;
+      }
+
+      .intro {
+        font-size: 17px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      .box {
+        padding: 21px 20px 21px 23px;
+      }
+
+      .steps li {
+        padding-left: 49px;
+      }
+
+      .steps li + li {
+        padding-top: 28px;
+      }
+
+      .steps li + li::before {
+        top: 28px;
+      }
+
+      .steps li::before {
+        width: 30px;
+        height: 30px;
+      }
+
+      .related a {
+        min-height: auto;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+
   </style>
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "People Search Sites: What They Know About You",
-    "description": "A practical guide to understanding people-search sites, checking listings and reducing online exposure.",
-    "url": "https://digitalfootprintscan.com/people-search-sites/",
+    "headline": "Email Exposure Check: Find Where Your Email Is Online",
+    "description": "A practical guide to checking where an email address may appear online and reducing unnecessary exposure.",
+    "url": "https://digitalfootprintscan.com/email-exposure-check/",
     "publisher": {
       "@type": "Organization",
       "name": "DigitalFootprintScan"
@@ -229,347 +579,256 @@
 <body>
 
 <header>
-  <div class="container">
-    <nav>
-      <a class="logo" href="/" aria-label="Digital Footprint Scan">
-        <img src="/logo-horizontal.png" alt="Digital Footprint Scan">
-      </a>
+  <nav>
 
-      <div class="nav-links">
-        <a href="/digital-footprint-check/">Digital Footprint</a>
-        <a href="/data-broker-removal/">Data Brokers</a>
-        <a href="/email-exposure-check/">Email Exposure</a>
-        <a href="/phone-number-exposure-check/">Phone Exposure</a>
-      </div>
-    </nav>
-  </div>
+    <a class="logo" href="/" aria-label="DigitalFootprintScan home">
+      <img src="/logo-horizontal.png" alt="DigitalFootprintScan">
+    </a>
+
+    <div>
+      <a href="/">Home</a>
+      <a href="/digital-footprint-check/">Digital Footprint</a>
+      <a href="/data-broker-removal/">Data Brokers</a>
+    </div>
+
+  </nav>
 </header>
 
 <main>
-  <div class="container">
 
-    <div class="eyebrow">Privacy Guide</div>
+  <div class="article-shell">
 
-    <h1>People Search Sites: What They Know About You</h1>
+    <div class="eyebrow">Email Privacy Guide</div>
+
+    <h1>Email Exposure Check: Find Where Your Email Is Online</h1>
 
     <p class="intro">
-      People-search sites make it easier to find information about
-      individuals online. Learn what these sites are, where their information
-      can come from, how to check your listings, and what you can do to reduce
-      your exposure.
+      An email address can become a persistent identifier across the internet.
+      Old accounts, forums, social profiles, directories and data broker
+      databases may continue to associate information with an address long
+      after you stop using a website.
     </p>
 
     <div class="box">
-      <strong>TL;DR — People-search sites:</strong>
+      <strong>TL;DR — How to check your email exposure:</strong>
       <p>
-        People-search sites organize information about individuals so it can
-        be searched by names, phone numbers, email addresses and other
-        identifying details. To check your exposure, search your name, phone
-        number and email address, review matching profiles and use the site's
-        opt-out process where available.
+        Search your email address in quotation marks, check older email
+        addresses, review public profiles and look for people-search or data
+        broker listings. Finding your email online does not automatically mean
+        your account has been hacked. If you find unnecessary exposure, remove
+        it where possible and review your online presence periodically.
       </p>
     </div>
 
-    <section>
-      <h2>What Are People-Search Sites?</h2>
+    <h2>Why Check Your Email Exposure?</h2>
 
-      <p>
-        People-search sites are online services that organize information
-        about individuals and make it searchable by names, phone numbers,
-        email addresses, locations or other identifying details.
-      </p>
+    <p>
+      Your email address can connect different pieces of your online identity.
+      When the same address is used across multiple services, it may make it
+      easier to associate accounts, profiles and publicly available information.
+    </p>
 
-      <p>
-        Depending on the service and the information available, a listing
-        may contain details such as a person's name, approximate location,
-        previous locations, phone numbers, relatives, professional
-        information or links to other public records.
-      </p>
+    <p>
+      An exposed email address can also attract unwanted marketing, phishing
+      attempts and other unsolicited messages. Exposure does not automatically
+      mean that an account has been hacked, but it is worth understanding where
+      your address is publicly visible.
+    </p>
 
-      <p>
-        The amount and type of information varies significantly between
-        websites and between individuals.
-      </p>
-    </section>
+    <h2>How to Check Where Your Email Appears Online</h2>
 
-    <section>
-      <h2>Where Do People-Search Sites Get Information?</h2>
+    <ol class="steps">
 
-      <p>
-        Information can be collected or assembled from a variety of sources.
-        These may include public records, directories, websites, marketing
-        databases and other publicly or commercially available information.
-      </p>
-
-      <p>
-        Some services combine information from multiple sources to create a
-        single profile. This can make information that is scattered across
-        different places easier to find.
-      </p>
-
-      <div class="note">
-        <strong>Important:</strong> A listing on a people-search site does not
-        necessarily mean that your accounts have been hacked. Information may
-        have been collected from public or commercially available sources.
-      </div>
-    </section>
-
-    <section>
-      <h2>What Information Might Appear?</h2>
-
-      <p>
-        Depending on the website and available records, people-search
-        profiles may include:
-      </p>
-
-      <ul>
-        <li>Names and name variations</li>
-        <li>Current or previous locations</li>
-        <li>Phone numbers</li>
-        <li>Email addresses</li>
-        <li>Possible relatives or household connections</li>
-        <li>Professional or business information</li>
-        <li>Public-record information</li>
-        <li>Links to related online profiles or records</li>
-      </ul>
-
-      <p>
-        Not every profile contains all of these details, and information can
-        be outdated or incorrectly matched.
-      </p>
-    </section>
-
-    <section>
-      <h2>How to Check If You Appear on People-Search Sites</h2>
-
-      <div class="steps">
-
-        <h3>1. Search Your Full Name</h3>
-
+      <li>
+        <strong>Search the exact email address.</strong>
         <p>
-          Start with your name in a search engine. Try quotation marks around
-          your full name and include a city, region or other non-sensitive
-          identifying detail when appropriate.
+          Put your email address in quotation marks in a search engine. Review
+          the results carefully and look for profiles, directories, forums and
+          websites that display the address.
         </p>
+      </li>
 
-        <h3>2. Search Your Phone Number</h3>
-
+      <li>
+        <strong>Search older email addresses.</strong>
         <p>
-          Search your phone number using common formatting variations. This
-          can help identify directories or pages where the number is publicly
-          associated with you.
+          If you have used multiple addresses over the years, check each one.
+          Abandoned addresses can remain associated with old accounts.
         </p>
+      </li>
 
+      <li>
+        <strong>Check your social profiles.</strong>
         <p>
-          For more information about phone exposure, see our
-          <a href="/phone-number-exposure-check/">phone number exposure check</a>.
+          Review whether your email address is visible publicly on social
+          networking profiles or other public accounts.
         </p>
+      </li>
 
-        <h3>3. Search Your Email Address</h3>
-
+      <li>
+        <strong>Review old accounts.</strong>
         <p>
-          Search exact email addresses you have used publicly. Older email
-          addresses can sometimes remain connected to abandoned profiles or
-          websites.
+          Think about websites and services you joined in the past. Close
+          accounts you no longer need and update security settings on accounts
+          you keep.
         </p>
+      </li>
 
+      <li>
+        <strong>Check people-search and data broker listings.</strong>
         <p>
-          You can also review our
-          <a href="/email-exposure-check/">email exposure check</a>.
+          Some databases may associate email addresses with names, locations
+          or other information.
         </p>
+      </li>
 
-        <h3>4. Check the Relevant Profiles</h3>
+    </ol>
 
-        <p>
-          If you find a people-search listing, review what information is
-          displayed and determine whether it actually belongs to you before
-          taking action.
-        </p>
+    <h2>Email Exposure Does Not Always Mean a Data Breach</h2>
 
-      </div>
-    </section>
+    <p>
+      Finding your email address online does not by itself prove that your
+      account has been compromised. An address may be publicly visible because
+      you used it to register for a website, publish a profile or communicate
+      on a forum.
+    </p>
 
-    <section>
-      <h2>People-Search Sites and Data Brokers</h2>
+    <p>
+      A data breach is a separate issue. If you suspect that an account has
+      been compromised, change the password, enable multi-factor authentication
+      where available and follow the affected service's security guidance.
+    </p>
 
-      <p>
-        People-search sites and data brokers overlap, but the terms are not
-        always interchangeable. A data broker generally collects and
-        aggregates information for purposes such as marketing, analytics,
-        identity-related services or other commercial uses.
-      </p>
+    <h2>How to Reduce Email Exposure</h2>
 
-      <p>
-        People-search services commonly present information in a form that
-        allows individuals to search for other people.
-      </p>
+    <ul>
+      <li>Remove your email from public profiles where it is not necessary.</li>
+      <li>Close unused online accounts.</li>
+      <li>Use privacy settings on social platforms.</li>
+      <li>Consider separate email addresses for different purposes.</li>
+      <li>Request removal from websites that publish your information.</li>
+      <li>Review your online exposure periodically.</li>
+    </ul>
 
-      <p>
-        Understanding both categories is useful when trying to reduce your
-        overall online exposure.
-      </p>
+    <h2>Can You Remove Your Email From the Internet?</h2>
 
-      <p>
-        Learn more about
-        <a href="/data-broker-removal/">data broker removal</a>
-        and how these services can affect your digital footprint.
-      </p>
-    </section>
+    <p>
+      Sometimes, but not everywhere. Website owners and data brokers control
+      different databases, and copies of information can exist in multiple
+      places.
+    </p>
 
-    <section>
-      <h2>How to Reduce Your Exposure</h2>
+    <p>
+      You can request removal directly from individual websites. For broader
+      coverage, you can also compare services that specialize in finding and
+      removing personal information from data broker databases.
+    </p>
 
-      <p>
-        The exact removal process depends on the website. Some services
-        provide an opt-out process that allows a person to request removal
-        of a listing.
-      </p>
+    <p>
+      Learn more about
+      <a href="/data-broker-removal/">data broker removal</a>
+      and the different approaches available.
+    </p>
 
-      <p>Common steps include:</p>
+    <h2>Check Your Broader Digital Footprint</h2>
 
-      <ol>
-        <li>Identify the website and locate its opt-out instructions.</li>
-        <li>Find the profile or listing that belongs to you.</li>
-        <li>Follow the site's identity or verification process if required.</li>
-        <li>Submit the removal request.</li>
-        <li>Check again later to confirm whether the information was removed.</li>
-      </ol>
+    <p>
+      Your email address is only one part of your online footprint. Your name,
+      phone number, usernames, social profiles and data broker listings may
+      reveal additional information.
+    </p>
 
-      <p>
-        Removal is not always permanent. Information can reappear when a
-        service receives new data or creates another profile.
-      </p>
+    <p>
+      Start with our
+      <a href="/digital-footprint-check/">digital footprint check guide</a>
+      to investigate your broader online presence.
+    </p>
 
-      <p>
-        For a broader approach to finding information about yourself online,
-        see our
-        <a href="/personal-information-exposure/">personal information exposure guide</a>.
-      </p>
-    </section>
+    <p>
+      You can also learn how to
+      <a href="/personal-information-exposure/">find personal information exposed online</a>
+      and investigate other types of public exposure.
+    </p>
 
-    <section>
-      <h2>Manual Removal vs. Removal Services</h2>
+    <h2>Frequently Asked Questions</h2>
 
-      <p>
-        Manual removal can work when you only have a small number of
-        listings to manage. The process can become more time-consuming when
-        information appears across many websites.
-      </p>
+    <h3>How can I check if my email is exposed online?</h3>
 
-      <p>
-        Some privacy services can search multiple data broker and
-        people-search databases and help manage removal requests at scale.
-        Their coverage, supported countries, pricing and monitoring
-        capabilities vary, so compare the details before choosing one.
-      </p>
+    <p>
+      Search the exact email address in quotation marks, review public profiles
+      and check websites such as directories, people-search services and data
+      broker listings.
+    </p>
 
-      <p>
-        Data removal is only one part of managing your wider
-        <a href="/digital-footprint-check/">digital footprint</a>.
-      </p>
-    </section>
+    <h3>Does finding my email address online mean it was leaked?</h3>
 
-    <section>
-      <h2>Why Checking Matters</h2>
+    <p>
+      No. An email address may be publicly visible because it was published on
+      a profile, website, forum or directory. Public exposure and a data breach
+      are separate issues.
+    </p>
 
-      <p>
-        A people-search profile is only one part of a broader digital
-        footprint. Information may also appear through social profiles,
-        old websites, directories, professional pages, forums and other
-        online sources.
-      </p>
+    <h3>Can I remove my email address from the internet?</h3>
 
-      <p>
-        Checking several types of exposure gives you a more complete picture
-        of what someone might discover about you online.
-      </p>
+    <p>
+      You may be able to remove it from individual websites and listings, but
+      there is no single process that removes an email address from every
+      website or database.
+    </p>
 
-      <p>
-        Start with our
-        <a href="/digital-footprint-check/">digital footprint check guide</a>
-        for a broader step-by-step approach.
-      </p>
-    </section>
+    <h3>Should I use different email addresses?</h3>
 
-    <section>
-      <h2>Frequently Asked Questions</h2>
+    <p>
+      Using separate addresses for different purposes can help limit how widely
+      one address becomes associated with your online activity.
+    </p>
 
-      <h3>Can I Remove Myself From People-Search Sites?</h3>
+    <div class="related">
 
-      <p>
-        Many people-search websites provide an opt-out or removal process,
-        but the requirements differ by site and removal may not be permanent.
-      </p>
-
-      <h3>Why Does My Information Appear If I Never Created an Account?</h3>
-
-      <p>
-        A profile may be assembled from public records, directories,
-        websites or other commercially available information. You do not
-        necessarily need to create an account with the people-search site
-        itself.
-      </p>
-
-      <h3>Does Finding My Information Mean I Was Hacked?</h3>
-
-      <p>
-        Not necessarily. Publicly available or commercially collected
-        information can appear on people-search services without a security
-        breach involving your accounts.
-      </p>
-
-      <h3>Will Removing One Listing Remove Everything About Me Online?</h3>
-
-      <p>
-        No. Removing a single listing addresses that particular source.
-        Other websites, directories, data brokers or public records may
-        still contain information about you.
-      </p>
-
-    </section>
-
-    <section class="related">
       <h2>Related Privacy Guides</h2>
 
       <a href="/digital-footprint-check/">
-        How to Check Your Digital Footprint
+        How to Check Your Digital Footprint →
       </a>
 
       <a href="/personal-information-exposure/">
-        Find Personal Information Exposed Online
-      </a>
-
-      <a href="/email-exposure-check/">
-        Email Exposure Check
+        Find Personal Information Exposed Online →
       </a>
 
       <a href="/phone-number-exposure-check/">
-        Phone Number Exposure Check
+        Check Phone Number Exposure →
+      </a>
+
+      <a href="/people-search-sites/">
+        Learn About People-Search Sites →
       </a>
 
       <a href="/data-broker-removal/">
-        Data Broker Removal Guide
+        Learn About Data Broker Removal →
       </a>
-    </section>
+
+    </div>
 
   </div>
+
 </main>
 
 <footer>
-  <div class="container">
 
-    <div class="footer-links">
-      <a href="/about.html">About</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/affiliate-disclosure.html">Affiliate Disclosure</a>
-      <a href="/contact.html">Contact</a>
-    </div>
+  <p>© 2026 DigitalFootprintScan.com</p>
 
-    <div>
-      © 2026 Digital Footprint Scan. All rights reserved.
-    </div>
+  <p>
+    <a href="/about.html">About</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/affiliate-disclosure.html">Affiliate Disclosure</a>
+    <a href="/contact.html">Contact</a>
+  </p>
 
-  </div>
+  <p class="disclosure">
+    Some links on this website may eventually be affiliate links. If you
+    purchase through them, we may receive a commission at no additional cost
+    to you.
+  </p>
+
 </footer>
 
 </body>
