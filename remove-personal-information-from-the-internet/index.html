@@ -7,6 +7,7 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+
     gtag('js', new Date());
 
     gtag('config', 'G-6654C66QXK');
@@ -15,41 +16,104 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Data Broker Removal: How to Remove Your Personal Information</title>
-
-  <meta name="description" content="Learn how data brokers collect personal information, how to find your listings, how to opt out, and the different ways to remove your information from data broker websites.">
-
-  <link rel="canonical" href="https://digitalfootprintscan.com/data-broker-removal/">
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="/favicon.png">
 
-  <meta property="og:title" content="Data Broker Removal: How to Remove Your Personal Information">
-  <meta property="og:description" content="Learn how data brokers collect personal information and how to find, opt out of and reduce your listings.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://digitalfootprintscan.com/data-broker-removal/">
-  <meta property="og:image" content="https://digitalfootprintscan.com/og-image.png">
+  <title>How to Remove Personal Information Online</title>
 
+  <meta
+    name="description"
+    content="Learn how to find and remove personal information online, including data broker listings, people-search profiles, social profiles and old accounts."
+  >
+
+  <link
+    rel="canonical"
+    href="https://digitalfootprintscan.com/remove-personal-information-from-the-internet/"
+  >
+
+  <!-- Open Graph -->
+  <meta
+    property="og:title"
+    content="How to Remove Personal Information From the Internet"
+  >
+
+  <meta
+    property="og:description"
+    content="A practical guide to finding and reducing personal information exposed online, from search results and data brokers to old accounts and social profiles."
+  >
+
+  <meta property="og:type" content="article">
+
+  <meta
+    property="og:url"
+    content="https://digitalfootprintscan.com/remove-personal-information-from-the-internet/"
+  >
+
+  <meta
+    property="og:image"
+    content="https://digitalfootprintscan.com/og-image.png"
+  >
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta
+    name="twitter:title"
+    content="How to Remove Personal Information From the Internet"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Learn how to find and reduce personal information exposed online."
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://digitalfootprintscan.com/og-image.png"
+  >
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
+
+    /* =========================================
+       DIGITALFOOTPRINTSCAN DESIGN SYSTEM
+       ========================================= */
 
     :root {
       --ink: #0b1220;
       --secondary-ink: #1c2536;
       --body-text: #5b6472;
       --muted-text: #8a93a2;
+
       --border: #e4e8ef;
       --subtle-border: #eef1f5;
+
       --white: #ffffff;
       --page-background: #f6f8fb;
+
       --primary-teal: #0e7c86;
       --soft-teal: #e6f4f5;
+
       --shadow: 0 6px 20px rgba(11, 18, 32, 0.035);
       --shadow-hover: 0 10px 26px rgba(11, 18, 32, 0.06);
+
       --radius-small: 10px;
       --radius-medium: 14px;
       --radius-large: 18px;
+
       --site-width: 1120px;
       --article-width: 760px;
     }
@@ -81,12 +145,18 @@
       color: inherit;
     }
 
+    /* =========================================
+       HEADER
+       ========================================= */
+
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
+
       background: rgba(255, 255, 255, 0.94);
       border-bottom: 1px solid var(--border);
+
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
     }
@@ -95,8 +165,10 @@
       width: 100%;
       max-width: var(--site-width);
       min-height: 70px;
+
       margin: 0 auto;
       padding: 14px 24px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -106,13 +178,16 @@
     .logo {
       display: flex;
       align-items: center;
+
       width: 176px;
       flex-shrink: 0;
+
       text-decoration: none;
     }
 
     .logo img {
       display: block;
+
       width: 176px;
       height: auto;
     }
@@ -124,135 +199,200 @@
       gap: 3px;
     }
 
-    nav > div {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 3px;
-    }
-
-    nav > div a,
     .nav-links a {
       color: var(--body-text);
       text-decoration: none;
+
       font-size: 14px;
       line-height: 1;
       font-weight: 500;
+
       padding: 10px 11px;
       border-radius: 8px;
-      transition: color 160ms ease, background-color 160ms ease, transform 160ms ease;
+
+      transition:
+        color 160ms ease,
+        background-color 160ms ease,
+        transform 160ms ease;
     }
 
-    nav > div a:hover,
     .nav-links a:hover {
       color: var(--ink);
       background: #f3f5f8;
       transform: translateY(-1px);
     }
 
+    /* =========================================
+       MAIN
+       ========================================= */
+
     main {
       width: 100%;
       max-width: var(--site-width);
+
       margin: 0 auto;
       padding: 70px 24px 90px;
     }
 
-    main > .container,
     .article-shell {
       width: 100%;
       max-width: var(--article-width);
       margin: 0 auto;
     }
 
+    /* =========================================
+       HERO
+       ========================================= */
+
+    .hero {
+      margin: 0 0 34px;
+    }
+
     .eyebrow {
       display: inline-flex;
       align-items: center;
+
       padding: 6px 10px;
+
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: 999px;
+
       color: var(--primary-teal);
+
       font-family: "JetBrains Mono", monospace;
       font-size: 11px;
       line-height: 1.2;
       font-weight: 500;
+
       letter-spacing: 0.055em;
       text-transform: uppercase;
     }
 
     h1 {
       max-width: 800px;
+
       margin: 18px 0 20px;
+
       color: var(--ink);
+
       font-size: clamp(40px, 6vw, 58px);
       line-height: 1.07;
+
       letter-spacing: -0.035em;
       font-weight: 700;
     }
 
     .intro {
       max-width: 760px;
+
       margin: 0 0 24px;
+
       color: var(--body-text);
+
       font-size: 18px;
       line-height: 1.75;
       font-weight: 400;
     }
 
-    p {
+    /* =========================================
+       ARTICLE
+       ========================================= */
+
+    .article-content {
+      width: 100%;
+    }
+
+    .article-content > p {
+      margin-top: 0;
+      margin-bottom: 24px;
+
       color: var(--body-text);
+
+      font-size: 16px;
+      line-height: 1.8;
     }
 
     h2 {
       margin: 58px 0 18px;
+
       color: var(--ink);
+
       font-size: 29px;
       line-height: 1.25;
+
       letter-spacing: -0.03em;
       font-weight: 700;
     }
 
     h3 {
       margin: 32px 0 10px;
+
       color: var(--secondary-ink);
+
       font-size: 19px;
       line-height: 1.4;
+
       letter-spacing: -0.015em;
       font-weight: 600;
     }
 
-    main p {
-      margin-top: 0;
-      margin-bottom: 24px;
-      font-size: 16px;
-      line-height: 1.8;
+    .article-content ul {
+      margin: 22px 0 28px;
+      padding-left: 24px;
+
+      color: var(--body-text);
     }
+
+    .article-content ul li {
+      margin-bottom: 10px;
+      padding-left: 4px;
+
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* =========================================
+       INFO BOX
+       ========================================= */
 
     .box {
       position: relative;
+
       margin: 36px 0;
+
       padding: 24px 26px 24px 29px;
+
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: var(--radius-medium);
+
       box-shadow: var(--shadow);
     }
 
     .box::before {
       content: "";
+
       position: absolute;
+
       top: 18px;
       bottom: 18px;
       left: 0;
+
       width: 3px;
+
       background: var(--primary-teal);
+
       border-radius: 0 4px 4px 0;
     }
 
     .box strong {
       display: block;
+
       margin-bottom: 8px;
+
       color: var(--ink);
+
       font-size: 16px;
       line-height: 1.45;
       font-weight: 600;
@@ -260,111 +400,131 @@
 
     .box p {
       margin: 0;
+
       color: var(--body-text);
+
       font-size: 15px;
       line-height: 1.75;
     }
 
-    ul,
-    ol {
-      color: var(--body-text);
+    /* =========================================
+       LINKS
+       ========================================= */
+
+    .article-content a {
+      color: var(--primary-teal);
+
+      text-decoration: none;
+      font-weight: 500;
+
+      border-bottom: 1px solid rgba(14, 124, 134, 0.25);
+
+      transition:
+        color 160ms ease,
+        border-color 160ms ease;
     }
 
-    main ul {
-      margin: 22px 0 28px;
-      padding-left: 24px;
+    .article-content a:hover {
+      color: var(--ink);
+      border-color: var(--ink);
     }
 
-    main ul li {
-      margin-bottom: 10px;
-      padding-left: 4px;
-      font-size: 16px;
-      line-height: 1.7;
-    }
+    /* =========================================
+       STEPS
+       ========================================= */
 
     .steps {
       margin: 30px 0 12px;
-    }
 
-    ol.steps {
       list-style: none;
+
       padding: 0;
+
       counter-reset: footprint-step;
     }
 
-    ol.steps li {
+    .steps li {
       position: relative;
+
       margin: 0;
+
       padding: 0 0 31px 58px;
+
       border-bottom: 1px solid var(--subtle-border);
+
       counter-increment: footprint-step;
     }
 
-    ol.steps li + li {
+    .steps li + li {
       padding-top: 31px;
     }
 
-    ol.steps li:last-child {
+    .steps li:last-child {
       padding-bottom: 0;
       border-bottom: 0;
     }
 
-    ol.steps li::before {
+    .steps li::before {
       content: counter(footprint-step, decimal-leading-zero);
+
       position: absolute;
+
       top: 1px;
       left: 0;
+
       width: 34px;
       height: 34px;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       background: var(--soft-teal);
+
       color: var(--primary-teal);
+
       border-radius: 9px;
+
       font-family: "JetBrains Mono", monospace;
       font-size: 11px;
       line-height: 1;
       font-weight: 600;
     }
 
-    ol.steps li + li::before {
+    .steps li + li::before {
       top: 31px;
     }
 
-    ol.steps li > strong {
+    .steps li > strong {
       display: block;
+
       margin: 0 0 8px;
+
       color: var(--ink);
+
       font-size: 17px;
       line-height: 1.45;
       font-weight: 600;
+
       letter-spacing: -0.01em;
     }
 
-    ol.steps li p {
+    .steps li p {
       margin: 0 0 15px;
+
       color: var(--body-text);
+
       font-size: 16px;
       line-height: 1.75;
     }
 
-    ol.steps li p:last-child {
+    .steps li p:last-child {
       margin-bottom: 0;
     }
 
-    main a {
-      color: var(--primary-teal);
-      text-decoration: none;
-      font-weight: 500;
-      border-bottom: 1px solid rgba(14, 124, 134, 0.25);
-      transition: color 160ms ease, border-color 160ms ease;
-    }
-
-    main a:hover {
-      color: var(--ink);
-      border-color: var(--ink);
-    }
+    /* =========================================
+       FAQ
+       ========================================= */
 
     .faq-section {
       margin-top: 62px;
@@ -372,6 +532,7 @@
 
     .faq-item {
       padding: 21px 0;
+
       border-top: 1px solid var(--subtle-border);
     }
 
@@ -381,7 +542,9 @@
 
     .faq-item h3 {
       margin: 0 0 8px;
+
       color: var(--ink);
+
       font-size: 18px;
       line-height: 1.45;
       font-weight: 600;
@@ -389,14 +552,22 @@
 
     .faq-item p {
       margin: 0;
+
       color: var(--body-text);
+
       font-size: 15.5px;
       line-height: 1.75;
     }
 
+    /* =========================================
+       RELATED RESOURCES
+       ========================================= */
+
     .related {
       margin-top: 68px;
+
       padding-top: 36px;
+
       border-top: 1px solid var(--border);
     }
 
@@ -405,96 +576,159 @@
       margin-bottom: 24px;
     }
 
-    .related a {
+    .related-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .related-grid a {
       position: relative;
+
       display: flex;
       align-items: center;
+
       min-height: 96px;
-      margin: 0 0 12px;
+
+      margin: 0;
+
       padding: 20px 48px 20px 20px;
+
       background: var(--white);
+
       border: 1px solid var(--border);
       border-radius: var(--radius-medium);
+
       color: var(--ink);
+
       font-size: 15px;
       line-height: 1.5;
       font-weight: 600;
+
       text-decoration: none;
+
+      border-bottom: 1px solid var(--border);
+
       box-shadow: 0 5px 18px rgba(11, 18, 32, 0.025);
-      transition: transform 170ms ease, box-shadow 170ms ease, border-color 170ms ease, background-color 170ms ease;
+
+      transition:
+        transform 170ms ease,
+        box-shadow 170ms ease,
+        border-color 170ms ease,
+        background-color 170ms ease;
     }
 
-    .related a::after {
+    .related-grid a::after {
       content: "→";
+
       position: absolute;
+
       right: 19px;
       top: 50%;
+
       color: var(--primary-teal);
+
       font-size: 18px;
       font-weight: 500;
+
       transform: translateY(-50%);
+
       transition: transform 170ms ease;
     }
 
-    .related a:hover {
+    .related-grid a:hover {
       background: #fbfcfd;
+
       border-color: #d9e0e8;
+
       box-shadow: var(--shadow-hover);
+
       transform: translateY(-2px);
     }
 
-    .related a:hover::after {
+    .related-grid a:hover::after {
       transform: translate(2px, -50%);
     }
 
+    /* =========================================
+       FOOTER
+       ========================================= */
+
     footer {
       background: var(--white);
+
       border-top: 1px solid var(--border);
+
       padding: 42px 24px 38px;
+
       color: var(--body-text);
+
       text-align: center;
     }
 
-    footer p {
-      margin: 0;
-    }
+    .footer-brand {
+      margin: 0 0 16px;
 
-    footer > p:first-child {
       color: var(--ink);
+
       font-size: 16px;
       line-height: 1.4;
       font-weight: 600;
+
       letter-spacing: -0.01em;
     }
 
-    footer > p:nth-child(2) {
-      margin: 8px 0 20px;
+    .footer-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 4px;
+
+      margin-bottom: 20px;
     }
 
-    footer a {
+    .footer-links a {
       display: inline-block;
+
       padding: 6px 9px;
+
       color: var(--body-text);
+
       font-size: 13px;
       font-weight: 500;
+
       text-decoration: none;
+
       border-bottom: 0;
       border-radius: 7px;
-      transition: color 160ms ease, background-color 160ms ease;
+
+      transition:
+        color 160ms ease,
+        background-color 160ms ease;
     }
 
-    footer a:hover {
+    .footer-links a:hover {
       color: var(--ink);
+
       background: #f3f5f8;
     }
 
     .disclosure {
       max-width: 650px;
+
       margin: 0 auto;
+
       color: var(--muted-text);
+
       font-size: 11.5px;
       line-height: 1.65;
     }
+
+    /* =========================================
+       RESPONSIVE
+       ========================================= */
 
     @media (max-width: 760px) {
 
@@ -507,7 +741,7 @@
         width: 160px;
       }
 
-      nav > div a {
+      .nav-links a {
         font-size: 13px;
         padding: 9px 7px;
       }
@@ -538,8 +772,11 @@
 
       nav {
         align-items: flex-start;
+
         flex-direction: column;
+
         gap: 12px;
+
         padding: 14px 17px;
       }
 
@@ -548,12 +785,12 @@
         width: 155px;
       }
 
-      nav > div {
+      .nav-links {
         width: 100%;
         flex-wrap: wrap;
       }
 
-      nav > div a {
+      .nav-links a {
         margin-right: 3px;
       }
 
@@ -571,7 +808,7 @@
         line-height: 1.7;
       }
 
-      main p {
+      .article-content > p {
         font-size: 16px;
       }
 
@@ -579,27 +816,31 @@
         padding: 21px 20px 21px 23px;
       }
 
-      ol.steps li {
+      .steps li {
         padding-left: 49px;
       }
 
-      ol.steps li + li {
+      .steps li + li {
         padding-top: 28px;
       }
 
-      ol.steps li + li::before {
+      .steps li + li::before {
         top: 28px;
       }
 
-      ol.steps li::before {
+      .steps li::before {
         width: 30px;
         height: 30px;
       }
 
-      .related a {
+      .related-grid a {
         min-height: auto;
       }
     }
+
+    /* =========================================
+       REDUCED MOTION
+       ========================================= */
 
     @media (prefers-reduced-motion: reduce) {
 
@@ -607,9 +848,7 @@
         scroll-behavior: auto;
       }
 
-      *,
-      *::before,
-      *::after {
+      * {
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
@@ -618,315 +857,700 @@
 
   </style>
 
+
+  <!-- Article Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Data Broker Removal: How to Remove Your Personal Information",
-    "description": "A practical guide to understanding data brokers and removing personal information from data broker websites.",
-    "url": "https://digitalfootprintscan.com/data-broker-removal/",
+    "headline": "How to Remove Personal Information From the Internet",
+    "description": "A practical guide to finding and reducing personal information exposed online, including search results, data brokers, people-search sites, social profiles and old accounts.",
+    "url": "https://digitalfootprintscan.com/remove-personal-information-from-the-internet/",
     "publisher": {
       "@type": "Organization",
-      "name": "DigitalFootprintScan"
+      "name": "DigitalFootprintScan",
+      "url": "https://digitalfootprintscan.com/"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://digitalfootprintscan.com/remove-personal-information-from-the-internet/"
     }
+  }
+  </script>
+
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I completely remove my personal information from the internet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Usually not completely. You can reduce a significant amount of public exposure by removing information from source websites, opting out of data broker and people-search listings, managing search-engine results, and deleting unnecessary accounts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I remove my personal information from Google?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Google provides removal processes for certain types of personal information appearing in Search. Removing a Google result does not necessarily remove the information from the original website, so source removal may also be necessary."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I remove my information from data brokers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Identify the data broker listing, locate its privacy or opt-out process, submit the required request, and verify that the listing has been removed. Some people use privacy services to manage multiple removal requests."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does deleting social media remove my information from the internet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Deleting or restricting an account can reduce exposure, but it does not guarantee that copies, screenshots, cached information, third-party references or previously collected data no longer exist elsewhere."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does my personal information come back after I remove it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Information can be collected again from public records, websites and other sources. Data broker profiles may also be rebuilt or updated, which is why periodic checking can be necessary."
+        }
+      }
+    ]
   }
   </script>
 
 </head>
 
+
 <body>
 
-<header>
-  <nav>
+  <!-- =========================================
+       HEADER
+       ========================================= -->
 
-    <a class="logo" href="/" aria-label="DigitalFootprintScan home">
-      <img src="/logo-horizontal.png" alt="DigitalFootprintScan">
-    </a>
+  <header>
 
-    <div>
-      <a href="/">Home</a>
-      <a href="/digital-footprint-check/">Digital Footprint</a>
-      <a href="/about.html">About</a>
+    <nav>
+
+      <a class="logo" href="/" aria-label="DigitalFootprintScan home">
+        <img
+          src="/logo-horizontal.png"
+          alt="DigitalFootprintScan"
+        >
+      </a>
+
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/data-broker-removal/">Data Brokers</a>
+        <a href="/about.html">About</a>
+      </div>
+
+    </nav>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN CONTENT
+       ========================================= -->
+
+  <main>
+
+    <div class="article-shell">
+
+      <!-- HERO -->
+
+      <section class="hero">
+
+        <div class="eyebrow">
+          Digital Privacy Guide
+        </div>
+
+        <h1>
+          How to Remove Personal Information From the Internet
+        </h1>
+
+        <p class="intro">
+          Personal information can appear across search results, data broker
+          profiles, people-search sites, social networks, old accounts and other
+          websites. This guide explains how to find that information and reduce
+          your public exposure step by step.
+        </p>
+
+      </section>
+
+
+      <!-- ARTICLE -->
+
+      <article class="article-content">
+
+        <p>
+          Removing personal information from the internet is usually a process
+          rather than a single request. Some information can be removed directly
+          from the website that published it. Other information may require an
+          opt-out request, an account deletion, or a search-engine removal request.
+        </p>
+
+
+        <!-- QUICK ANSWER -->
+
+        <div class="box">
+
+          <strong>
+            Quick answer — how to remove personal information:
+          </strong>
+
+          <p>
+            First find what is exposed by searching your name, email addresses,
+            phone number and usernames. Then remove information from the original
+            websites where possible, opt out of data broker and people-search
+            listings, manage eligible search results, and delete or secure old
+            accounts. Recheck periodically because information can appear again.
+          </p>
+
+        </div>
+
+
+        <h2>What Personal Information Can Appear Online?</h2>
+
+        <p>
+          The information connected to you online can come from many different
+          sources. Some of it may have been shared by you, while other information
+          may have been published, collected or combined by third parties.
+        </p>
+
+        <ul>
+          <li>Full names and name variations</li>
+          <li>Email addresses</li>
+          <li>Phone numbers</li>
+          <li>Home or previous addresses</li>
+          <li>Social media profiles</li>
+          <li>Usernames and account names</li>
+          <li>Photos and publicly visible profile information</li>
+          <li>Old forum posts, comments and websites</li>
+          <li>People-search profiles and directory listings</li>
+          <li>Information associated with data broker profiles</li>
+        </ul>
+
+
+        <h2>Where Your Personal Information May Be Found</h2>
+
+        <p>
+          Before removing anything, it helps to understand where the information
+          is coming from. Different sources require different removal methods.
+        </p>
+
+        <h3>Search engines</h3>
+
+        <p>
+          Search engines can make personal information easier to discover. A search
+          result is not necessarily the original source, however. Removing a result
+          from a search engine and removing the information from the website hosting
+          it are separate actions.
+        </p>
+
+        <h3>Data brokers</h3>
+
+        <p>
+          Data brokers may compile information from multiple sources and create
+          profiles associated with individuals. These profiles can contain contact
+          information and other details.
+        </p>
+
+        <h3>People-search sites</h3>
+
+        <p>
+          People-search websites can aggregate information from public records,
+          directories and other sources into searchable profiles. These listings
+          may expose names, locations, relatives, phone numbers or other details.
+        </p>
+
+        <h3>Social profiles</h3>
+
+        <p>
+          Public social-media profiles can reveal names, usernames, photos,
+          workplaces, locations and other information. Older profiles can also
+          remain visible even when you no longer actively use them.
+        </p>
+
+        <h3>Old accounts and websites</h3>
+
+        <p>
+          Forums, blogs, old accounts, comments and other websites can continue
+          displaying information you shared years ago. Forgotten accounts are
+          particularly easy to overlook during a privacy cleanup.
+        </p>
+
+
+        <h2>How to Find Your Personal Information Online</h2>
+
+        <p>
+          Start by searching for the information that is most closely associated
+          with you. Use several variations rather than relying on one search.
+        </p>
+
+        <ol class="steps">
+
+          <li>
+            <strong>Search your full name.</strong>
+
+            <p>
+              Search your name in quotation marks and try common variations,
+              initials, former names or combinations with a city, employer or
+              other relevant detail.
+            </p>
+          </li>
+
+          <li>
+            <strong>Search your email addresses.</strong>
+
+            <p>
+              Search current and older email addresses. An old address can remain
+              connected to profiles, accounts, forum posts and other websites.
+            </p>
+          </li>
+
+          <li>
+            <strong>Search your phone number.</strong>
+
+            <p>
+              Search your phone number using different formatting styles. Phone
+              numbers can appear in directories, people-search profiles and other
+              public listings.
+            </p>
+          </li>
+
+          <li>
+            <strong>Search old usernames.</strong>
+
+            <p>
+              Using the same username across multiple websites can make older
+              profiles easier to discover.
+            </p>
+          </li>
+
+          <li>
+            <strong>Check social profiles.</strong>
+
+            <p>
+              View your profiles from a public or logged-out perspective where
+              possible. Review information that strangers can see.
+            </p>
+          </li>
+
+          <li>
+            <strong>Check people-search and data broker websites.</strong>
+
+            <p>
+              These sites may aggregate information from multiple sources and
+              create searchable profiles.
+            </p>
+
+            <p>
+              Learn more about
+              <a href="/people-search-sites/">people-search sites</a>
+              and
+              <a href="/data-broker-removal/">data broker removal</a>.
+            </p>
+          </li>
+
+        </ol>
+
+
+        <h2>How to Remove Information From Websites</h2>
+
+        <p>
+          When you find personal information on a website, start with the original
+          source whenever possible. Look for a privacy policy, contact page,
+          deletion request, opt-out form or other removal process.
+        </p>
+
+        <p>
+          If the information is connected to an account you control, deleting the
+          account or changing its public visibility may reduce exposure.
+        </p>
+
+        <p>
+          If the website does not provide an obvious removal process, check its
+          privacy documentation or contact the site owner. Keep a record of the
+          request and the date you submitted it.
+        </p>
+
+
+        <h2>How to Opt Out of People-Search Sites</h2>
+
+        <p>
+          Many people-search websites provide an opt-out or removal process.
+          Requirements differ between websites, so you may need to locate your
+          profile first and then follow the site's verification instructions.
+        </p>
+
+        <p>
+          Removing one people-search listing does not necessarily remove your
+          information from other websites. Search for additional listings after
+          completing each removal request.
+        </p>
+
+        <p>
+          See our
+          <a href="/people-search-sites/">people-search sites guide</a>
+          for more information about how these services work.
+        </p>
+
+
+        <h2>How to Remove Information From Data Brokers</h2>
+
+        <p>
+          Data broker removal generally involves finding your profile, locating
+          the company's opt-out process, submitting the required request and then
+          checking whether the listing has disappeared.
+        </p>
+
+        <p>
+          Because different companies maintain different databases, removing your
+          information from one data broker does not automatically remove it from
+          every other source.
+        </p>
+
+        <p>
+          Our
+          <a href="/data-broker-removal/">data broker removal guide</a>
+          explains the process in more detail.
+        </p>
+
+
+        <h2>How to Reduce Search-Engine Visibility</h2>
+
+        <p>
+          Search engines can make information much easier to discover, but a
+          search result is not always the original source of the information.
+        </p>
+
+        <p>
+          If possible, first request removal from the website hosting the
+          information. Depending on the type of information and the search engine,
+          additional search-result removal options may also be available.
+        </p>
+
+        <p>
+          Removing a result from search does not necessarily delete the underlying
+          page. Source removal and search-result removal are therefore separate
+          steps.
+        </p>
+
+
+        <h2>Lock Down Your Social Profiles</h2>
+
+        <p>
+          Review the public visibility of your social-media profiles and remove
+          information that you no longer want to share publicly.
+        </p>
+
+        <p>
+          Check profile details, old posts, photos, usernames, contact information
+          and other information that strangers can see. Where appropriate, change
+          privacy settings or delete information you no longer need.
+        </p>
+
+
+        <h2>Check Email and Phone Exposure</h2>
+
+        <p>
+          Email addresses and phone numbers can connect different parts of your
+          online identity. They may appear in old accounts, directories, social
+          profiles, forums, business listings or people-search databases.
+        </p>
+
+        <p>
+          Our
+          <a href="/email-exposure-check/">email exposure guide</a>
+          and
+          <a href="/phone-number-exposure-check/">phone number exposure guide</a>
+          can help you review these areas separately.
+        </p>
+
+
+        <h2>Why Your Information May Appear Without You Realizing It</h2>
+
+        <p>
+          Information can spread online through old accounts, public profiles,
+          directories, business listings, public records and commercial databases.
+          You may have provided information years ago and forgotten that it was
+          published.
+        </p>
+
+        <p>
+          Removing information from one location also does not necessarily remove it
+          from every other source.
+        </p>
+
+
+        <h2>What Should You Do If You Find Your Information?</h2>
+
+        <p>
+          First, document where the information appears. Then look for the site's
+          privacy or removal process. Many websites provide an opt-out or deletion
+          request.
+        </p>
+
+        <p>
+          For information appearing across many data brokers, manually submitting
+          requests can become time-consuming. This is where specialized personal-data
+          removal services may be useful.
+        </p>
+
+        <p>
+          Learn more about
+          <a href="/data-broker-removal/">data broker removal options</a>
+          if your information appears on multiple data broker or people-search
+          websites.
+        </p>
+
+
+        <h2>Can You Remove Personal Information From the Internet?</h2>
+
+        <p>
+          Sometimes. The process depends on where the information appears, who
+          controls it and which privacy rights apply to you.
+        </p>
+
+        <p>
+          Even after information is removed, copies or new listings may appear
+          elsewhere. Privacy protection is therefore an ongoing process rather than
+          a guaranteed one-time cleanup.
+        </p>
+
+
+        <h2>How to Reduce Future Online Exposure</h2>
+
+        <p>
+          Once you have cleaned up existing information, a few habits can help
+          reduce future exposure.
+        </p>
+
+        <ul>
+          <li>Review the privacy settings of important accounts.</li>
+          <li>Delete old accounts you no longer need.</li>
+          <li>Avoid publicly posting unnecessary contact information.</li>
+          <li>Use different usernames where appropriate.</li>
+          <li>Review what personal information appears on public profiles.</li>
+          <li>Periodically search for your own information online.</li>
+          <li>Keep a record of important removal requests.</li>
+        </ul>
+
+
+        <h2>Should You Remove Personal Information Yourself or Use a Service?</h2>
+
+        <p>
+          Manual removal can be appropriate when you have a limited number of
+          listings and are comfortable managing the requests yourself. It gives you
+          direct control over which websites you contact and what information you
+          ask them to remove.
+        </p>
+
+        <p>
+          A privacy service may be useful when information appears across many
+          sources or when you want ongoing monitoring and removal assistance.
+          Before using one, compare what sources it covers, how often it checks for
+          new listings, what removal process it uses and what the service actually
+          promises.
+        </p>
+
+
+        <h2>Start With a Digital Footprint Check</h2>
+
+        <p>
+          Removing information is much easier when you first understand where it
+          appears. A digital footprint check can help you identify names,
+          identifiers, profiles, people-search listings and other publicly visible
+          information that may need attention.
+        </p>
+
+        <p>
+          Start with our
+          <a href="/digital-footprint-check/">guide to checking your digital footprint</a>,
+          then use the individual privacy guides on this site to investigate the
+          areas most relevant to you.
+        </p>
+
+
+        <!-- FAQ -->
+
+        <section class="faq-section">
+
+          <h2>Frequently Asked Questions</h2>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Can I completely remove my personal information from the internet?
+            </h3>
+
+            <p>
+              Usually not completely. You can reduce a significant amount of public
+              exposure by removing information from source websites, opting out of
+              data broker and people-search listings, managing eligible search
+              results, and deleting unnecessary accounts.
+            </p>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <h3>
+              How do I remove my personal information from Google?
+            </h3>
+
+            <p>
+              Google provides removal processes for certain types of personal
+              information appearing in Search. Removing a Google result does not
+              necessarily remove the information from the original website, so
+              source removal may also be necessary.
+            </p>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <h3>
+              How do I remove my information from data brokers?
+            </h3>
+
+            <p>
+              Identify the relevant data broker listing, locate its privacy or
+              opt-out process, submit the required request and verify that the
+              listing has been removed. Some people use privacy services to manage
+              multiple removal requests.
+            </p>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Does deleting social media remove my information from the internet?
+            </h3>
+
+            <p>
+              Deleting or restricting an account can reduce exposure, but it does
+              not guarantee that copies, screenshots, cached information,
+              third-party references or previously collected data no longer exist.
+            </p>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Why does my personal information come back after I remove it?
+            </h3>
+
+            <p>
+              Information can be collected again from public records, websites and
+              other sources. Data broker profiles may also be rebuilt or updated,
+              which is why periodic checking can be necessary.
+            </p>
+
+          </div>
+
+        </section>
+
+
+        <!-- RELATED RESOURCES -->
+
+        <section class="related">
+
+          <h2>Continue Your Privacy Check</h2>
+
+          <div class="related-grid">
+
+            <a href="/digital-footprint-check/">
+              Learn How to Check Your Digital Footprint
+            </a>
+
+            <a href="/personal-information-exposure/">
+              Find Personal Information Exposed Online
+            </a>
+
+            <a href="/data-broker-removal/">
+              Learn About Data Broker Removal
+            </a>
+
+            <a href="/people-search-sites/">
+              Learn About People-Search Sites
+            </a>
+
+            <a href="/email-exposure-check/">
+              Check Email Exposure
+            </a>
+
+            <a href="/phone-number-exposure-check/">
+              Check Phone Number Exposure
+            </a>
+
+          </div>
+
+        </section>
+
+      </article>
+
     </div>
 
-  </nav>
-</header>
+  </main>
 
-<main>
 
-  <div class="article-shell">
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
 
-    <div class="eyebrow">Privacy Guide</div>
+  <footer>
 
-    <h1>Data Broker Removal: How to Remove Your Personal Information</h1>
-
-    <p class="intro">
-      Data brokers collect information about people from a variety of sources
-      and may create searchable profiles containing personal details. Removing
-      these listings can reduce the amount of information publicly available
-      about you.
+    <p class="footer-brand">
+      DigitalFootprintScan.com
     </p>
 
-    <p>
-      The process can be confusing because there is no single database that
-      contains everyone's information. Different companies collect different
-      types of data and have different removal procedures.
-    </p>
+    <div class="footer-links">
 
-    <div class="box">
-      <strong>TL;DR — How data broker removal works:</strong>
-      <p>
-        Find your listings, locate each site's opt-out or removal process,
-        submit the required request, record what you removed and check again
-        later. Manual removal can work for a small number of listings, while
-        specialized data removal services may help manage searches and
-        requests across multiple sources.
-      </p>
-    </div>
-
-    <h2>What Is a Data Broker?</h2>
-
-    <p>
-      A data broker is a company that collects, combines, analyzes or sells
-      information about individuals. Sources can include public records,
-      websites, marketing databases and other commercially available data.
-    </p>
-
-    <p>
-      Depending on the company and applicable laws, a profile may contain
-      information such as your name, approximate location, age range, phone
-      number, relatives or other publicly available details.
-    </p>
-
-    <h2>Why Does Data Broker Removal Matter?</h2>
-
-    <p>
-      Information collected by data brokers can make it easier for strangers,
-      marketers and other organizations to find information associated with
-      you.
-    </p>
-
-    <p>
-      Reducing unnecessary public exposure can be one part of improving your
-      overall digital privacy. It does not, however, guarantee that all
-      information about you will disappear from the internet.
-    </p>
-
-    <h2>How to Remove Yourself From Data Broker Sites</h2>
-
-    <ol class="steps">
-
-      <li>
-        <strong>Find your listings.</strong>
-        <p>
-          Search for your name, phone number, email address and other relevant
-          information on people-search and data broker websites.
-        </p>
-      </li>
-
-      <li>
-        <strong>Locate the opt-out process.</strong>
-        <p>
-          Look for links such as "Opt Out", "Do Not Sell My Information",
-          "Privacy Choices" or "Remove My Information".
-        </p>
-      </li>
-
-      <li>
-        <strong>Submit the removal request.</strong>
-        <p>
-          Follow the site's instructions. Some websites may require you to
-          verify that you control the information or email address involved.
-        </p>
-      </li>
-
-      <li>
-        <strong>Record what you removed.</strong>
-        <p>
-          Keep track of the website, profile and date of your request. This
-          makes future checks easier.
-        </p>
-      </li>
-
-      <li>
-        <strong>Check again later.</strong>
-        <p>
-          Information can reappear or new information can be added. Periodic
-          checks are therefore useful.
-        </p>
-      </li>
-
-    </ol>
-
-    <h2>Why Manual Removal Can Take Time</h2>
-
-    <p>
-      There can be many different data brokers and people-search websites.
-      Each can have its own website, search system, verification requirements
-      and removal process.
-    </p>
-
-    <p>
-      This means manually removing information can become a repetitive process,
-      particularly when you want to check multiple databases.
-    </p>
-
-    <p>
-      People-search sites are closely related to data broker exposure. Learn
-      more about
-      <a href="/people-search-sites/">how people-search sites work</a>
-      and how to check whether your information appears there.
-    </p>
-
-    <h2>Using a Data Removal Service</h2>
-
-    
-<div style="margin: 34px 0; padding: 24px 26px; background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 10px;">
-  <strong style="display:block; margin-bottom:8px; color:#111827; font-size:17px;">Want a low-cost starting point before choosing a removal service?</strong>
-  <p style="margin:0 0 12px; color:#4b5563;">
-    Scan My Shadow provides a basic digital exposure report and a customised removal kit for a one-time fee of $9.99. It can help you understand broader exposure first; dedicated data-removal services can be more appropriate when you want broader or ongoing removal assistance.
-  </p>
-  <a href="https://www.scanmyshadow.com/" style="color:#111827; font-weight:700; text-decoration:none;">
-    Get the $9.99 digital exposure scan →
-  </a>
-</div>
-
-
-    <p>
-      Privacy-focused data removal services offer an alternative to doing every
-      search manually. Depending on the provider, they may search multiple
-      data broker websites, identify matching profiles and submit removal
-      requests for you.
-    </p>
-
-    <p>
-      Coverage varies significantly between services, so don't assume that one
-      provider removes your information from every website. Check exactly what
-      databases, countries and types of information a service covers before
-      purchasing.
-    </p>
-
-    <p>
-      You can also compare manual removal with other ways of reducing your
-      broader
-      <a href="/personal-information-exposure/">personal information exposure</a>.
-    </p>
-
-    <h2>Can Data Brokers Put Your Information Back?</h2>
-
-    <p>
-      In some cases, information can reappear after it has been removed.
-      Data sources can change and companies may create new records over time.
-    </p>
-
-    <p>
-      For that reason, privacy protection is better viewed as an ongoing
-      process rather than a one-time cleanup.
-    </p>
-
-    <h2>How Data Broker Removal Fits Into Your Digital Footprint</h2>
-
-    <p>
-      Data broker listings are only one part of an online footprint. You should
-      also review old accounts, social profiles, email exposure, phone-number
-      listings and other publicly available information.
-    </p>
-
-    <p>
-      Start with our
-      <a href="/digital-footprint-check/">digital footprint check guide</a>
-      to work through the broader process.
-    </p>
-
-    <p>
-      You can also review your
-      <a href="/email-exposure-check/">email exposure</a>
-      and
-      <a href="/phone-number-exposure-check/">phone number exposure</a>
-      separately.
-    </p>
-
-    <h2>Frequently Asked Questions</h2>
-
-    <h3>How do I remove my information from data brokers?</h3>
-
-    <p>
-      Find the relevant data broker listing, locate the site's opt-out or
-      removal process, follow its verification requirements and submit the
-      request. Keep a record of the request and check again later.
-    </p>
-
-    <h3>Can I remove my information from data brokers for free?</h3>
-
-    <p>
-      Many data brokers provide an opt-out process that you can complete
-      yourself. The exact process varies by website and may require identity
-      or email verification.
-    </p>
-
-    <h3>Will removing my information from one data broker remove it everywhere?</h3>
-
-    <p>
-      No. Different companies maintain different databases. Removing one
-      listing does not automatically remove information held by other data
-      brokers, websites or public sources.
-    </p>
-
-    <h3>Can data brokers add my information again?</h3>
-
-    <p>
-      Information can reappear in some cases when new data is collected or
-      another record is created. Periodic checking may therefore be necessary.
-    </p>
-
-    <div class="related">
-
-      <h2>Related Privacy Guides</h2>
-
-      <a href="/digital-footprint-check/">
-        How to Check Your Digital Footprint →
+      <a href="/about.html">
+        About
       </a>
 
-      <a href="/personal-information-exposure/">
-        Find Personal Information Exposed Online →
+      <a href="/privacy.html">
+        Privacy
       </a>
 
-      <a href="/people-search-sites/">
-        Learn About People-Search Sites →
+      <a href="/affiliate-disclosure.html">
+        Affiliate Disclosure
       </a>
 
-      <a href="/email-exposure-check/">
-        Check Email Exposure →
-      </a>
-
-      <a href="/phone-number-exposure-check/">
-        Check Phone Number Exposure →
+      <a href="/contact.html">
+        Contact
       </a>
 
     </div>
 
-  </div>
+    <p class="disclosure">
+      Some links on this website may eventually be affiliate links. If you
+      purchase through them, we may receive a commission at no additional cost
+      to you.
+    </p>
 
-</main>
-
-<footer>
-
-  <p>© 2026 DigitalFootprintScan.com</p>
-
-  <p>
-    <a href="/about.html">About</a>
-    <a href="/privacy.html">Privacy</a>
-    <a href="/affiliate-disclosure.html">Affiliate Disclosure</a>
-    <a href="/contact.html">Contact</a>
-  </p>
-
-  <p class="disclosure">
-    Some links on this website may eventually be affiliate links. If you
-    purchase through them, we may receive a commission at no additional cost
-    to you.
-  </p>
-
-</footer>
+  </footer>
 
 </body>
 </html>
