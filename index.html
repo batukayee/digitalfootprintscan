@@ -338,6 +338,16 @@
 
     .scan-bar .mono { color: var(--slate-2); }
 
+    .scan-disclaimer {
+      margin: 0;
+      padding: 10px 20px;
+      color: var(--slate);
+      background: #fbfcfd;
+      border-bottom: 1px solid var(--line-2);
+      font-size: 12px;
+      font-style: italic;
+    }
+
     .scan-status {
       display: inline-flex;
       align-items: center;
@@ -548,6 +558,28 @@
 
     .card:hover a .arrow { transform: translateX(4px); }
 
+    .hero-reassurance {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px 16px;
+      flex-wrap: wrap;
+      max-width: 760px;
+      margin: 26px auto 0;
+      padding: 14px 18px;
+      color: var(--slate);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--paper);
+      box-shadow: var(--shadow-sm);
+      font-size: 13px;
+    }
+
+    .hero-reassurance strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
     /* How it works */
 
     .how {
@@ -558,7 +590,7 @@
 
     .steps {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 40px;
       position: relative;
     }
@@ -709,6 +741,49 @@
       text-wrap: pretty;
     }
 
+    /* Mission */
+
+    .mission-section {
+      padding-top: 0;
+    }
+
+    .mission-box {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 42px;
+      text-align: center;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--paper);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .mission-box .mono {
+      display: inline-block;
+      margin-bottom: 16px;
+      color: var(--signal);
+    }
+
+    .mission-box h2 {
+      margin: 0 0 14px;
+      font-size: clamp(28px, 3vw, 36px);
+      line-height: 1.15;
+      letter-spacing: -.03em;
+    }
+
+    .mission-box p {
+      max-width: 620px;
+      margin: 0 auto 20px;
+      color: var(--slate);
+      font-size: 16px;
+    }
+
+    .mission-box strong {
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
     /* Privacy note */
 
     .privacy-note {
@@ -851,12 +926,30 @@
     /* ---------- Responsive ---------- */
 
     @media (max-width: 960px) {
-      .checks, .steps { grid-template-columns: 1fr 1fr; }
-      .steps { gap: 36px; }
-      .step:nth-child(2)::before { right: 0; }
-      .scan-grid { grid-template-columns: 1fr 1fr; }
-      .scan-cell:nth-child(2) { border-right: none; }
-      .scan-cell:nth-child(1), .scan-cell:nth-child(2) { border-bottom: 1px solid var(--line-2); }
+      .checks { grid-template-columns: 1fr 1fr; }
+
+      .steps {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+      }
+
+      .step:nth-child(2)::before,
+      .step:nth-child(4)::before {
+        right: 0;
+      }
+
+      .scan-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .scan-cell:nth-child(2) {
+        border-right: none;
+      }
+
+      .scan-cell:nth-child(1),
+      .scan-cell:nth-child(2) {
+        border-bottom: 1px solid var(--line-2);
+      }
     }
 
     @media (max-width: 720px) {
@@ -879,6 +972,13 @@
 
       .hero p { font-size: 17px; }
 
+      .hero-reassurance {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 4px;
+        text-align: left;
+      }
+
       .button { width: 100%; justify-content: center; text-align: center; }
 
       .scan { margin-top: 56px; }
@@ -897,6 +997,10 @@
 
       .privacy-note { padding: 52px 24px; border-radius: 18px; }
 
+      .mission-box {
+        padding: 32px 24px;
+      }
+
       .footer-top, .footer-bottom { flex-direction: column; }
 
     }
@@ -914,6 +1018,8 @@
     <a class="logo" href="/" aria-label="Digital Footprint Scan">
       <img
         src="/logo-horizontal.png"
+        width="176"
+        height="32"
         alt="Digital Footprint Scan"
       >
     </a>
@@ -953,13 +1059,13 @@
     </div>
 
     <h1 class="reveal in" data-delay="1">
-      Digital Footprint Scan: Understand Your Online Exposure
+      Digital Footprint Scan: See What’s Exposed About You Online
     </h1>
 
     <p class="reveal in" data-delay="2">
-      Discover what personal information may be exposed online,
-      understand where it can appear, and learn practical ways to
-      reduce your digital footprint.
+      Your name, email address, phone number and old accounts can leave traces
+      across the internet. Learn where your information may appear — and what
+      you can do about it.
     </p>
 
     <a
@@ -967,7 +1073,7 @@
       data-delay="3"
       href="/digital-footprint-check/"
     >
-      Learn How to Check Your Digital Footprint
+      Start Your Digital Footprint Check
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
         <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
@@ -980,8 +1086,11 @@
       <div class="scan-line"></div>
       <div class="scan-bar">
         <span class="mono">Exposure overview</span>
-        <span class="mono scan-status">Scan complete</span>
+        <span class="mono scan-status">Example exposure overview</span>
       </div>
+      <p class="scan-disclaimer">
+        Illustration of the types of information a digital footprint check may uncover.
+      </p>
       <div class="scan-grid">
         <div class="scan-cell">
           <span class="mono">Sources checked</span>
@@ -1024,6 +1133,14 @@
     </div>
   </div>
 
+  <div class="hero-reassurance reveal" data-delay="5">
+    <strong>Private by design</strong>
+    <span>
+      You can learn how to check your online exposure without giving us your
+      personal information.
+    </span>
+  </div>
+
 </section>
 
 
@@ -1037,12 +1154,12 @@
     <span class="mono">What you can check</span>
 
     <h2>
-      What can you check?
+      Your online footprint is bigger than social media.
     </h2>
 
     <p>
-      Your online footprint can extend far beyond social media.
-      Start with the areas most relevant to you.
+      Information connected to your name, email, phone number and accounts can
+      appear in many different places. Start with the area you want to understand.
     </p>
 
   </div>
@@ -1210,60 +1327,38 @@
 
     <div class="steps">
 
-
       <div class="step reveal">
-
-        <div class="step-number mono">
-          Step 01
-        </div>
-
-        <h3>
-          Identify your information
-        </h3>
-
+        <div class="step-number mono">Step 01</div>
+        <h3>Find your identifiers</h3>
         <p>
-          Start with identifiers such as your name, email addresses,
-          phone numbers and usernames.
+          Start with your name, email addresses, phone numbers and usernames.
         </p>
-
       </div>
-
 
       <div class="step reveal" data-delay="1">
-
-        <div class="step-number mono">
-          Step 02
-        </div>
-
-        <h3>
-          Find where it appears
-        </h3>
-
+        <div class="step-number mono">Step 02</div>
+        <h3>Search where they appear</h3>
         <p>
-          Search engines, social platforms, directories, people-search
-          sites and data brokers can reveal different parts of your footprint.
+          Check search engines, social platforms, directories, people-search
+          sites and data brokers.
         </p>
-
       </div>
-
 
       <div class="step reveal" data-delay="2">
-
-        <div class="step-number mono">
-          Step 03
-        </div>
-
-        <h3>
-          Decide what to reduce
-        </h3>
-
+        <div class="step-number mono">Step 03</div>
+        <h3>Decide what matters</h3>
         <p>
-          Once you understand your exposure, you can decide which
-          information should be removed, limited or monitored.
+          Separate harmless information from details you would rather keep private.
         </p>
-
       </div>
 
+      <div class="step reveal" data-delay="3">
+        <div class="step-number mono">Step 04</div>
+        <h3>Take action</h3>
+        <p>
+          Remove, limit or monitor information where appropriate.
+        </p>
+      </div>
 
     </div>
 
@@ -1409,20 +1504,44 @@
 
     <div class="commercial-box reveal">
 
-      <span class="mono">Coming soon</span>
+      <span class="mono">Optional help</span>
 
       <h2>
-        Looking for more comprehensive privacy protection?
+        When you’re ready to go further
       </h2>
 
       <p>
-        Some privacy services can search data broker and people-search
-        databases and help manage removal requests at scale. We are
-        researching available options and will publish independent
-        comparisons as they become available.
+        Understanding your exposure is the first step. For people who want help
+        finding and removing information from data brokers and people-search sites,
+        there are services that can handle parts of this process for you. We’re
+        evaluating these services so we can explain what they do, what they cost,
+        and who they may be suitable for.
       </p>
 
     </div>
+
+  </div>
+
+</section>
+
+
+<section class="section mission-section">
+
+  <div class="mission-box reveal">
+
+    <span class="mono">Our purpose</span>
+
+    <h2>
+      Why Digital Footprint Scan exists
+    </h2>
+
+    <p>
+      Your personal information can spread across the internet without you
+      realizing it. Digital Footprint Scan exists to make online exposure
+      easier to understand without complicated privacy jargon or scare tactics.
+    </p>
+
+    <strong>Independent. Practical. Privacy-first.</strong>
 
   </div>
 
@@ -1434,13 +1553,14 @@
   <div class="privacy-note reveal">
 
     <h2>
-      Privacy starts with knowing what is exposed.
+      You don’t have to give us your personal information to learn how to protect it.
     </h2>
 
     <p>
-      DigitalFootprintScan provides educational information to help
-      people understand their online exposure. The goal is simple:
-      make digital privacy easier to understand and easier to act on.
+      Our guides are designed to help you investigate your own online presence
+      using publicly available information and practical privacy practices.
+      Digital Footprint Scan provides educational information without scare
+      tactics or unnecessary data collection.
     </p>
 
   </div>
