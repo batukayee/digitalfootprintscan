@@ -52,11 +52,15 @@
     }
 
     .logo {
-      text-decoration: none;
-      font-size: 21px;
-      font-weight: 700;
-      letter-spacing: -0.4px;
-      white-space: nowrap;
+      display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo img {
+  display: block;
+  width: 190px;
+  height: auto;
     }
 
     .nav-links {
@@ -389,7 +393,7 @@
 
 <header>
   <nav>
-    <a class="logo" href="/">DigitalFootprintScan</a>
+    <a class="logo" href="/" aria-label="Digital Footprint Scan">   <img src="/logo-horizontal.png" alt="Digital Footprint Scan"> </a>
 
     <div class="nav-links">
       <a href="/digital-footprint-check/">Digital Footprint</a>
