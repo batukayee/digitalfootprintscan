@@ -7,6 +7,7 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+
     gtag('js', new Date());
 
     gtag('config', 'G-6654C66QQX');
@@ -27,145 +28,722 @@
   <meta property="og:url" content="https://digitalfootprintscan.com/digital-footprint-check/">
   <meta property="og:image" content="https://digitalfootprintscan.com/og-image.png">
 
+  <!-- Inter + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
   <style>
-    * { box-sizing: border-box; }
+    :root {
+      --ink: #0b1220;
+      --secondary-ink: #1c2536;
+      --body: #5b6472;
+      --muted: #8a93a2;
+
+      --border: #e4e8ef;
+      --subtle-border: #eef1f5;
+
+      --white: #ffffff;
+      --page-bg: #f6f8fb;
+
+      --teal: #0e7c86;
+      --soft-teal: #e6f4f5;
+
+      --shadow:
+        0 8px 24px rgba(11, 18, 32, 0.045);
+
+      --shadow-hover:
+        0 12px 30px rgba(11, 18, 32, 0.07);
+
+      --radius-sm: 10px;
+      --radius-md: 14px;
+      --radius-lg: 18px;
+
+      --content-width: 860px;
+      --reading-width: 750px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      color: #172033;
-      background: #f7f9fc;
+      font-family: "Inter", Arial, sans-serif;
+      color: var(--secondary-ink);
+      background: var(--page-bg);
       line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
+    a {
+      color: inherit;
+    }
+
+    /* =========================
+       HEADER
+       ========================= */
+
     header {
-      background: #fff;
-      border-bottom: 1px solid #e5e9f0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom: 1px solid var(--border);
+
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
 
     nav {
-      max-width: 1050px;
-      margin: auto;
-      padding: 18px 20px;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 15px 24px;
+
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      min-height: 68px;
     }
 
     .logo {
       font-size: 20px;
+      line-height: 1;
       font-weight: 700;
-      color: #172033;
+      letter-spacing: -0.025em;
+      color: var(--ink);
       text-decoration: none;
+      white-space: nowrap;
     }
 
-    nav a {
-      color: #526070;
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 14px;
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
     }
+
+    nav a:not(.logo) {
+      color: var(--body);
+      text-decoration: none;
+      font-size: 14px;
+      line-height: 1;
+      font-weight: 500;
+
+      padding: 9px 11px;
+      border-radius: 8px;
+
+      transition:
+        color 160ms ease,
+        background-color 160ms ease,
+        transform 160ms ease;
+    }
+
+    nav a:not(.logo):hover {
+      color: var(--ink);
+      background: #f3f5f8;
+      transform: translateY(-1px);
+    }
+
+    /* =========================
+       PAGE
+       ========================= */
 
     main {
-      max-width: 850px;
-      margin: auto;
-      padding: 55px 20px 80px;
-      background: #fff;
+      width: 100%;
+      max-width: var(--content-width);
+      margin: 0 auto;
+      padding: 72px 28px 92px;
+    }
+
+    .article-shell {
+      max-width: var(--reading-width);
+      margin: 0 auto;
+    }
+
+    /* =========================
+       HERO
+       ========================= */
+
+    .hero {
+      margin-bottom: 42px;
     }
 
     .eyebrow {
-      font-size: 14px;
-      font-weight: 700;
-      color: #526070;
+      display: inline-flex;
+      align-items: center;
+
+      padding: 6px 10px;
+
+      border: 1px solid var(--border);
+      border-radius: 999px;
+
+      background: var(--white);
+
+      color: var(--teal);
+
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      line-height: 1.2;
+      font-weight: 500;
+
+      letter-spacing: 0.055em;
       text-transform: uppercase;
-      letter-spacing: .05em;
     }
 
     h1 {
-      font-size: 44px;
-      line-height: 1.15;
-      margin: 12px 0 20px;
-    }
+      margin: 18px 0 20px;
 
-    h2 {
-      font-size: 29px;
-      margin-top: 45px;
-      line-height: 1.25;
-    }
+      color: var(--ink);
 
-    h3 {
-      font-size: 21px;
-      margin-top: 30px;
-    }
-
-    p {
-      color: #394658;
+      font-size: clamp(38px, 6vw, 56px);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      font-weight: 700;
     }
 
     .intro {
+      margin: 0;
+      max-width: 760px;
+
+      color: var(--body);
+
       font-size: 19px;
-      color: #526070;
+      line-height: 1.7;
+      font-weight: 400;
     }
+
+    /* =========================
+       ARTICLE CONTENT
+       ========================= */
+
+    .article-content {
+      color: var(--body);
+    }
+
+    .article-content > p {
+      margin: 0 0 24px;
+
+      font-size: 16.5px;
+      line-height: 1.8;
+    }
+
+    h2 {
+      margin: 58px 0 18px;
+
+      color: var(--ink);
+
+      font-size: 29px;
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+      font-weight: 700;
+    }
+
+    h3 {
+      margin: 32px 0 10px;
+
+      color: var(--secondary-ink);
+
+      font-size: 19px;
+      line-height: 1.4;
+      letter-spacing: -0.015em;
+      font-weight: 600;
+    }
+
+    ul,
+    ol {
+      color: var(--body);
+    }
+
+    ul {
+      padding-left: 24px;
+      margin: 20px 0 28px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+      padding-left: 4px;
+    }
+
+    /* =========================
+       LINKS
+       ========================= */
+
+    .article-content a {
+      color: var(--teal);
+      text-decoration: none;
+      font-weight: 500;
+
+      border-bottom: 1px solid rgba(14, 124, 134, 0.25);
+
+      transition:
+        color 160ms ease,
+        border-color 160ms ease;
+    }
+
+    .article-content a:hover {
+      color: var(--ink);
+      border-color: var(--ink);
+    }
+
+    /* =========================
+       TL;DR / INFORMATION BOX
+       ========================= */
 
     .box {
-      background: #f1f4f8;
-      padding: 25px;
-      border-radius: 10px;
-      margin: 30px 0;
+      position: relative;
+
+      margin: 36px 0;
+      padding: 24px 26px 24px 28px;
+
+      background: var(--white);
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+
+      box-shadow: var(--shadow);
     }
 
+    .box::before {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      top: 18px;
+      bottom: 18px;
+
+      width: 3px;
+
+      background: var(--teal);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .box strong {
+      display: block;
+
+      margin-bottom: 9px;
+
+      color: var(--ink);
+
+      font-size: 16px;
+      line-height: 1.45;
+      font-weight: 600;
+    }
+
+    .box p {
+      margin: 0;
+
+      color: var(--body);
+
+      font-size: 15.5px;
+      line-height: 1.75;
+    }
+
+    /* =========================
+       STEPS
+       ========================= */
+
     .steps {
-      padding-left: 25px;
+      list-style: none;
+      padding: 0;
+      margin: 30px 0 10px;
+
+      counter-reset: footprint-step;
     }
 
     .steps li {
-      margin-bottom: 20px;
+      position: relative;
+
+      margin: 0;
+      padding: 0 0 32px 58px;
+
+      border-bottom: 1px solid var(--subtle-border);
+
+      counter-increment: footprint-step;
     }
 
+    .steps li + li {
+      padding-top: 32px;
+    }
+
+    .steps li:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .steps li::before {
+      content: counter(footprint-step, decimal-leading-zero);
+
+      position: absolute;
+      left: 0;
+      top: 1px;
+
+      width: 34px;
+      height: 34px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: var(--soft-teal);
+      color: var(--teal);
+
+      border-radius: 9px;
+
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      line-height: 1;
+      font-weight: 600;
+    }
+
+    .steps li + li::before {
+      top: 32px;
+    }
+
+    .steps li > strong {
+      display: block;
+
+      margin: 0 0 8px;
+
+      color: var(--ink);
+
+      font-size: 17px;
+      line-height: 1.45;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .steps li p {
+      margin: 0 0 15px;
+
+      color: var(--body);
+
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .steps li p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* =========================
+       FAQ
+       ========================= */
+
+    .faq-section {
+      margin-top: 62px;
+    }
+
+    .faq-item {
+      padding: 22px 0;
+
+      border-top: 1px solid var(--subtle-border);
+    }
+
+    .faq-item:last-child {
+      border-bottom: 1px solid var(--subtle-border);
+    }
+
+    .faq-item h3 {
+      margin: 0 0 9px;
+    }
+
+    .faq-item p {
+      margin: 0;
+
+      color: var(--body);
+
+      font-size: 15.5px;
+      line-height: 1.75;
+    }
+
+    /* =========================
+       RELATED / NEXT STEP
+       ========================= */
+
     .related {
-      margin-top: 55px;
-      padding-top: 30px;
-      border-top: 1px solid #e5e9f0;
+      margin-top: 68px;
+      padding-top: 36px;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .related h2 {
+      margin-top: 0;
+      margin-bottom: 24px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
     }
 
     .related a {
+      position: relative;
+
       display: block;
-      color: #172033;
-      font-weight: 700;
-      margin: 12px 0;
+
+      min-height: 105px;
+
+      padding: 20px 42px 20px 20px;
+
+      background: var(--white);
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+
+      color: var(--ink);
+
+      font-size: 15px;
+      line-height: 1.5;
+      font-weight: 600;
+
       text-decoration: none;
+
+      box-shadow: 0 5px 18px rgba(11, 18, 32, 0.025);
+
+      transition:
+        transform 170ms ease,
+        box-shadow 170ms ease,
+        border-color 170ms ease,
+        background-color 170ms ease;
     }
 
+    .related a::after {
+      content: "→";
+
+      position: absolute;
+      right: 19px;
+      top: 50%;
+
+      color: var(--teal);
+
+      font-size: 18px;
+      font-weight: 500;
+
+      transform: translateY(-50%);
+
+      transition: transform 170ms ease;
+    }
+
+    .related a:hover {
+      background: #fbfcfd;
+      border-color: #d9e0e8;
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+
+    .related a:hover::after {
+      transform: translate(2px, -50%);
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
+
     footer {
-      background: #172033;
-      color: #fff;
+      background: var(--white);
+
+      border-top: 1px solid var(--border);
+
+      padding: 42px 24px 38px;
+
+      color: var(--body);
+
       text-align: center;
-      padding: 30px 20px;
+    }
+
+    .footer-brand {
+      margin: 0 0 13px;
+
+      color: var(--ink);
+
+      font-size: 16px;
+      line-height: 1.4;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px;
+
+      margin: 0 0 20px;
     }
 
     footer a {
-      color: #fff;
-      margin: 0 8px;
-      font-size: 14px;
+      display: inline-block;
+
+      padding: 6px 9px;
+
+      color: var(--body);
+
+      font-size: 13px;
+      font-weight: 500;
+
+      text-decoration: none;
+
+      border-radius: 7px;
+
+      transition:
+        color 160ms ease,
+        background-color 160ms ease;
+    }
+
+    footer a:hover {
+      color: var(--ink);
+      background: #f3f5f8;
     }
 
     .disclosure {
-      font-size: 12px;
-      opacity: .7;
       max-width: 650px;
-      margin: 15px auto 0;
+      margin: 0 auto;
+
+      color: var(--muted);
+
+      font-size: 11.5px;
+      line-height: 1.65;
     }
 
-    @media (max-width: 700px) {
-      h1 { font-size: 35px; }
+    /* =========================
+       RESPONSIVE
+       ========================= */
+
+    @media (max-width: 760px) {
 
       nav {
+        padding: 14px 18px;
+      }
+
+      .logo {
+        font-size: 18px;
+      }
+
+      nav a:not(.logo) {
+        font-size: 13px;
+        padding: 8px 7px;
+      }
+
+      .nav-links {
+        gap: 0;
+      }
+
+      main {
+        padding: 52px 20px 72px;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .intro {
+        font-size: 17px;
+      }
+
+      h2 {
+        font-size: 26px;
+        margin-top: 48px;
+      }
+
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+
+      header {
+        position: relative;
+      }
+
+      nav {
+        align-items: flex-start;
         flex-direction: column;
         gap: 12px;
       }
 
-      nav a {
-        margin: 0 7px;
+      .nav-links {
+        width: 100%;
+        flex-wrap: wrap;
+      }
+
+      nav a:not(.logo) {
+        margin: 0 4px 0 0;
+      }
+
+      main {
+        padding: 42px 17px 60px;
+      }
+
+      h1 {
+        font-size: 36px;
+        line-height: 1.1;
+      }
+
+      .intro {
+        font-size: 17px;
+        line-height: 1.7;
+      }
+
+      .article-content > p {
+        font-size: 16px;
+      }
+
+      .box {
+        padding: 21px 20px 21px 23px;
+      }
+
+      .steps li {
+        padding-left: 49px;
+      }
+
+      .steps li + li {
+        padding-top: 28px;
+      }
+
+      .steps li + li::before {
+        top: 28px;
+      }
+
+      .steps li::before {
+        width: 30px;
+        height: 30px;
+      }
+
+      .related a {
+        min-height: auto;
+      }
+    }
+
+    /* =========================
+       REDUCED MOTION
+       ========================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
       }
     }
   </style>
@@ -190,302 +768,406 @@
 
 <header>
   <nav>
-    <a class="logo" href="/">DigitalFootprintScan</a>
 
-    <div>
+    <a class="logo" href="/">
+      DigitalFootprintScan
+    </a>
+
+    <div class="nav-links">
       <a href="/">Home</a>
       <a href="/data-broker-removal/">Data Brokers</a>
       <a href="/about.html">About</a>
     </div>
+
   </nav>
 </header>
 
 <main>
 
-  <div class="eyebrow">Digital Privacy Guide</div>
+  <div class="article-shell">
 
-  <h1>How to Check Your Digital Footprint Online</h1>
+    <!-- HERO -->
 
-  <p class="intro">
-    Your digital footprint is the trail of information connected to you
-    online. It can include search results, social profiles, old accounts,
-    email addresses, phone numbers, public records and information collected
-    by data brokers.
-  </p>
+    <section class="hero">
 
-  <p>
-    You don't need to be a cybersecurity expert to check your digital
-    footprint. A systematic search can help you discover information you may
-    have forgotten about or may not realize is publicly available.
-  </p>
+      <div class="eyebrow">
+        Digital Privacy Guide
+      </div>
 
-  <div class="box">
-    <strong>TL;DR — How to check your digital footprint:</strong>
-    <p>
-      Search your full name, email addresses, usernames and phone number.
-      Review social profiles, old accounts, people-search websites and data
-      broker listings. Record what you find, check whether it can be removed,
-      and periodically repeat the process because information can reappear
-      or change over time.
-    </p>
-  </div>
+      <h1>
+        How to Check Your Digital Footprint Online
+      </h1>
 
-  <h2>What Is a Digital Footprint?</h2>
-
-  <p>
-    A digital footprint is the information and activity associated with you
-    online. Some of it is created directly by you, such as social media
-    profiles, comments and accounts. Other information may be published or
-    collected by websites, directories, data brokers and other organizations.
-  </p>
-
-  <p>
-    Your digital footprint can therefore extend beyond the information you
-    knowingly share. Searching for your own information is one practical way
-    to understand what may be publicly visible.
-  </p>
-
-  <h2>What Can Be Part of Your Digital Footprint?</h2>
-
-  <p>Your online footprint can contain many different types of information.</p>
-
-  <ul>
-    <li>Your full name and variations of your name</li>
-    <li>Email addresses</li>
-    <li>Phone numbers</li>
-    <li>Social media profiles</li>
-    <li>Usernames and online accounts</li>
-    <li>Photos and other publicly available content</li>
-    <li>Old websites, forum posts and comments</li>
-    <li>Public records and directory listings</li>
-    <li>Information published by data brokers</li>
-  </ul>
-
-  <h2>How to Check Your Digital Footprint</h2>
-
-  <ol class="steps">
-
-    <li>
-      <strong>Search your name.</strong>
-      <p>
-        Search your full name in quotation marks and try variations such as
-        your name with your city, employer or other non-sensitive identifying
-        terms. Review several pages of results rather than stopping at the
-        first page.
+      <p class="intro">
+        Your digital footprint is the trail of information connected to you
+        online. It can include search results, social profiles, old accounts,
+        email addresses, phone numbers, public records and information collected
+        by data brokers.
       </p>
-    </li>
 
-    <li>
-      <strong>Search your email addresses.</strong>
+    </section>
+
+    <!-- ARTICLE -->
+
+    <article class="article-content">
+
       <p>
-        Search each email address you have used publicly. Look for old
-        profiles, forum accounts, business listings and websites where the
-        address appears.
+        You don't need to be a cybersecurity expert to check your digital
+        footprint. A systematic search can help you discover information you may
+        have forgotten about or may not realize is publicly available.
+      </p>
+
+      <div class="box">
+
+        <strong>
+          TL;DR — How to check your digital footprint:
+        </strong>
+
+        <p>
+          Search your full name, email addresses, usernames and phone number.
+          Review social profiles, old accounts, people-search websites and data
+          broker listings. Record what you find, check whether it can be removed,
+          and periodically repeat the process because information can reappear
+          or change over time.
+        </p>
+
+      </div>
+
+      <h2>What Is a Digital Footprint?</h2>
+
+      <p>
+        A digital footprint is the information and activity associated with you
+        online. Some of it is created directly by you, such as social media
+        profiles, comments and accounts. Other information may be published or
+        collected by websites, directories, data brokers and other organizations.
       </p>
 
       <p>
-        You can also perform a dedicated
-        <a href="/email-exposure-check/">email exposure check</a>
-        to investigate where your email address may appear online.
+        Your digital footprint can therefore extend beyond the information you
+        knowingly share. Searching for your own information is one practical way
+        to understand what may be publicly visible.
       </p>
-    </li>
 
-    <li>
-      <strong>Check your usernames.</strong>
-      <p>
-        If you regularly use the same username, search for it. Older accounts
-        and profiles can remain visible long after you stop using them.
-      </p>
-    </li>
-
-    <li>
-      <strong>Check your phone number.</strong>
-      <p>
-        Search for your phone number using different formats. Public directory
-        and people-search websites may associate numbers with names or other
-        information.
-      </p>
+      <h2>What Can Be Part of Your Digital Footprint?</h2>
 
       <p>
-        For a more focused investigation, see our
-        <a href="/phone-number-exposure-check/">phone number exposure check</a>.
+        Your online footprint can contain many different types of information.
       </p>
-    </li>
 
-    <li>
-      <strong>Review social media visibility.</strong>
+      <ul>
+        <li>Your full name and variations of your name</li>
+        <li>Email addresses</li>
+        <li>Phone numbers</li>
+        <li>Social media profiles</li>
+        <li>Usernames and online accounts</li>
+        <li>Photos and other publicly available content</li>
+        <li>Old websites, forum posts and comments</li>
+        <li>Public records and directory listings</li>
+        <li>Information published by data brokers</li>
+      </ul>
+
+      <h2>How to Check Your Digital Footprint</h2>
+
+      <ol class="steps">
+
+        <li>
+
+          <strong>
+            Search your name.
+          </strong>
+
+          <p>
+            Search your full name in quotation marks and try variations such as
+            your name with your city, employer or other non-sensitive identifying
+            terms. Review several pages of results rather than stopping at the
+            first page.
+          </p>
+
+        </li>
+
+        <li>
+
+          <strong>
+            Search your email addresses.
+          </strong>
+
+          <p>
+            Search each email address you have used publicly. Look for old
+            profiles, forum accounts, business listings and websites where the
+            address appears.
+          </p>
+
+          <p>
+            You can also perform a dedicated
+            <a href="/email-exposure-check/">email exposure check</a>
+            to investigate where your email address may appear online.
+          </p>
+
+        </li>
+
+        <li>
+
+          <strong>
+            Check your usernames.
+          </strong>
+
+          <p>
+            If you regularly use the same username, search for it. Older accounts
+            and profiles can remain visible long after you stop using them.
+          </p>
+
+        </li>
+
+        <li>
+
+          <strong>
+            Check your phone number.
+          </strong>
+
+          <p>
+            Search for your phone number using different formats. Public directory
+            and people-search websites may associate numbers with names or other
+            information.
+          </p>
+
+          <p>
+            For a more focused investigation, see our
+            <a href="/phone-number-exposure-check/">phone number exposure check</a>.
+          </p>
+
+        </li>
+
+        <li>
+
+          <strong>
+            Review social media visibility.
+          </strong>
+
+          <p>
+            Check what an individual who is not connected to you can see on your
+            profiles. Review old posts, profile information, photos and public
+            contact details.
+          </p>
+
+        </li>
+
+        <li>
+
+          <strong>
+            Look for people-search and data broker listings.
+          </strong>
+
+          <p>
+            Some websites collect information from public and commercial sources
+            and make profiles searchable. These listings can sometimes contain
+            names, approximate locations, relatives, phone numbers and other
+            information.
+          </p>
+
+          <p>
+            Learn more about
+            <a href="/people-search-sites/">people-search sites</a>
+            and how
+            <a href="/data-broker-removal/">data broker removal</a>
+            works.
+          </p>
+
+        </li>
+
+      </ol>
+
+      <h2>Check for Personal Information Exposed Online</h2>
+
       <p>
-        Check what an individual who is not connected to you can see on your
-        profiles. Review old posts, profile information, photos and public
-        contact details.
-      </p>
-    </li>
-
-    <li>
-      <strong>Look for people-search and data broker listings.</strong>
-      <p>
-        Some websites collect information from public and commercial sources
-        and make profiles searchable. These listings can sometimes contain
-        names, approximate locations, relatives, phone numbers and other
-        information.
+        Your name, contact details and other identifying information can appear
+        across many different websites. Search engines can reveal some of this
+        information, while directories, people-search sites and data brokers may
+        contain additional records.
       </p>
 
       <p>
-        Learn more about
-        <a href="/people-search-sites/">people-search sites</a>
-        and how
-        <a href="/data-broker-removal/">data broker removal</a>
-        works.
+        Our guide to
+        <a href="/personal-information-exposure/">personal information exposure</a>
+        explains what types of information may be visible online and where to
+        look for it.
       </p>
-    </li>
 
-  </ol>
+      <h2>Why Checking Manually Can Be Difficult</h2>
 
-  <h2>Check for Personal Information Exposed Online</h2>
+      <p>
+        Searching Google and social networks is useful, but it does not provide
+        a complete picture of your online exposure. Information can exist on
+        websites that don't rank prominently in search engines, and data brokers
+        may maintain profiles that are difficult to find manually.
+      </p>
 
-  <p>
-    Your name, contact details and other identifying information can appear
-    across many different websites. Search engines can reveal some of this
-    information, while directories, people-search sites and data brokers may
-    contain additional records.
-  </p>
+      <p>
+        This is one reason people sometimes use dedicated privacy services.
+        These services can search multiple data sources and, depending on the
+        provider, help submit removal requests on a user's behalf.
+      </p>
 
-  <p>
-    Our guide to
-    <a href="/personal-information-exposure/">personal information exposure</a>
-    explains what types of information may be visible online and where to
-    look for it.
-  </p>
+      <h2>What to Do If You Find Your Information</h2>
 
-  <h2>Why Checking Manually Can Be Difficult</h2>
+      <p>
+        Don't panic. First record where the information appears and determine
+        whether the website provides a privacy, opt-out or removal process.
+      </p>
 
-  <p>
-    Searching Google and social networks is useful, but it does not provide
-    a complete picture of your online exposure. Information can exist on
-    websites that don't rank prominently in search engines, and data brokers
-    may maintain profiles that are difficult to find manually.
-  </p>
+      <p>
+        You can often request removal directly from individual websites. For
+        people-search and data broker listings, however, there may be many
+        different sites to check.
+      </p>
 
-  <p>
-    This is one reason people sometimes use dedicated privacy services.
-    These services can search multiple data sources and, depending on the
-    provider, help submit removal requests on a user's behalf.
-  </p>
+      <p>
+        If you find information on data broker websites, learn more about
+        <a href="/data-broker-removal/">data broker removal options</a>
+        and the different approaches available.
+      </p>
 
-  <h2>What to Do If You Find Your Information</h2>
+      <h2>Can a Digital Footprint Be Completely Removed?</h2>
 
-  <p>
-    Don't panic. First record where the information appears and determine
-    whether the website provides a privacy, opt-out or removal process.
-  </p>
+      <p>
+        Not necessarily. Removing information from one website does not guarantee
+        that the same information does not exist somewhere else. New information
+        can also appear over time.
+      </p>
 
-  <p>
-    You can often request removal directly from individual websites. For
-    people-search and data broker listings, however, there may be many
-    different sites to check.
-  </p>
+      <p>
+        A more realistic goal is to reduce unnecessary public exposure, remove
+        information where possible, secure old accounts and periodically review
+        what is publicly available.
+      </p>
 
-  <p>
-    If you find information on data broker websites, learn more about
-    <a href="/data-broker-removal/">data broker removal options</a>
-    and the different approaches available.
-  </p>
+      <h2>How Often Should You Check Your Digital Footprint?</h2>
 
-  <h2>Can a Digital Footprint Be Completely Removed?</h2>
+      <p>
+        There is no single schedule that works for everyone. A periodic review can
+        help you notice new public information, old accounts or listings that have
+        appeared since your previous check.
+      </p>
 
-  <p>
-    Not necessarily. Removing information from one website does not guarantee
-    that the same information does not exist somewhere else. New information
-    can also appear over time.
-  </p>
+      <p>
+        If you have a large online presence or frequently create new accounts,
+        checking more regularly may make sense. The important point is to treat
+        digital-footprint checking as an ongoing privacy habit rather than a
+        one-time task.
+      </p>
 
-  <p>
-    A more realistic goal is to reduce unnecessary public exposure, remove
-    information where possible, secure old accounts and periodically review
-    what is publicly available.
-  </p>
+      <!-- FAQ -->
 
-  <h2>How Often Should You Check Your Digital Footprint?</h2>
+      <section class="faq-section">
 
-  <p>
-    There is no single schedule that works for everyone. A periodic review can
-    help you notice new public information, old accounts or listings that have
-    appeared since your previous check.
-  </p>
+        <h2>Frequently Asked Questions</h2>
 
-  <p>
-    If you have a large online presence or frequently create new accounts,
-    checking more regularly may make sense. The important point is to treat
-    digital-footprint checking as an ongoing privacy habit rather than a
-    one-time task.
-  </p>
+        <div class="faq-item">
 
-  <h2>Frequently Asked Questions</h2>
+          <h3>
+            What is the easiest way to check my digital footprint?
+          </h3>
 
-  <h3>What is the easiest way to check my digital footprint?</h3>
+          <p>
+            Start by searching your full name, email addresses, usernames and
+            phone number. Then review social media profiles, old accounts,
+            people-search sites and data broker listings for information connected
+            to you.
+          </p>
 
-  <p>
-    Start by searching your full name, email addresses, usernames and phone
-    number. Then review social media profiles, old accounts, people-search
-    sites and data broker listings for information connected to you.
-  </p>
+        </div>
 
-  <h3>Can I check my digital footprint for free?</h3>
+        <div class="faq-item">
 
-  <p>
-    Yes. You can perform many basic checks yourself using search engines,
-    social networks and publicly available websites. More comprehensive
-    monitoring or removal services may charge a fee.
-  </p>
+          <h3>
+            Can I check my digital footprint for free?
+          </h3>
 
-  <h3>What information should I search for?</h3>
+          <p>
+            Yes. You can perform many basic checks yourself using search engines,
+            social networks and publicly available websites. More comprehensive
+            monitoring or removal services may charge a fee.
+          </p>
 
-  <p>
-    Start with your name, email addresses, usernames and phone number. You can
-    also look for old profiles, photos, forum posts, public directory
-    listings, people-search profiles and data broker records.
-  </p>
+        </div>
 
-  <h3>Can someone else see my digital footprint?</h3>
+        <div class="faq-item">
 
-  <p>
-    Potentially. Some information may be publicly searchable, while other
-    information is restricted by account privacy settings or website access
-    controls. What another person can see depends on the information and the
-    site's visibility settings.
-  </p>
+          <h3>
+            What information should I search for?
+          </h3>
 
-  <h3>Does checking my digital footprint remove information?</h3>
+          <p>
+            Start with your name, email addresses, usernames and phone number. You can
+            also look for old profiles, photos, forum posts, public directory
+            listings, people-search profiles and data broker records.
+          </p>
 
-  <p>
-    No. Checking helps you discover what may be publicly available. Removing
-    information is a separate process that may require contacting individual
-    websites or using privacy services.
-  </p>
+        </div>
 
-  <div class="related">
+        <div class="faq-item">
 
-    <h2>Continue Your Privacy Check</h2>
+          <h3>
+            Can someone else see my digital footprint?
+          </h3>
 
-    <a href="/personal-information-exposure/">
-      Find Personal Information Exposed Online →
-    </a>
+          <p>
+            Potentially. Some information may be publicly searchable, while other
+            information is restricted by account privacy settings or website access
+            controls. What another person can see depends on the information and the
+            site's visibility settings.
+          </p>
 
-    <a href="/email-exposure-check/">
-      Check Email Exposure →
-    </a>
+        </div>
 
-    <a href="/phone-number-exposure-check/">
-      Check Phone Number Exposure →
-    </a>
+        <div class="faq-item">
 
-    <a href="/people-search-sites/">
-      Learn About People-Search Sites →
-    </a>
+          <h3>
+            Does checking my digital footprint remove information?
+          </h3>
 
-    <a href="/data-broker-removal/">
-      Learn About Data Broker Removal →
-    </a>
+          <p>
+            No. Checking helps you discover what may be publicly available. Removing
+            information is a separate process that may require contacting individual
+            websites or using privacy services.
+          </p>
+
+        </div>
+
+      </section>
+
+      <!-- RELATED -->
+
+      <section class="related">
+
+        <h2>Continue Your Privacy Check</h2>
+
+        <div class="related-grid">
+
+          <a href="/personal-information-exposure/">
+            Find Personal Information Exposed Online
+          </a>
+
+          <a href="/email-exposure-check/">
+            Check Email Exposure
+          </a>
+
+          <a href="/phone-number-exposure-check/">
+            Check Phone Number Exposure
+          </a>
+
+          <a href="/people-search-sites/">
+            Learn About People-Search Sites
+          </a>
+
+          <a href="/data-broker-removal/">
+            Learn About Data Broker Removal
+          </a>
+
+        </div>
+
+      </section>
+
+    </article>
 
   </div>
 
@@ -493,14 +1175,16 @@
 
 <footer>
 
-  <p>© 2026 DigitalFootprintScan.com</p>
+  <p class="footer-brand">
+    DigitalFootprintScan.com
+  </p>
 
-  <p>
+  <div class="footer-links">
     <a href="/about.html">About</a>
     <a href="/privacy.html">Privacy</a>
     <a href="/affiliate-disclosure.html">Affiliate Disclosure</a>
     <a href="/contact.html">Contact</a>
-  </p>
+  </div>
 
   <p class="disclosure">
     Some links on this website may eventually be affiliate links. If you
