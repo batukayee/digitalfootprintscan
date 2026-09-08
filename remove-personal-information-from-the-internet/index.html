@@ -3,7 +3,7 @@
 <head>
 
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6654C66QXK"></script>
+  <script async src="https://www.googletagmanager.com/gtag.js?id=G-6654C66QXK"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -196,6 +196,7 @@
       display: flex;
       align-items: center;
       gap: 3px;
+      flex-wrap: wrap;
     }
 
     .nav-links a {
@@ -403,6 +404,60 @@
 
       font-size: 15px;
       line-height: 1.75;
+    }
+
+    /* =========================================
+       SERVICE BOX
+       ========================================= */
+
+    .service-box {
+      margin: 36px 0;
+      padding: 26px;
+
+      background: var(--white);
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius-medium);
+
+      box-shadow: var(--shadow);
+    }
+
+    .service-label {
+      display: block;
+
+      margin-bottom: 9px;
+
+      color: var(--primary-teal);
+
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      line-height: 1.4;
+      font-weight: 600;
+
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .service-box h3 {
+      margin: 0 0 10px;
+
+      color: var(--ink);
+
+      font-size: 20px;
+      line-height: 1.4;
+    }
+
+    .service-box p {
+      margin: 0 0 18px;
+
+      color: var(--body-text);
+
+      font-size: 15.5px;
+      line-height: 1.75;
+    }
+
+    .service-box p:last-child {
+      margin-bottom: 0;
     }
 
     /* =========================================
@@ -798,7 +853,8 @@
         font-size: 16px;
       }
 
-      .box {
+      .box,
+      .service-box {
         padding: 21px 20px 21px 23px;
       }
 
@@ -878,7 +934,7 @@
         "name": "Can I completely remove my personal information from the internet?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Usually not completely. You can reduce a significant amount of public exposure by removing information from source websites, opting out of data broker and people-search listings, managing search-engine results, and deleting unnecessary accounts."
+          "text": "Usually not completely. You can reduce a significant amount of public exposure by removing information from source websites, opting out of data broker and people-search listings, managing eligible search results, and deleting unnecessary accounts."
         }
       },
       {
@@ -886,7 +942,7 @@
         "name": "How do I remove my personal information from Google?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Google provides removal processes for certain types of personal information appearing in Search. Removing a Google result does not necessarily remove the information from the original website, so source removal may also be necessary."
+          "text": "Search engines may provide removal processes for certain types of personal information appearing in search results. Removing a search result does not necessarily remove the information from the original website, so source removal may also be necessary."
         }
       },
       {
@@ -894,7 +950,7 @@
         "name": "How do I remove my information from data brokers?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Identify the data broker listing, locate its privacy or opt-out process, submit the required request, and verify that the listing has been removed. Some people use privacy services to manage multiple removal requests."
+          "text": "Identify the relevant data broker listing, locate its privacy or opt-out process, submit the required request and verify that the listing has been removed. Some people use privacy services to manage multiple removal requests."
         }
       },
       {
@@ -902,7 +958,7 @@
         "name": "Does deleting social media remove my information from the internet?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Deleting or restricting an account can reduce exposure, but it does not guarantee that copies, screenshots, cached information, third-party references or previously collected data no longer exist elsewhere."
+          "text": "Deleting or restricting an account can reduce exposure, but it does not guarantee that copies, screenshots, cached information, third-party references or previously collected data no longer exist."
         }
       },
       {
@@ -911,6 +967,14 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Information can be collected again from public records, websites and other sources. Data broker profiles may also be rebuilt or updated, which is why periodic checking can be necessary."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I remove my personal information myself or use a removal service?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Manual removal can work when you have a limited number of listings and want direct control. A removal service may be useful when information appears across many sources or when you want help managing recurring removal requests. Coverage and pricing vary by provider."
         }
       }
     ]
@@ -939,6 +1003,7 @@
 
       <div class="nav-links">
         <a href="/">Home</a>
+        <a href="/digital-footprint-check/">Digital Footprint</a>
         <a href="/data-broker-removal/">Data Brokers</a>
         <a href="/about.html">About</a>
       </div>
@@ -989,6 +1054,13 @@
           opt-out request, an account deletion, or a search-engine removal request.
         </p>
 
+        <p>
+          If you are starting from scratch, begin with a
+          <a href="/digital-footprint-check/">digital footprint check</a>
+          to identify the different types of information that may be publicly
+          connected to you. You can then work through each source separately.
+        </p>
+
 
         <!-- QUICK ANSWER -->
 
@@ -1029,6 +1101,12 @@
           <li>People-search profiles and directory listings</li>
           <li>Information associated with data broker profiles</li>
         </ul>
+
+        <p>
+          If you want to understand the exposure itself before beginning removal,
+          see our guide to
+          <a href="/personal-information-exposure/">personal information exposure</a>.
+        </p>
 
 
         <h2>Where Your Personal Information May Be Found</h2>
@@ -1208,26 +1286,18 @@
         </ol>
 
 
-        <h2>How to Remove Personal Information From Google Search</h2>
+        <h2>How to Remove Personal Information From Search Results</h2>
 
         <p>
-          Google provides processes for requesting removal of certain types of
-          private personal information from Search. These processes apply to
-          eligible search results and do not automatically delete the underlying
-          information from the website that hosts it.
+          Search engines can make personal information much easier to discover.
+          Depending on the type of information and the applicable process, you may
+          be able to request removal of certain results from search.
         </p>
 
         <p>
-          If your address, phone number or email address appears in Google Search,
-          you can investigate Google's available personal-information removal
-          options and determine whether the result qualifies.
-        </p>
-
-        <p>
-          The best approach is usually to treat search-result removal and source
-          removal as two separate tasks: reduce visibility in search where
-          appropriate, while also contacting the original website when you want the
-          underlying information removed.
+          Search-result removal and source removal are separate tasks. If possible,
+          address the original website as well as the search result so that the
+          information is not simply available through another route.
         </p>
 
 
@@ -1242,12 +1312,14 @@
         <p>
           The process can become time-consuming when information appears across
           multiple services. Some people handle requests individually, while others
-          choose a privacy service to help manage removals.
+          choose a
+          <strong>data broker removal service</strong>
+          to help manage removals.
         </p>
 
         <p>
-          For a dedicated explanation of the process, see
-          <a href="/data-broker-removal/">Data Broker Removal</a>.
+          For a dedicated explanation of the process, see our
+          <a href="/data-broker-removal/">Data Broker Removal guide</a>.
         </p>
 
 
@@ -1352,35 +1424,88 @@
 
         <p>
           A privacy service may be useful when information appears across many
-          sources or when you want ongoing monitoring and removal assistance.
+          sources or when you want help managing recurring removal requests.
           Before using one, compare what sources it covers, how often it checks for
           new listings, what removal process it uses and what the service actually
           promises.
         </p>
+
+        <div class="service-box">
+
+          <span class="service-label">
+            Choosing a removal service
+          </span>
+
+          <h3>
+            Compare coverage before you subscribe
+          </h3>
+
+          <p>
+            Data removal services can differ significantly in the websites they
+            cover, geographic availability, removal methods, monitoring features,
+            pricing and renewal terms.
+          </p>
+
+          <p>
+            If you are considering a service, compare its current coverage and
+            terms rather than assuming that one provider removes your information
+            everywhere.
+          </p>
+
+        </div>
 
 
         <h2>Start With a Digital Footprint Check</h2>
 
         <p>
           Removing information is much easier when you first understand where it
-          appears. A digital footprint check can help you identify names,
-          identifiers, profiles, people-search listings and other publicly visible
-          information that may need attention.
+          appears. A
+          <a href="/digital-footprint-check/">digital footprint check</a>
+          can help you identify names, identifiers, profiles, people-search
+          listings and other publicly visible information that may need attention.
         </p>
 
         <p>
-          Start with our
-          <a href="/digital-footprint-check/">guide to checking your digital footprint</a>,
-          then use the individual privacy guides on this site to investigate the
-          areas most relevant to you.
+          Once you identify the exposure, use the relevant guides on this site to
+          work through each area:
         </p>
+
+        <ul>
+          <li>
+            <a href="/personal-information-exposure/">
+              Personal information exposure
+            </a>
+          </li>
+          <li>
+            <a href="/data-broker-removal/">
+              Data broker removal
+            </a>
+          </li>
+          <li>
+            <a href="/people-search-sites/">
+              People-search sites
+            </a>
+          </li>
+          <li>
+            <a href="/email-exposure-check/">
+              Email exposure
+            </a>
+          </li>
+          <li>
+            <a href="/phone-number-exposure-check/">
+              Phone number exposure
+            </a>
+          </li>
+        </ul>
 
 
         <!-- FAQ -->
 
         <section class="faq-section">
 
-          <h2>Frequently Asked Questions</h2>
+          <h2>
+            Frequently Asked Questions
+          </h2>
 
 
           <div class="faq-item">
@@ -1406,10 +1531,10 @@
             </h3>
 
             <p>
-              Google provides removal processes for certain types of personal
-              information appearing in Search. Removing a Google result does not
-              necessarily remove the information from the original website, so
-              source removal may also be necessary.
+              Search engines may provide removal processes for certain types of
+              personal information appearing in search results. Removing a search
+              result does not necessarily remove the information from the original
+              website, so source removal may also be necessary.
             </p>
 
           </div>
@@ -1460,6 +1585,22 @@
 
           </div>
 
+
+          <div class="faq-item">
+
+            <h3>
+              Should I remove my personal information myself or use a removal service?
+            </h3>
+
+            <p>
+              Manual removal can work when you have a limited number of listings and
+              want direct control. A removal service may be useful when information
+              appears across many sources or when you want help managing recurring
+              removal requests. Coverage and pricing vary by provider.
+            </p>
+
+          </div>
+
         </section>
 
 
@@ -1467,12 +1608,14 @@
 
         <section class="related">
 
-          <h2>Continue Your Privacy Check</h2>
+          <h2>
+            Continue Your Privacy Check
+          </h2>
 
           <div class="related-grid">
 
             <a href="/digital-footprint-check/">
-              Learn How to Check Your Digital Footprint
+              Check Your Digital Footprint
             </a>
 
             <a href="/personal-information-exposure/">
@@ -1480,11 +1623,11 @@
             </a>
 
             <a href="/data-broker-removal/">
-              Learn About Data Broker Removal
+              Remove Information From Data Brokers
             </a>
 
             <a href="/people-search-sites/">
-              Learn About People-Search Sites
+              Check People-Search Sites
             </a>
 
             <a href="/email-exposure-check/">
