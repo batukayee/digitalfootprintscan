@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,134 +5,382 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Digital Footprint Scan — Check Your Online Exposure</title>
-  <meta name="description" content="Learn how to check your digital footprint, discover personal information exposed online, and compare services that can help protect your privacy.">
+
+  <meta name="description" content="Learn how to check your digital footprint, find personal information exposed online, and take practical steps to reduce your online exposure.">
+
   <link rel="canonical" href="https://digitalfootprintscan.com/">
 
   <meta property="og:title" content="Digital Footprint Scan — Check Your Online Exposure">
-  <meta property="og:description" content="Discover what personal information may be exposed online and learn how to protect your digital privacy.">
+  <meta property="og:description" content="Learn how to discover personal information exposed online and take practical steps to protect your privacy.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://digitalfootprintscan.com/">
 
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       color: #172033;
       background: #f7f9fc;
-      line-height: 1.6;
+      line-height: 1.65;
     }
+
+    a {
+      color: inherit;
+    }
+
     header {
       background: #ffffff;
-      border-bottom: 1px solid #e5e9f0;
+      border-bottom: 1px solid #e6eaf0;
     }
+
     nav {
-      max-width: 1100px;
-      margin: auto;
-      padding: 18px 20px;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 18px 24px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      gap: 30px;
     }
+
     .logo {
+      text-decoration: none;
       font-size: 21px;
       font-weight: 700;
-      color: #172033;
-      text-decoration: none;
+      letter-spacing: -0.4px;
+      white-space: nowrap;
     }
-    nav a {
-      color: #526070;
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nav-links a {
       text-decoration: none;
-      margin-left: 22px;
+      color: #596577;
       font-size: 14px;
     }
+
+    .nav-links a:hover {
+      color: #172033;
+    }
+
     .hero {
       background: #ffffff;
-      padding: 80px 20px;
+      padding: 92px 24px 88px;
       text-align: center;
+      border-bottom: 1px solid #e6eaf0;
     }
+
+    .hero-inner {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 7px 13px;
+      border: 1px solid #dce2ea;
+      border-radius: 999px;
+      color: #536071;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .2px;
+      background: #f8fafc;
+    }
+
     .hero h1 {
+      margin: 0 auto 22px;
       max-width: 800px;
-      margin: 0 auto 20px;
-      font-size: 48px;
-      line-height: 1.1;
+      font-size: 52px;
+      line-height: 1.08;
+      letter-spacing: -1.8px;
     }
+
     .hero p {
       max-width: 700px;
-      margin: 0 auto 30px;
-      color: #5b6675;
+      margin: 0 auto 32px;
+      color: #5d6878;
       font-size: 19px;
     }
+
     .button {
       display: inline-block;
+      padding: 14px 23px;
+      border-radius: 8px;
       background: #172033;
       color: #ffffff;
-      padding: 14px 24px;
-      border-radius: 8px;
       text-decoration: none;
       font-weight: 700;
+      font-size: 15px;
     }
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 60px 20px;
+
+    .button:hover {
+      opacity: .9;
     }
-    h2 {
-      font-size: 32px;
-      margin-bottom: 15px;
+
+    .section {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 72px 24px;
     }
-    .intro {
-      max-width: 750px;
-      color: #5b6675;
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 34px;
     }
-    .cards {
+
+    .section-heading h2 {
+      margin: 0 0 12px;
+      font-size: 34px;
+      line-height: 1.2;
+      letter-spacing: -.7px;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: #606b7b;
+      font-size: 17px;
+    }
+
+    .checks {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 30px;
+      gap: 18px;
     }
+
     .card {
       background: #ffffff;
-      padding: 25px;
-      border: 1px solid #e5e9f0;
+      border: 1px solid #e3e8ef;
       border-radius: 12px;
+      padding: 27px;
     }
+
     .card h3 {
-      margin-top: 0;
+      margin: 0 0 9px;
+      font-size: 19px;
+      line-height: 1.3;
     }
+
+    .card p {
+      margin: 0 0 17px;
+      color: #606b7b;
+      font-size: 15px;
+    }
+
     .card a {
       color: #172033;
+      text-decoration: none;
+      font-size: 14px;
       font-weight: 700;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    .how {
+      background: #ffffff;
+      border-top: 1px solid #e6eaf0;
+      border-bottom: 1px solid #e6eaf0;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .step {
+      padding: 8px 0;
+    }
+
+    .step-number {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #172033;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    .step h3 {
+      margin: 0 0 7px;
+      font-size: 18px;
+    }
+
+    .step p {
+      margin: 0;
+      color: #606b7b;
+      font-size: 15px;
+    }
+
+    .guide-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .guide {
+      display: block;
+      background: #ffffff;
+      border: 1px solid #e3e8ef;
+      border-radius: 10px;
+      padding: 21px 23px;
       text-decoration: none;
     }
-    .cta {
-      background: #eef2f7;
-      text-align: center;
-      padding: 50px 20px;
-      margin-top: 20px;
+
+    .guide strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 16px;
     }
+
+    .guide span {
+      color: #606b7b;
+      font-size: 14px;
+    }
+
+    .privacy-note {
+      background: #eef2f7;
+      border-radius: 14px;
+      padding: 38px;
+      text-align: center;
+    }
+
+    .privacy-note h2 {
+      margin: 0 0 12px;
+      font-size: 29px;
+      line-height: 1.2;
+    }
+
+    .privacy-note p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: #596577;
+      font-size: 16px;
+    }
+
+    .commercial {
+      background: #ffffff;
+      border-top: 1px solid #e6eaf0;
+      border-bottom: 1px solid #e6eaf0;
+    }
+
+    .commercial-box {
+      max-width: 760px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .commercial-box h2 {
+      margin: 0 0 12px;
+      font-size: 31px;
+      line-height: 1.2;
+    }
+
+    .commercial-box p {
+      margin: 0 0 24px;
+      color: #606b7b;
+    }
+
     footer {
       background: #172033;
       color: #ffffff;
-      padding: 35px 20px;
+      padding: 38px 24px;
       text-align: center;
     }
+
+    footer p {
+      margin: 7px 0;
+    }
+
     footer a {
       color: #ffffff;
-      margin: 0 10px;
+      text-decoration: none;
+      margin: 0 9px;
       font-size: 14px;
     }
-    .disclosure {
-      max-width: 700px;
-      margin: 15px auto 0;
-      font-size: 12px;
-      opacity: .75;
+
+    footer a:hover {
+      text-decoration: underline;
     }
-    @media (max-width: 700px) {
-      .hero h1 { font-size: 36px; }
-      .cards { grid-template-columns: 1fr; }
-      nav { flex-direction: column; gap: 12px; }
-      nav a { margin: 0 8px; }
+
+    .footer-note {
+      max-width: 720px;
+      margin: 18px auto 0;
+      color: #b9c1ce;
+      font-size: 12px;
+    }
+
+    @media (max-width: 800px) {
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .checks,
+      .steps {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 12px 18px;
+      }
+
+      .hero {
+        padding: 65px 20px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+        letter-spacing: -1px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .section {
+        padding: 55px 20px;
+      }
+
+      .section-heading h2 {
+        font-size: 29px;
+      }
+
+      .checks,
+      .steps,
+      .guide-list {
+        grid-template-columns: 1fr;
+      }
+
+      .privacy-note {
+        padding: 30px 22px;
+      }
     }
   </style>
 </head>
@@ -143,106 +390,264 @@
 <header>
   <nav>
     <a class="logo" href="/">DigitalFootprintScan</a>
-    <div>
+
+    <div class="nav-links">
       <a href="/digital-footprint-check/">Digital Footprint</a>
       <a href="/data-broker-removal/">Data Brokers</a>
-      <a href="/about.html">About</a>
+      <a href="/email-exposure-check/">Email Exposure</a>
+      <a href="/phone-number-exposure-check/">Phone Exposure</a>
     </div>
   </nav>
 </header>
 
+
 <section class="hero">
-  <h1>Check Your Digital Footprint</h1>
-  <p>
-    Discover what personal information may be exposed online,
-    understand your digital footprint, and learn how to protect your privacy.
-  </p>
-  <a class="button" href="/digital-footprint-check/">
-    Start Your Digital Footprint Check
-  </a>
+  <div class="hero-inner">
+
+    <div class="eyebrow">Understand your online exposure</div>
+
+    <h1>Check Your Digital Footprint</h1>
+
+    <p>
+      Discover what personal information may be exposed online,
+      understand where it can appear, and learn practical ways to
+      reduce your digital footprint.
+    </p>
+
+    <a class="button" href="/digital-footprint-check/">
+      Start With a Digital Footprint Check
+    </a>
+
+  </div>
 </section>
+
 
 <main>
 
-<section class="container">
-  <h2>What Is a Digital Footprint?</h2>
-  <p class="intro">
-    Your digital footprint is the information about you that exists online.
-    It can include your name, email address, phone number, social profiles,
-    public records, data broker listings and other information connected to you.
-  </p>
+<section class="section">
 
-  <div class="cards">
+  <div class="section-heading">
+    <h2>What can you check?</h2>
+    <p>
+      Your online footprint can extend far beyond social media.
+      Start with the areas most relevant to you.
+    </p>
+  </div>
 
-    <div class="card">
-      <h3>Digital Footprint Check</h3>
-      <p>Learn what to look for when checking your online presence.</p>
-      <a href="/digital-footprint-check/">Learn how to check →</a>
-    </div>
+  <div class="checks">
 
-    <div class="card">
+    <article class="card">
+      <h3>Digital Footprint</h3>
+      <p>
+        Learn how to search for information connected to your name,
+        accounts, usernames and online activity.
+      </p>
+      <a href="/digital-footprint-check/">Check your digital footprint →</a>
+    </article>
+
+    <article class="card">
       <h3>Personal Information</h3>
-      <p>Understand how your name, email and other information can appear online.</p>
-      <a href="/personal-information-exposure/">Explore exposure →</a>
-    </div>
+      <p>
+        Find out what personal details can appear publicly across
+        websites, directories and other online sources.
+      </p>
+      <a href="/personal-information-exposure/">Explore personal information exposure →</a>
+    </article>
 
-    <div class="card">
-      <h3>Data Broker Removal</h3>
-      <p>Learn how data brokers collect and publish personal information.</p>
-      <a href="/data-broker-removal/">Learn about removal →</a>
-    </div>
+    <article class="card">
+      <h3>Data Brokers</h3>
+      <p>
+        Understand how data brokers collect, publish and distribute
+        personal information and how removal works.
+      </p>
+      <a href="/data-broker-removal/">Learn about data broker removal →</a>
+    </article>
 
-    <div class="card">
+    <article class="card">
       <h3>Email Exposure</h3>
-      <p>Understand what information can be associated with an email address.</p>
+      <p>
+        Learn where an email address may appear online and what
+        information can potentially be associated with it.
+      </p>
       <a href="/email-exposure-check/">Check email exposure →</a>
-    </div>
+    </article>
 
-    <div class="card">
+    <article class="card">
       <h3>Phone Number Exposure</h3>
-      <p>Learn what someone may discover from a publicly exposed phone number.</p>
-      <a href="/phone-number-exposure-check/">Learn more →</a>
-    </div>
+      <p>
+        Understand what may be discoverable from a publicly exposed
+        phone number and how to reduce unnecessary visibility.
+      </p>
+      <a href="/phone-number-exposure-check/">Check phone exposure →</a>
+    </article>
 
-    <div class="card">
-      <h3>Privacy Services</h3>
-      <p>Compare services designed to find and remove personal information.</p>
-      <a href="/best-digital-footprint-removal-services/">Compare services →</a>
-    </div>
+    <article class="card">
+      <h3>Privacy & Removal</h3>
+      <p>
+        Learn about the different approaches people can use to
+        reduce personal information exposure online.
+      </p>
+      <a href="/data-broker-removal/">Explore privacy options →</a>
+    </article>
 
   </div>
+
 </section>
 
-<section class="cta">
-  <div class="container">
-    <h2>Want a Deeper Privacy Check?</h2>
-    <p>
-      Some privacy services can search large numbers of data broker
-      and people-search databases on your behalf.
-    </p>
-    <a class="button" href="/best-digital-footprint-removal-services/">
-      Compare Privacy Services
-    </a>
+
+<section class="how">
+
+  <div class="section">
+
+    <div class="section-heading">
+      <h2>How a digital footprint check works</h2>
+      <p>
+        A useful privacy check starts by understanding what information
+        exists and where it may be visible.
+      </p>
+    </div>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Identify your information</h3>
+        <p>
+          Start with identifiers such as your name, email addresses,
+          phone numbers and usernames.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Find where it appears</h3>
+        <p>
+          Search engines, social platforms, directories, people-search
+          sites and data brokers can reveal different parts of your footprint.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Decide what to reduce</h3>
+        <p>
+          Once you understand your exposure, you can decide which
+          information should be removed, limited or monitored.
+        </p>
+      </div>
+
+    </div>
+
   </div>
+
+</section>
+
+
+<section class="section">
+
+  <div class="section-heading">
+    <h2>Privacy guides</h2>
+    <p>
+      Practical guides to help you understand and manage different
+      parts of your online presence.
+    </p>
+  </div>
+
+  <div class="guide-list">
+
+    <a class="guide" href="/digital-footprint-check/">
+      <strong>How to Check Your Digital Footprint</strong>
+      <span>A practical starting point for discovering your online presence.</span>
+    </a>
+
+    <a class="guide" href="/personal-information-exposure/">
+      <strong>Personal Information Exposed Online</strong>
+      <span>Understand what personal information can appear publicly.</span>
+    </a>
+
+    <a class="guide" href="/data-broker-removal/">
+      <strong>Data Broker Removal</strong>
+      <span>Learn how data brokers work and how information can be removed.</span>
+    </a>
+
+    <a class="guide" href="/email-exposure-check/">
+      <strong>Email Exposure Check</strong>
+      <span>Explore what may be associated with an exposed email address.</span>
+    </a>
+
+    <a class="guide" href="/phone-number-exposure-check/">
+      <strong>Phone Number Exposure Check</strong>
+      <span>Learn what may be discoverable from a phone number online.</span>
+    </a>
+
+  </div>
+
+</section>
+
+
+<section class="commercial">
+
+  <div class="section">
+
+    <div class="commercial-box">
+
+      <h2>Looking for more comprehensive privacy protection?</h2>
+
+      <p>
+        Some privacy services can search data broker and people-search
+        databases and help manage removal requests at scale. We are
+        researching available options and will publish independent
+        comparisons as they become available.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section">
+
+  <div class="privacy-note">
+
+    <h2>Privacy starts with knowing what is exposed.</h2>
+
+    <p>
+      DigitalFootprintScan provides educational information to help
+      people understand their online exposure. The goal is simple:
+      make digital privacy easier to understand and easier to act on.
+    </p>
+
+  </div>
+
 </section>
 
 </main>
 
+
 <footer>
-  <p>© 2026 DigitalFootprintScan.com</p>
+
+  <p><strong>DigitalFootprintScan.com</strong></p>
+
   <p>
     <a href="/about.html">About</a>
     <a href="/privacy.html">Privacy</a>
     <a href="/affiliate-disclosure.html">Affiliate Disclosure</a>
     <a href="/contact.html">Contact</a>
   </p>
-  <p class="disclosure">
-    Some links on this website may eventually be affiliate links. If you
-    purchase through them, we may receive a commission at no additional cost
-    to you.
+
+  <p class="footer-note">
+    Some links on this website may eventually be affiliate links.
+    If you purchase through them, we may receive a commission at no
+    additional cost to you.
   </p>
+
+  <p class="footer-note">
+    © 2026 DigitalFootprintScan.com
+  </p>
+
 </footer>
 
 </body>
 </html>
-```
