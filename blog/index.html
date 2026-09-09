@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6654C66QXK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6654C66QXK');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Blog | Digital Footprint Scan</title>
+
+  <meta
+    name="description"
+    content="Practical, privacy-first guides on digital footprints, personal information exposure, email and phone exposure, people-search sites and data brokers."
+  >
+
+  <link rel="canonical" href="https://digitalfootprintscan.com/blog/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Blog | Digital Footprint Scan">
+  <meta
+    property="og:description"
+    content="Practical, privacy-first guides on digital footprints, personal information exposure, email and phone exposure, people-search sites and data brokers."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://digitalfootprintscan.com/blog/">
+  <meta property="og:image" content="https://digitalfootprintscan.com/og-image.png">
+  <meta property="og:image:alt" content="Digital Footprint Scan Blog">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog | Digital Footprint Scan">
+  <meta
+    name="twitter:description"
+    content="Practical, privacy-first guides on digital footprints, personal information exposure, email and phone exposure, people-search sites and data brokers."
+  >
+  <meta name="twitter:image" content="https://digitalfootprintscan.com/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": "https://digitalfootprintscan.com/blog/#collection",
+    "name": "Digital Footprint Scan Blog",
+    "url": "https://digitalfootprintscan.com/blog/",
+    "isPartOf": {
+      "@id": "https://digitalfootprintscan.com/#website"
+    }
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root {
+      --ink: #0b1220;
+      --ink-2: #1c2536;
+      --slate: #5b6472;
+      --slate-2: #8a93a2;
+      --line: #e4e8ef;
+      --line-2: #eef1f5;
+      --paper: #ffffff;
+      --paper-2: #f6f8fb;
+      --signal: #0e7c86;
+      --signal-soft: #e6f4f5;
+      --radius: 14px;
+      --shadow-sm: 0 1px 2px rgba(11, 18, 32, .04), 0 1px 1px rgba(11, 18, 32, .03);
+      --shadow-md: 0 1px 2px rgba(11, 18, 32, .04), 0 8px 24px -8px rgba(11, 18, 32, .10);
+      --shadow-lg: 0 2px 4px rgba(11, 18, 32, .04), 0 24px 60px -20px rgba(11, 18, 32, .22);
+      --ease: cubic-bezier(.22, 1, .36, 1);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper-2);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      font-feature-settings: 'cv11', 'ss01';
+    }
+
+    a { color: inherit; }
+
+    ::selection { background: var(--signal); color: #fff; }
+
+    :focus-visible {
+      outline: 2px solid var(--signal);
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+
+    .mono {
+      font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-weight: 500;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+
+    /* ---------- Header (matches homepage) ---------- */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, .78);
+      backdrop-filter: saturate(180%) blur(14px);
+      -webkit-backdrop-filter: saturate(180%) blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      flex-shrink: 0;
+      color: var(--ink);
+    }
+
+    .logo-mark {
+      display: block;
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+      flex: 0 0 auto;
+    }
+
+    .logo-divider {
+      display: block;
+      width: 2px;
+      height: 26px;
+      background: var(--ink);
+      border-radius: 1px;
+      flex: 0 0 auto;
+    }
+
+    .logo-text {
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--slate);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: color .2s var(--ease), background .2s var(--ease);
+    }
+
+    .nav-links a:hover {
+      color: var(--ink);
+      background: var(--line-2);
+    }
+
+    .nav-links a.current {
+      color: var(--ink);
+      background: var(--line-2);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--paper);
+      color: var(--ink);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: background .2s var(--ease), border-color .2s var(--ease), box-shadow .2s var(--ease);
+      flex-shrink: 0;
+    }
+
+    .menu-toggle:hover {
+      background: var(--line-2);
+      border-color: #d6dce6;
+      box-shadow: var(--shadow-md);
+    }
+
+    .menu-toggle:focus-visible {
+      outline: 2px solid var(--signal);
+      outline-offset: 3px;
+    }
+
+    .menu-toggle-icon {
+      position: relative;
+      width: 19px;
+      height: 14px;
+      display: block;
+    }
+
+    .menu-toggle-icon span {
+      position: absolute;
+      left: 0;
+      width: 19px;
+      height: 1.5px;
+      border-radius: 999px;
+      background: currentColor;
+      transition: transform .25s var(--ease), opacity .2s var(--ease), top .25s var(--ease);
+    }
+
+    .menu-toggle-icon span:nth-child(1) { top: 0; }
+    .menu-toggle-icon span:nth-child(2) { top: 6px; }
+    .menu-toggle-icon span:nth-child(3) { top: 12px; }
+
+    .menu-toggle[aria-expanded="true"] .menu-toggle-icon span:nth-child(1) {
+      top: 6px;
+      transform: rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] .menu-toggle-icon span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle[aria-expanded="true"] .menu-toggle-icon span:nth-child(3) {
+      top: 6px;
+      transform: rotate(-45deg);
+    }
+
+    .nav-menu {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 24px;
+      width: 250px;
+      padding: 8px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: var(--shadow-lg);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-6px);
+      transition: opacity .2s var(--ease), transform .2s var(--ease), visibility .2s;
+    }
+
+    .nav-menu.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .nav-menu a {
+      display: block;
+      padding: 12px 14px;
+      border-radius: 9px;
+      color: var(--slate);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color .2s var(--ease), background .2s var(--ease);
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.current {
+      color: var(--ink);
+      background: var(--line-2);
+    }
+
+    /* ---------- Blog hero ---------- */
+
+    .blog-hero {
+      position: relative;
+      background: var(--paper);
+      padding: 76px 24px 64px;
+      text-align: center;
+      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .blog-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(11, 18, 32, .045) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(11, 18, 32, .045) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .blog-hero-inner {
+      position: relative;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      padding: 7px 14px 7px 9px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--slate);
+      font-size: 13px;
+      font-weight: 500;
+      background: var(--paper);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .eyebrow .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--signal);
+    }
+
+    .blog-hero h1 {
+      margin: 0 auto 16px;
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.06;
+      letter-spacing: -.035em;
+      font-weight: 700;
+      text-wrap: balance;
+    }
+
+    .blog-hero p {
+      max-width: 560px;
+      margin: 0 auto 34px;
+      color: var(--slate);
+      font-size: 17px;
+      line-height: 1.6;
+      text-wrap: pretty;
+    }
+
+    /* Search */
+
+    .search-wrap {
+      position: relative;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--slate-2);
+      pointer-events: none;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 15px 46px 15px 46px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--paper);
+      box-shadow: var(--shadow-sm);
+      font: inherit;
+      font-size: 15px;
+      color: var(--ink);
+      transition: border-color .2s var(--ease), box-shadow .2s var(--ease);
+    }
+
+    .search-input::placeholder { color: var(--slate-2); }
+
+    .search-input:focus {
+      outline: none;
+      border-color: var(--signal);
+      box-shadow: 0 0 0 4px var(--signal-soft);
+    }
+
+    .search-clear {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 30px;
+      border: none;
+      border-radius: 8px;
+      background: transparent;
+      color: var(--slate-2);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background .2s var(--ease), color .2s var(--ease);
+    }
+
+    .search-clear:hover { background: var(--line-2); color: var(--ink); }
+
+    .search-clear.show { display: inline-flex; }
+
+    /* ---------- Filter + results ---------- */
+
+    .blog-controls {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 36px 24px 0;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin: 0 auto 8px;
+      max-width: 920px;
+    }
+
+    .chip {
+      padding: 8px 15px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--slate);
+      cursor: pointer;
+      transition: background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease);
+      white-space: nowrap;
+    }
+
+    .chip:hover { background: var(--line-2); color: var(--ink); }
+
+    .chip.active {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: #fff;
+    }
+
+    .results-meta {
+      text-align: center;
+      color: var(--slate-2);
+      font-size: 13px;
+      margin: 22px 0 30px;
+    }
+
+    /* ---------- Grid ---------- */
+
+    .blog-section {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px 104px;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 18px;
+    }
+
+    .blog-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px 26px 24px;
+      box-shadow: var(--shadow-sm);
+      transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
+    }
+
+    .blog-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: #d6dce6;
+    }
+
+    .blog-card .tag {
+      display: inline-block;
+      align-self: flex-start;
+      margin-bottom: 14px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--signal-soft);
+      color: var(--signal);
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .blog-card h3 {
+      margin: 0 0 8px;
+      font-size: 17.5px;
+      line-height: 1.35;
+      letter-spacing: -.015em;
+      font-weight: 600;
+    }
+
+    .blog-card p {
+      margin: 0 0 20px;
+      color: var(--slate);
+      font-size: 14.5px;
+      line-height: 1.58;
+      flex: 1;
+    }
+
+    .blog-card .read-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .blog-card .read-link::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+    }
+
+    .blog-card .read-link .arrow {
+      display: inline-block;
+      transition: transform .25s var(--ease);
+    }
+
+    .blog-card:hover .read-link .arrow { transform: translateX(4px); }
+
+    .no-results {
+      display: none;
+      text-align: center;
+      padding: 70px 20px;
+      color: var(--slate);
+    }
+
+    .no-results.show { display: block; }
+
+    .no-results strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-size: 17px;
+    }
+
+    /* ---------- Footer (matches homepage) ---------- */
+
+    footer {
+      background: var(--paper);
+      border-top: 1px solid var(--line);
+      color: var(--ink);
+      padding: 56px 24px 40px;
+    }
+
+    .footer-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 40px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .footer-top p { margin: 0; }
+
+    .footer-brand strong {
+      font-size: 16px;
+      letter-spacing: -.01em;
+    }
+
+    .footer-brand .tag {
+      display: block;
+      margin-top: 6px;
+      color: var(--slate);
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 6px 28px;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: var(--slate);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color .2s var(--ease);
+    }
+
+    footer a:hover { color: var(--ink); }
+
+    .footer-bottom {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+      padding-top: 24px;
+    }
+
+    .footer-note {
+      max-width: 620px;
+      margin: 0;
+      color: var(--slate-2);
+      font-size: 12.5px;
+      line-height: 1.6;
+    }
+
+    /* ---------- Responsive ---------- */
+
+    @media (max-width: 960px) {
+
+      .nav-links { display: none; }
+
+      .menu-toggle { display: inline-flex; }
+
+    }
+
+    @media (max-width: 720px) {
+
+      nav {
+        height: auto;
+        padding: 14px 20px;
+      }
+
+      .logo { gap: 10px; }
+
+      .logo-mark { height: 32px; }
+
+      .logo-divider { height: 20px; }
+
+      .logo-text { font-size: 16px; }
+
+      .nav-menu {
+        right: 20px;
+        width: min(250px, calc(100vw - 40px));
+      }
+
+      .blog-hero { padding: 56px 20px 48px; }
+
+      .blog-hero p { font-size: 16px; }
+
+      .blog-controls { padding: 30px 20px 0; }
+
+      .blog-section { padding: 0 20px 72px; }
+
+      .blog-grid { grid-template-columns: 1fr; }
+
+      .footer-top, .footer-bottom { flex-direction: column; }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<header>
+
+  <nav>
+
+    <a class="logo" href="/" aria-label="Digital Footprint Scan">
+      <img class="logo-mark" src="/logo-icon.png" alt="">
+      <span class="logo-divider" aria-hidden="true"></span>
+      <span class="logo-text">Digital Footprint Scan</span>
+    </a>
+
+    <div class="nav-links">
+
+      <a href="/digital-footprint-check/">Digital Footprint</a>
+      <a href="/data-broker-removal/">Data Brokers</a>
+      <a href="/email-exposure-check/">Email Exposure</a>
+      <a href="/phone-number-exposure-check/">Phone Exposure</a>
+      <a href="/blog/" class="current" aria-current="page">Blog</a>
+
+    </div>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="site-menu"
+    >
+      <span class="menu-toggle-icon" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+
+    <div class="nav-menu" id="site-menu">
+
+      <a href="/digital-footprint-check/">Digital Footprint</a>
+      <a href="/data-broker-removal/">Data Brokers</a>
+      <a href="/email-exposure-check/">Email Exposure</a>
+      <a href="/phone-number-exposure-check/">Phone Exposure</a>
+      <a href="/blog/" class="current" aria-current="page">Blog</a>
+
+    </div>
+
+  </nav>
+
+</header>
+
+
+<section class="blog-hero">
+
+  <div class="blog-hero-inner">
+
+    <div class="eyebrow">
+      <span class="dot" aria-hidden="true"></span>
+      Privacy guides
+    </div>
+
+    <h1>Understand your digital footprint, one guide at a time</h1>
+
+    <p>
+      Practical, jargon-free guides on digital footprints, personal information,
+      email and phone exposure, people-search sites and data brokers.
+    </p>
+
+    <div class="search-wrap">
+      <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input
+        type="text"
+        class="search-input"
+        id="blogSearch"
+        placeholder="Search guides — try “email”, “phone” or “data broker”"
+        autocomplete="off"
+        aria-label="Search blog guides"
+      >
+      <button class="search-clear" id="searchClear" type="button" aria-label="Clear search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+  </div>
+
+</section>
+
+
+<div class="blog-controls">
+
+  <div class="chip-row" id="chipRow" role="group" aria-label="Filter guides by topic"></div>
+
+  <p class="results-meta" id="resultsMeta"></p>
+
+</div>
+
+
+<main class="blog-section">
+
+  <div class="blog-grid" id="blogGrid"></div>
+
+  <div class="no-results" id="noResults">
+    <strong>No guides matched your search.</strong>
+    Try a different keyword, or clear the search to see everything.
+  </div>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div class="footer-top">
+
+      <p class="footer-brand">
+        <strong>DigitalFootprintScan.com</strong>
+        <span class="tag">Understand and reduce your online exposure.</span>
+      </p>
+
+      <p class="footer-links">
+        <a href="/about.html">About</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/affiliate-disclosure.html">Affiliate Disclosure</a>
+        <a href="/contact.html">Contact</a>
+      </p>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <p class="footer-note">
+        Some links on this website may eventually be affiliate links.
+        If you purchase through them, we may receive a commission at no
+        additional cost to you.
+      </p>
+
+      <p class="footer-note">
+        © 2026 DigitalFootprintScan.com
+      </p>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<script>
+  // ---------- Mobile menu (matches homepage behavior) ----------
+  (function () {
+    var toggle = document.querySelector('.menu-toggle');
+    var menu = document.querySelector('.nav-menu');
+
+    if (toggle && menu) {
+      function closeMenu() {
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open navigation menu');
+        menu.classList.remove('open');
+      }
+
+      toggle.addEventListener('click', function (event) {
+        event.stopPropagation();
+        var isOpen = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!isOpen));
+        toggle.setAttribute('aria-label', isOpen ? 'Open navigation menu' : 'Close navigation menu');
+        menu.classList.toggle('open', !isOpen);
+      });
+
+      menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+      });
+
+      document.addEventListener('click', function (event) {
+        if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+          closeMenu();
+        }
+      });
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') closeMenu();
+      });
+    }
+  })();
+
+  // ---------- Blog data + live search ----------
+  (function () {
+
+    var posts = [
+      { title: "How to Find Personal Information About Yourself Online", slug: "find-personal-information-about-yourself-online", category: "Personal Information", description: "A practical walkthrough for discovering what's publicly connected to your name online." },
+      { title: "What Is a Digital Footprint? A Simple Guide", slug: "what-is-a-digital-footprint-simple-guide", category: "Digital Footprint", description: "A beginner-friendly explanation of what a digital footprint actually is and why it exists." },
+      { title: "How to Check Your Digital Footprint", slug: "how-to-check-your-digital-footprint", category: "Digital Footprint", description: "Step-by-step guidance for reviewing what your own digital footprint looks like today." },
+      { title: "How to See What Information Google Has About You", slug: "how-to-see-what-information-google-has-about-you", category: "Digital Footprint", description: "Learn what Google may know about you and how to check it yourself." },
+      { title: "Find Your Name Online: See What People Can Find", slug: "find-your-name-online-see-what-people-can-find", category: "Digital Footprint", description: "A focused guide to searching your own name and understanding the results." },
+      { title: "Check If Your Email Address Is Public Online", slug: "check-if-your-email-address-is-public-online", category: "Email Exposure", description: "Learn how to tell whether an email address you use is publicly exposed." },
+      { title: "Why Is My Phone Number Showing Up Online?", slug: "why-is-my-phone-number-showing-up-online", category: "Phone Exposure", description: "Understand the common reasons a phone number ends up visible online." },
+      { title: "How to Remove Personal Information From the Internet", slug: "remove-personal-information-from-the-internet", category: "Personal Information", description: "Practical steps for reducing personal information exposed across the web." },
+      { title: "What Are People-Search Sites and How Do They Get Your Information?", slug: "what-are-people-search-sites-and-how-do-they-get-your-information", category: "People-Search Sites", description: "An explainer on how people-search sites compile and publish personal details." },
+      { title: "What Are Data Brokers and Why Do They Have My Information?", slug: "what-are-data-brokers-and-why-do-they-have-my-information", category: "Data Brokers", description: "A look at how data brokers gather and profit from personal information." },
+      { title: "What Is a Digital Footprint and Why Does It Matter?", slug: "what-is-a-digital-footprint-and-why-does-it-matter", category: "Digital Footprint", description: "Why digital footprints matter and how they shape your online exposure." },
+      { title: "How Are Digital Footprints Created?", slug: "how-are-digital-footprints-created", category: "Digital Footprint", description: "How everyday online activity gradually builds up a digital footprint." },
+      { title: "What Does Your Digital Footprint Say About You?", slug: "what-does-your-digital-footprint-say-about-you", category: "Digital Footprint", description: "What your digital footprint can reveal to someone who goes looking." },
+      { title: "Find Old Accounts You Forgot About", slug: "find-old-accounts-you-forgot-about", category: "Digital Footprint", description: "A guide to tracking down accounts you may have forgotten existed." },
+      { title: "Find Old Usernames and Accounts Online", slug: "find-old-usernames-and-accounts-online", category: "Digital Footprint", description: "Tips for locating old usernames and the accounts tied to them." },
+      { title: "Check What Your Social Media Profiles Reveal About You", slug: "check-what-your-social-media-profiles-reveal-about-you", category: "Digital Footprint", description: "What your social profiles might be showing to people you don't know." },
+      { title: "What Personal Information Is Publicly Available About You?", slug: "what-personal-information-is-publicly-available-about-you", category: "Personal Information", description: "An overview of the personal details that can end up publicly visible." },
+      { title: "Why Is My Personal Information Online?", slug: "why-is-my-personal-information-online", category: "Personal Information", description: "Common explanations for why personal information appears online in the first place." },
+      { title: "How Do Websites Get Your Personal Information?", slug: "how-do-websites-get-your-personal-information", category: "Personal Information", description: "How websites collect personal details, sometimes without you realizing it." },
+      { title: "Find Out If Your Address Is Online", slug: "find-out-if-your-address-is-online", category: "Personal Information", description: "A guide to checking whether your home address is publicly searchable." },
+      { title: "Find Out If Your Name and Phone Number Are Online", slug: "find-out-if-your-name-and-phone-number-are-online", category: "Personal Information", description: "How to check whether your name and phone number appear together online." },
+      { title: "Is Personal Information Online Always a Privacy Risk?", slug: "is-personal-information-online-always-a-privacy-risk", category: "Personal Information", description: "A balanced look at when online personal information is actually risky." },
+      { title: "Find Where Your Email Address Appears Online", slug: "find-where-your-email-address-appears-online", category: "Email Exposure", description: "Where an email address can surface across the web and how to check." },
+      { title: "Why Is My Email Address Showing Up Online?", slug: "why-is-my-email-address-showing-up-online", category: "Email Exposure", description: "Reasons an email address may show up in search results or listings." },
+      { title: "Find Old Accounts Linked to an Email Address", slug: "find-old-accounts-linked-to-an-email-address", category: "Email Exposure", description: "How to track down old accounts still linked to an email you use." },
+      { title: "What Can Someone Find With Your Email Address?", slug: "what-can-someone-find-with-your-email-address", category: "Email Exposure", description: "What information may be discoverable simply from an email address." },
+      { title: "Does Finding Your Email Online Mean It Has Been Hacked?", slug: "does-finding-your-email-online-mean-it-has-been-hacked", category: "Email Exposure", description: "Why public email exposure and account hacking are not the same thing." },
+      { title: "Find Where Your Phone Number Is Online", slug: "find-where-your-phone-number-is-online", category: "Phone Exposure", description: "A guide to checking where a phone number appears across the internet." },
+      { title: "What Can Someone Find With Your Phone Number?", slug: "what-can-someone-find-with-your-phone-number", category: "Phone Exposure", description: "What details can potentially be linked to an exposed phone number." },
+      { title: "How Do People-Search Sites Get Your Phone Number?", slug: "how-do-people-search-sites-get-your-phone-number", category: "People-Search Sites", description: "How people-search sites source and display phone number information." },
+      { title: "How to Remove Your Phone Number From the Internet", slug: "remove-your-phone-number-from-the-internet", category: "Phone Exposure", description: "Practical steps for reducing a phone number's visibility online." },
+      { title: "Can Someone Find Your Address With Your Phone Number?", slug: "can-someone-find-your-address-with-your-phone-number", category: "Phone Exposure", description: "Whether a phone number alone can lead someone to a home address." },
+      { title: "How to Remove Yourself From People-Search Sites", slug: "remove-yourself-from-people-search-sites", category: "People-Search Sites", description: "A step-by-step approach to opting out of people-search listings." },
+      { title: "Why Do People-Search Sites Have My Address?", slug: "why-do-people-search-sites-have-my-address", category: "People-Search Sites", description: "Why home addresses often appear on people-search websites." },
+      { title: "How to Opt Out of People-Search Websites", slug: "how-to-opt-out-of-people-search-websites", category: "People-Search Sites", description: "A practical walkthrough of the opt-out process for people-search sites." },
+      { title: "How Do Data Brokers Collect Your Personal Information?", slug: "how-do-data-brokers-collect-your-personal-information", category: "Data Brokers", description: "How data brokers source, compile and sell personal information." },
+      { title: "How to Opt Out of Data Brokers Yourself", slug: "how-to-opt-out-of-data-brokers-yourself", category: "Data Brokers", description: "A DIY guide to submitting opt-out requests to data brokers yourself." },
+      { title: "Are Data Removal Services Worth It?", slug: "are-data-removal-services-worth-it", category: "Data Brokers", description: "Weighing the cost and value of paid data removal services." },
+      { title: "The Difference Between Removing Information From Google and Removing It From the Internet", slug: "difference-between-removing-information-from-google-and-removing-it-from-the-internet", category: "Personal Information", description: "Why removing something from Google search is different from removing it from the web." },
+      { title: "How to Reduce Your Digital Footprint and Keep It Smaller", slug: "reduce-your-digital-footprint-and-keep-it-smaller", category: "Digital Footprint", description: "Ongoing habits that help keep your digital footprint smaller over time." }
+    ];
+
+    var categories = ["All", "Digital Footprint", "Personal Information", "Email Exposure", "Phone Exposure", "People-Search Sites", "Data Brokers"];
+
+    var grid = document.getElementById('blogGrid');
+    var chipRow = document.getElementById('chipRow');
+    var searchInput = document.getElementById('blogSearch');
+    var searchClear = document.getElementById('searchClear');
+    var resultsMeta = document.getElementById('resultsMeta');
+    var noResults = document.getElementById('noResults');
+
+    var activeCategory = "All";
+
+    function escapeHtml(str) {
+      return str.replace(/[&<>"']/g, function (c) {
+        return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c];
+      });
+    }
+
+    function cardHtml(post) {
+      return (
+        '<article class="blog-card">' +
+          '<span class="tag">' + escapeHtml(post.category) + '</span>' +
+          '<h3>' + escapeHtml(post.title) + '</h3>' +
+          '<p>' + escapeHtml(post.description) + '</p>' +
+          '<a class="read-link" href="/blog/' + post.slug + '/">Read guide <span class="arrow" aria-hidden="true">→</span></a>' +
+        '</article>'
+      );
+    }
+
+    function render() {
+      var query = searchInput.value.trim().toLowerCase();
+
+      searchClear.classList.toggle('show', query.length > 0);
+
+      var filtered = posts.filter(function (post) {
+        var matchesCategory = activeCategory === "All" || post.category === activeCategory;
+        if (!matchesCategory) return false;
+        if (!query) return true;
+        var haystack = (post.title + ' ' + post.description + ' ' + post.category).toLowerCase();
+        return haystack.indexOf(query) !== -1;
+      });
+
+      grid.innerHTML = filtered.map(cardHtml).join('');
+      noResults.classList.toggle('show', filtered.length === 0);
+
+      resultsMeta.textContent =
+        filtered.length === posts.length
+          ? posts.length + ' guides'
+          : filtered.length + ' of ' + posts.length + ' guides';
+    }
+
+    // Build category chips
+    chipRow.innerHTML = categories.map(function (cat) {
+      var activeClass = cat === activeCategory ? ' active' : '';
+      return '<button type="button" class="chip' + activeClass + '" data-category="' + escapeHtml(cat) + '">' + escapeHtml(cat) + '</button>';
+    }).join('');
+
+    chipRow.addEventListener('click', function (event) {
+      var chip = event.target.closest('.chip');
+      if (!chip) return;
+      activeCategory = chip.getAttribute('data-category');
+      chipRow.querySelectorAll('.chip').forEach(function (c) {
+        c.classList.toggle('active', c === chip);
+      });
+      render();
+    });
+
+    // Live, auto-populating search — filters as you type, no Enter needed
+    searchInput.addEventListener('input', render);
+
+    searchClear.addEventListener('click', function () {
+      searchInput.value = '';
+      searchInput.focus();
+      render();
+    });
+
+    render();
+
+  })();
+</script>
+
+</body>
+</html>
