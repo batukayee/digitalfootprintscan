@@ -197,6 +197,107 @@
       background: var(--line-2);
     }
 
+    .menu-toggle {
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--paper);
+      color: var(--ink);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: background .2s var(--ease), border-color .2s var(--ease), box-shadow .2s var(--ease);
+      flex-shrink: 0;
+    }
+
+    .menu-toggle:hover {
+      background: var(--line-2);
+      border-color: #d6dce6;
+      box-shadow: var(--shadow-md);
+    }
+
+    .menu-toggle:focus-visible {
+      outline: 2px solid var(--signal);
+      outline-offset: 3px;
+    }
+
+    .menu-toggle-icon {
+      position: relative;
+      width: 19px;
+      height: 14px;
+      display: block;
+    }
+
+    .menu-toggle-icon span {
+      position: absolute;
+      left: 0;
+      width: 19px;
+      height: 1.5px;
+      border-radius: 999px;
+      background: currentColor;
+      transition: transform .25s var(--ease), opacity .2s var(--ease), top .25s var(--ease);
+    }
+
+    .menu-toggle-icon span:nth-child(1) { top: 0; }
+    .menu-toggle-icon span:nth-child(2) { top: 6px; }
+    .menu-toggle-icon span:nth-child(3) { top: 12px; }
+
+    .menu-toggle[aria-expanded="true"] .menu-toggle-icon span:nth-child(1) {
+      top: 6px;
+      transform: rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] .menu-toggle-icon span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle[aria-expanded="true"] .menu-toggle-icon span:nth-child(3) {
+      top: 6px;
+      transform: rotate(-45deg);
+    }
+
+    .nav-menu {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 24px;
+      width: 250px;
+      padding: 8px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: var(--shadow-lg);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-6px);
+      transition: opacity .2s var(--ease), transform .2s var(--ease), visibility .2s;
+    }
+
+    .nav-menu.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .nav-menu a {
+      display: block;
+      padding: 12px 14px;
+      border-radius: 9px;
+      color: var(--slate);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color .2s var(--ease), background .2s var(--ease);
+    }
+
+    .nav-menu a:hover {
+      color: var(--ink);
+      background: var(--line-2);
+    }
+
     /* ---------- Hero ---------- */
 
     .hero {
@@ -973,15 +1074,11 @@
       nav {
         height: auto;
         padding: 14px 20px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
       }
 
-      .nav-links {
-        flex-wrap: wrap;
-        gap: 2px;
-        margin-left: -12px;
+      .nav-menu {
+        right: 20px;
+        width: min(250px, calc(100vw - 40px));
       }
 
       .hero { padding: 72px 20px 0; }
@@ -1044,7 +1141,21 @@
       >
     </a>
 
-    <div class="nav-links">
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="site-menu"
+    >
+      <span class="menu-toggle-icon" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+
+    <div class="nav-menu" id="site-menu">
 
       <a href="/digital-footprint-check/">
         Digital Footprint
@@ -1661,6 +1772,43 @@
 </footer>
 
 <script>
+  (function () {
+    var toggle = document.querySelector('.menu-toggle');
+    var menu = document.querySelector('.nav-menu');
+
+    if (toggle && menu) {
+      function closeMenu() {
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open navigation menu');
+        menu.classList.remove('open');
+      }
+
+      toggle.addEventListener('click', function (event) {
+        event.stopPropagation();
+        var isOpen = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!isOpen));
+        toggle.setAttribute('aria-label', isOpen ? 'Open navigation menu' : 'Close navigation menu');
+        menu.classList.toggle('open', !isOpen);
+      });
+
+      menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+      });
+
+      document.addEventListener('click', function (event) {
+        if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+          closeMenu();
+        }
+      });
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+          closeMenu();
+        }
+      });
+    }
+  })();
+
   (function () {
     var els = document.querySelectorAll('.reveal:not(.in)');
     if (!('IntersectionObserver' in window)) {
