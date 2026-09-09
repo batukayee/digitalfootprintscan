@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to Find Personal Information About Yourself Online | Digital Footprint Scan</title>
+  <meta name="description" content="Learn how to find personal information about yourself online, where to look, what to record, and what you can do when you find something you would rather not have public.">
+  <link rel="canonical" href="https://digitalfootprintscan.com/blog/find-personal-information-about-yourself-online/">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to Find Personal Information About Yourself Online">
+  <meta property="og:description" content="A practical, privacy-first guide to finding personal information about yourself online and deciding what to do about it.">
+  <meta property="og:url" content="https://digitalfootprintscan.com/blog/find-personal-information-about-yourself-online/">
+  <meta property="og:image" content="https://digitalfootprintscan.com/og-image.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Find Personal Information About Yourself Online">
+  <meta name="twitter:description" content="A practical, privacy-first guide to finding personal information about yourself online.">
+  <meta name="twitter:image" content="https://digitalfootprintscan.com/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6654C66QXK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6654C66QXK');
+  </script>
+
+  <style>
+    :root{
+      --ink:#0b1220;
+      --muted:#596579;
+      --primary-teal:#0e7c86;
+      --soft-teal:#e6f4f5;
+      --page-background:#f6f8fb;
+      --border:#e4e8ef;
+      --white:#fff;
+      --max:1120px;
+      --article:760px;
+      --radius:16px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--page-background);
+      color:var(--ink);
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      line-height:1.72;
+    }
+
+    a{color:var(--primary-teal);text-decoration:none}
+    a:hover{text-decoration:underline}
+    img{max-width:100%;height:auto}
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(228,232,239,.9);
+    }
+
+    .nav{
+      max-width:var(--max);
+      margin:0 auto;
+      min-height:68px;
+      padding:0 24px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+
+    .brand{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      color:var(--ink);
+      font-weight:800;
+      letter-spacing:-.02em;
+    }
+
+    .brand img{width:34px;height:34px;object-fit:contain}
+    .nav-links{display:flex;align-items:center;gap:22px;font-size:14px;font-weight:600}
+    .nav-links a{color:#354052}
+
+    main{padding:54px 20px 80px}
+
+    .article-wrap{
+      max-width:var(--article);
+      margin:0 auto;
+    }
+
+    .breadcrumbs{
+      font-size:13px;
+      color:#697487;
+      margin-bottom:22px;
+    }
+
+    .breadcrumbs a{color:#697487}
+    .breadcrumbs span{margin:0 7px;color:#a1a9b5}
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      min-height:30px;
+      padding:5px 10px;
+      border:1px solid #cfe7e9;
+      border-radius:999px;
+      background:var(--soft-teal);
+      color:#0b6871;
+      font:600 12px/1 "JetBrains Mono",monospace;
+      letter-spacing:.02em;
+      text-transform:uppercase;
+    }
+
+    h1{
+      margin:18px 0 18px;
+      font-size:clamp(38px,6vw,58px);
+      line-height:1.06;
+      letter-spacing:-.045em;
+    }
+
+    .dek{
+      margin:0 0 22px;
+      color:#465266;
+      font-size:19px;
+      line-height:1.6;
+    }
+
+    .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 18px;
+      color:#697487;
+      font-size:13px;
+      margin-bottom:32px;
+    }
+
+    .card{
+      background:var(--white);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:0 10px 30px rgba(11,18,32,.04);
+    }
+
+    .tldr{
+      padding:24px 26px;
+      margin:0 0 38px;
+      background:var(--soft-teal);
+      border:1px solid #cce7e9;
+      border-radius:var(--radius);
+    }
+
+    .tldr-label{
+      font:600 12px/1 "JetBrains Mono",monospace;
+      text-transform:uppercase;
+      color:#0b6871;
+      letter-spacing:.04em;
+      margin-bottom:10px;
+    }
+
+    .tldr p{margin:0;color:#18353a}
+
+    article p{font-size:17px;color:#263244}
+    article h2{
+      margin:48px 0 14px;
+      font-size:30px;
+      line-height:1.2;
+      letter-spacing:-.025em;
+    }
+
+    article h3{
+      margin:30px 0 10px;
+      font-size:21px;
+      line-height:1.3;
+    }
+
+    article ul,article ol{padding-left:25px}
+    article li{margin:9px 0;color:#263244}
+
+    .step{
+      margin:22px 0;
+      padding:22px 24px;
+      background:var(--white);
+      border:1px solid var(--border);
+      border-radius:14px;
+    }
+
+    .step-number{
+      display:inline-flex;
+      width:30px;
+      height:30px;
+      align-items:center;
+      justify-content:center;
+      margin-right:8px;
+      border-radius:50%;
+      background:var(--ink);
+      color:white;
+      font:600 13px/1 "JetBrains Mono",monospace;
+      vertical-align:middle;
+    }
+
+    .callout{
+      margin:30px 0;
+      padding:22px 24px;
+      border-left:4px solid var(--primary-teal);
+      background:#fff;
+      border-radius:0 12px 12px 0;
+      box-shadow:0 7px 24px rgba(11,18,32,.035);
+    }
+
+    .callout strong{color:var(--ink)}
+
+    .decision-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin:24px 0 10px;
+    }
+
+    .decision{
+      padding:20px;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:14px;
+    }
+
+    .decision h3{margin:0 0 7px;font-size:18px}
+    .decision p{margin:0;font-size:15px}
+
+    .related{
+      margin-top:50px;
+      padding:24px;
+    }
+
+    .related h2{margin:0 0 16px;font-size:22px}
+    .related-grid{display:grid;gap:10px}
+    .related a{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      padding:14px 16px;
+      border:1px solid var(--border);
+      border-radius:12px;
+      background:#fff;
+      color:var(--ink);
+      font-weight:600;
+    }
+    .related a span{color:var(--primary-teal)}
+
+    .faq{
+      margin-top:48px;
+    }
+
+    .faq-item{
+      padding:20px 0;
+      border-top:1px solid var(--border);
+    }
+
+    .faq-item h3{margin:0 0 8px;font-size:19px}
+    .faq-item p{margin:0;font-size:16px}
+
+    .author-note{
+      margin-top:48px;
+      padding:18px 20px;
+      color:#5d6879;
+      font-size:13px;
+      border-top:1px solid var(--border);
+    }
+
+    footer{
+      max-width:var(--article);
+      margin:0 auto;
+      padding:0 20px 50px;
+      color:#697487;
+      font-size:13px;
+    }
+
+    @media(max-width:700px){
+      .nav{padding:0 16px}
+      .nav-links{gap:12px}
+      .nav-links a:nth-child(n+2){display:none}
+      main{padding:38px 16px 64px}
+      h1{font-size:39px}
+      .dek{font-size:17px}
+      article p{font-size:16px}
+      .decision-grid{grid-template-columns:1fr}
+      .tldr,.step,.callout,.related{padding:20px}
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "@id":"https://digitalfootprintscan.com/blog/find-personal-information-about-yourself-online/#article",
+    "headline":"How to Find Personal Information About Yourself Online",
+    "description":"A practical, privacy-first guide to finding personal information about yourself online and deciding what to do when you find something you would rather not have public.",
+    "mainEntityOfPage":{
+      "@type":"WebPage",
+      "@id":"https://digitalfootprintscan.com/blog/find-personal-information-about-yourself-online/"
+    },
+    "image":"https://digitalfootprintscan.com/og-image.png",
+    "datePublished":"2026-09-09",
+    "dateModified":"2026-09-09",
+    "author":{
+      "@type":"Organization",
+      "name":"Digital Footprint Scan",
+      "url":"https://digitalfootprintscan.com/"
+    },
+    "publisher":{
+      "@type":"Organization",
+      "name":"Digital Footprint Scan",
+      "url":"https://digitalfootprintscan.com/",
+      "logo":{
+        "@type":"ImageObject",
+        "url":"https://digitalfootprintscan.com/logo-horizontal.png"
+      }
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://digitalfootprintscan.com/"},
+      {"@type":"ListItem","position":2,"name":"Blog","item":"https://digitalfootprintscan.com/blog/"},
+      {"@type":"ListItem","position":3,"name":"How to Find Personal Information About Yourself Online","item":"https://digitalfootprintscan.com/blog/find-personal-information-about-yourself-online/"}
+    ]
+  }
+  </script>
+</head>
+
+<body>
+<header class="site-header">
+  <nav class="nav" aria-label="Primary navigation">
+    <a class="brand" href="/">
+      <img src="/logo-horizontal.png" alt="Digital Footprint Scan">
+    </a>
+    <div class="nav-links">
+      <a href="/digital-footprint-check/">Digital Footprint Check</a>
+      <a href="/data-broker-removal/">Data Broker Removal</a>
+      <a href="/about.html">About</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="article-wrap">
+    <div class="breadcrumbs">
+      <a href="/">Home</a><span>›</span>
+      <a href="/blog/">Blog</a><span>›</span>
+      Find Personal Information About Yourself Online
+    </div>
+
+    <article>
+      <div class="eyebrow">Privacy Guide</div>
+
+      <h1>How to Find Personal Information About Yourself Online</h1>
+
+      <p class="dek">
+        Your name can travel surprisingly far online. Here's a practical way to find what is publicly connected to you — without turning the exercise into a three-hour rabbit hole.
+      </p>
+
+      <div class="meta">
+        <span>By Digital Footprint Scan</span>
+        <span>Updated September 9, 2026</span>
+      </div>
+
+      <div class="tldr">
+        <div class="tldr-label">TL;DR</div>
+        <p>
+          Start with your name, email addresses, phone number and commonly used usernames. Check search engines, social profiles, directories, people-search sites and old accounts. Record what you find, decide what actually needs attention, and then use the appropriate removal, privacy or account-security option. Finding information is the first step; removing it is a separate job.
+        </p>
+      </div>
+
+      <p>
+        If you've ever searched your own name and found an old profile, a directory listing or a forgotten account staring back at you, congratulations: you've met your digital footprint.
+      </p>
+
+      <p>
+        The good news is that checking what is visible about you does not require special software or a cybersecurity degree. A careful search can reveal quite a lot. The trick is knowing <em>where</em> to look and, just as importantly, knowing what a search result does — and does not — tell you.
+      </p>
+
+      <h2>What counts as personal information online?</h2>
+
+      <p>
+        Personal information can be surprisingly ordinary. Depending on what has been published or collected, you may find your full name, email address, phone number, usernames, photographs, social profiles, business listings, old forum posts, directory records or other information associated with you.
+      </p>
+
+      <p>
+        Some of it was posted by you. Some may have been published by someone else. Some may have been collected from public or commercial sources and republished elsewhere. That distinction matters because the best way to deal with a piece of information depends on where it came from and who controls it.
+      </p>
+
+      <h2>How to find personal information about yourself</h2>
+
+      <div class="step">
+        <h3><span class="step-number">1</span>Search your full name</h3>
+        <p>
+          Put your full name in quotation marks and search it. Then try sensible variations: your name with a city, employer, profession or another non-sensitive detail that helps distinguish you from people with similar names.
+        </p>
+        <p>
+          Don't stop at the first result. Look through several pages and pay attention to directories, profile pages, old posts, images and websites you don't immediately recognize.
+        </p>
+      </div>
+
+      <div class="step">
+        <h3><span class="step-number">2</span>Search every email address you have used publicly</h3>
+        <p>
+          Try each email address separately. An old address can remain attached to forum accounts, profiles, business listings or pages you haven't visited in years.
+        </p>
+        <p>
+          If you're trying to understand the wider picture rather than just one address, our <a href="/email-exposure-check/">email exposure check</a> explains what to look for and how email exposure fits into your broader online footprint.
+        </p>
+      </div>
+
+      <div class="step">
+        <h3><span class="step-number">3</span>Check usernames and old profiles</h3>
+        <p>
+          If you tend to reuse the same username, search for it. Old accounts can be easy to forget and surprisingly persistent. Check social platforms, forums, community sites and other places where you may have created an account.
+        </p>
+        <p>
+          A username match is not automatically proof that every result belongs to you. Look for supporting clues before assuming you've found your own account.
+        </p>
+      </div>
+
+      <div class="step">
+        <h3><span class="step-number">4</span>Search your phone number carefully</h3>
+        <p>
+          Search your number in different formats, including country code and local formatting where relevant. Public directories and people-search websites can sometimes associate a number with a name or other details.
+        </p>
+        <p>
+          For a focused explanation of this part of the process, see our <a href="/phone-number-exposure-check/">phone number exposure check</a>.
+        </p>
+      </div>
+
+      <div class="step">
+        <h3><span class="step-number">5</span>Review what your social profiles reveal</h3>
+        <p>
+          View your profiles as someone who is not connected to you, where the platform allows it. Check profile fields, older posts, photographs, contact details and public activity.
+        </p>
+        <p>
+          This is less about making your entire online life invisible and more about spotting information you forgot was public.
+        </p>
+      </div>
+
+      <div class="step">
+        <h3><span class="step-number">6</span>Check people-search and directory sites</h3>
+        <p>
+          Search for your name and contact details on people-search websites and public directories. Depending on the site and jurisdiction, listings may contain names, approximate locations, relatives, phone numbers or other profile information.
+        </p>
+        <p>
+          If this is where you are finding most of your exposure, our guide to <a href="/people-search-sites/">people-search sites</a> explains what these sites do and what removal can involve.
+        </p>
+      </div>
+
+      <div class="step">
+        <h3><span class="step-number">7</span>Look beyond the first page of search results</h3>
+        <p>
+          Search engines are useful, but they are not a complete inventory of everything that exists about you online. A page may exist without ranking prominently, and some information is easier to find directly on the site that hosts it.
+        </p>
+        <p>
+          Think of search results as a window into your exposure, not a master database of your entire digital life.
+        </p>
+      </div>
+
+      <h2>Make a simple exposure list</h2>
+
+      <p>
+        Once you start searching, it is easy to open seventeen tabs and forget why you opened the first one. A simple list keeps the exercise useful.
+      </p>
+
+      <ul>
+        <li><strong>Where is the information?</strong> Record the website and page.</li>
+        <li><strong>What is visible?</strong> Note the type of information, not unnecessary sensitive details.</li>
+        <li><strong>Who controls it?</strong> Identify whether it is your account, another website, a directory, a people-search site or another source.</li>
+        <li><strong>Does it actually need attention?</strong> Not every old result is equally important.</li>
+        <li><strong>What is the next step?</strong> Privacy setting, account deletion, direct removal request, opt-out process or simply leaving it alone.</li>
+      </ul>
+
+      <div class="callout">
+        <strong>A useful rule:</strong> don't copy more personal information into your notes than you need. You're trying to reduce exposure, not accidentally create a new little spreadsheet of it.
+      </div>
+
+      <h2>What should you do if you find something you don't want public?</h2>
+
+      <p>
+        There isn't one universal removal button. The right response depends on the source.
+      </p>
+
+      <div class="decision-grid">
+        <div class="decision">
+          <h3>Your own account</h3>
+          <p>Review the account's privacy settings, remove unnecessary public details, or close the account if you no longer need it.</p>
+        </div>
+
+        <div class="decision">
+          <h3>Someone else's website</h3>
+          <p>Check the site's privacy, correction or removal process. The site owner may control what can be changed.</p>
+        </div>
+
+        <div class="decision">
+          <h3>People-search listing</h3>
+          <p>Look for the site's opt-out or suppression process and follow its instructions carefully.</p>
+        </div>
+
+        <div class="decision">
+          <h3>Data broker listing</h3>
+          <p>Identify the broker and review its available opt-out or removal process. Multiple brokers may require separate action.</p>
+        </div>
+      </div>
+
+      <p>
+        If you are seeing information across several types of sources, our <a href="/personal-information-exposure/">personal information exposure guide</a> is the better next step because it covers the broader picture rather than focusing on one type of result.
+      </p>
+
+      <h2>Can you remove all personal information from the internet?</h2>
+
+      <p>
+        Usually, it is more realistic to think in terms of <strong>reducing unnecessary exposure</strong> than making yourself completely disappear.
+      </p>
+
+      <p>
+        Removing information from one site does not guarantee that it is gone everywhere. Copies can exist elsewhere, information can be republished, and new public information can appear later.
+      </p>
+
+      <p>
+        That is why a sensible privacy routine is often more useful than a one-time purge: find what is exposed, deal with the sources that matter, secure old accounts, and check again periodically.
+      </p>
+
+      <h2>Want the broader picture?</h2>
+
+      <p>
+        This article focuses on finding personal information. If you want a more complete walkthrough of the process — including names, email addresses, usernames, phone numbers, social profiles, people-search sites and data brokers — start with our <a href="/digital-footprint-check/">complete digital footprint check guide</a>.
+      </p>
+
+      <p>
+        And if your search has already uncovered several types of personal information, our <a href="/personal-information-exposure/">personal information exposure guide</a> is the natural next step.
+      </p>
+
+      <section class="faq" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">Frequently asked questions</h2>
+
+        <div class="faq-item">
+          <h3>How do I find out what personal information is online about me?</h3>
+          <p>Search your name, email addresses, phone number and commonly used usernames. Then check social profiles, directories, people-search sites, old accounts and other pages connected to you.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Can I find personal information about myself for free?</h3>
+          <p>Yes. Many basic checks can be performed manually using search engines, social platforms and publicly accessible websites. More comprehensive exposure or removal services may charge a fee.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Why is my information on people-search websites?</h3>
+          <p>People-search sites can compile information from public records, public web sources and other datasets. What they display varies by site and location.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Does finding my information online mean my account was hacked?</h3>
+          <p>No. Information being publicly visible can have many explanations, including a public profile, directory listing, old account or data collected from public sources. Public exposure and an account compromise are different issues.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What should I do first if I find sensitive information?</h3>
+          <p>Record where it appears without unnecessarily copying the sensitive data, identify who controls the page, and check the site's privacy, correction, opt-out or removal process. If an account may actually be compromised, address account security separately.</p>
+        </div>
+      </section>
+
+      <section class="related card" aria-labelledby="related-heading">
+        <h2 id="related-heading">Continue the privacy check</h2>
+        <div class="related-grid">
+          <a href="/digital-footprint-check/">
+            <span>How to check your digital footprint</span>
+            <span>→</span>
+          </a>
+          <a href="/personal-information-exposure/">
+            <span>Understand personal information exposure</span>
+            <span>→</span>
+          </a>
+          <a href="/email-exposure-check/">
+            <span>Check where your email may appear online</span>
+            <span>→</span>
+          </a>
+          <a href="/phone-number-exposure-check/">
+            <span>Check phone-number exposure</span>
+            <span>→</span>
+          </a>
+          <a href="/people-search-sites/">
+            <span>Understand people-search sites</span>
+            <span>→</span>
+          </a>
+          <a href="/data-broker-removal/">
+            <span>Learn about data broker removal</span>
+            <span>→</span>
+          </a>
+        </div>
+      </section>
+
+      <div class="author-note">
+        Digital Footprint Scan creates practical privacy guides designed to help people understand and reduce unnecessary online exposure. Information can vary by website and jurisdiction, so check the current policies of the service or site involved before taking action.
+      </div>
+    </article>
+  </div>
+</main>
+
+<footer>
+  <div>© 2026 DigitalFootprintScan.com · <a href="/privacy.html">Privacy</a> · <a href="/affiliate-disclosure.html">Affiliate Disclosure</a> · <a href="/contact.html">Contact</a></div>
+</footer>
+</body>
+</html>
