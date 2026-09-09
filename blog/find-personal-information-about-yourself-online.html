@@ -88,17 +88,35 @@
     .brand{
       display:inline-flex;
       align-items:center;
+      gap:14px;
       color:var(--ink);
-      line-height:0;
+      line-height:1;
       flex:0 0 auto;
     }
 
-    .brand img{
+    .brand-mark{
       display:block;
-      width:170px;
-      height:auto;
-      max-height:none;
+      width:auto;
+      height:46px;
       object-fit:contain;
+      flex:0 0 auto;
+    }
+
+    .brand-divider{
+      display:block;
+      width:2px;
+      height:30px;
+      background:var(--ink);
+      border-radius:1px;
+      flex:0 0 auto;
+    }
+
+    .brand-text{
+      font-size:20px;
+      font-weight:800;
+      letter-spacing:-.015em;
+      color:var(--ink);
+      white-space:nowrap;
     }
 
     .nav-links{
@@ -408,10 +426,13 @@
         padding:0 16px;
       }
 
-      .brand img{
-        width:138px;
-        max-height:none;
-      }
+      .brand{gap:9px}
+
+      .brand-mark{height:34px}
+
+      .brand-divider{height:22px}
+
+      .brand-text{font-size:15px}
 
       .nav-links{
         gap:13px;
@@ -503,7 +524,9 @@
 <header class="site-header">
   <nav class="nav" aria-label="Primary navigation">
     <a class="brand" href="/" aria-label="Digital Footprint Scan home">
-      <img src="/blog/logo-horizontal.png" alt="Digital Footprint Scan">
+      <img class="brand-mark" src="/blog/logo-icon.png" alt="">
+      <span class="brand-divider" aria-hidden="true"></span>
+      <span class="brand-text">Digital Footprint Scan</span>
     </a>
     <div class="nav-links">
       <a href="/digital-footprint-check/">Digital Footprint</a>
