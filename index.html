@@ -166,14 +166,35 @@
     .logo {
       display: flex;
       align-items: center;
+      gap: 14px;
       text-decoration: none;
       flex-shrink: 0;
+      color: var(--ink);
     }
 
-    .logo img {
+    .logo-mark {
       display: block;
-      width: 270px;
-      height: auto;
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+      flex: 0 0 auto;
+    }
+
+    .logo-divider {
+      display: block;
+      width: 2px;
+      height: 26px;
+      background: var(--ink);
+      border-radius: 1px;
+      flex: 0 0 auto;
+    }
+
+    .logo-text {
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      color: var(--ink);
+      white-space: nowrap;
     }
 
     .nav-links {
@@ -1085,9 +1106,13 @@
         padding: 14px 20px;
       }
 
-      .logo img {
-        width: 230px;
-      }
+      .logo{gap:10px}
+
+      .logo-mark{height:32px}
+
+      .logo-divider{height:20px}
+
+      .logo-text{font-size:16px}
 
       .nav-menu {
         right: 20px;
@@ -1146,12 +1171,9 @@
   <nav>
 
     <a class="logo" href="/" aria-label="Digital Footprint Scan">
-      <img
-        src="/logo-horizontal.png"
-        width="270"
-        height="84"
-        alt="Digital Footprint Scan"
-      >
+      <img class="logo-mark" src="/logo-icon.png" alt="">
+      <span class="logo-divider" aria-hidden="true"></span>
+      <span class="logo-text">Digital Footprint Scan</span>
     </a>
 
     <div class="nav-links">
