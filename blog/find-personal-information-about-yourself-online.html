@@ -83,11 +83,14 @@
     }
 
     .brand{
-      display:inline-flex;
-      align-items:center;
+      position:relative;
+      display:block;
+      width:184px;
+      height:68px;
       color:var(--ink);
       line-height:0;
       flex:0 0 auto;
+      overflow:visible;
     }
 
     .brand img{
@@ -96,6 +99,31 @@
       height:auto;
       max-height:none;
       object-fit:contain;
+    }
+
+    .brand::before{
+      content:"";
+      position:absolute;
+      z-index:1;
+      left:58px;
+      top:0;
+      width:126px;
+      height:68px;
+      background:#fff;
+    }
+
+    .brand::after{
+      content:"";
+      position:absolute;
+      z-index:2;
+      left:58px;
+      top:0;
+      width:126px;
+      height:68px;
+      background-image:url("/blog/logo-horizontal.png");
+      background-repeat:no-repeat;
+      background-size:195.5px auto;
+      background-position:-8px -5px;
     }
 
     .nav-links{
@@ -405,9 +433,28 @@
         padding:0 16px;
       }
 
+      .brand{
+        width:149px;
+        height:55px;
+      }
+
       .brand img{
         width:138px;
         max-height:none;
+      }
+
+      .brand::before{
+        left:47px;
+        width:102px;
+        height:55px;
+      }
+
+      .brand::after{
+        left:47px;
+        width:102px;
+        height:55px;
+        background-size:158.7px auto;
+        background-position:-6.5px -4px;
       }
 
       .nav-links{
