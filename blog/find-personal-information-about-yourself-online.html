@@ -34,25 +34,28 @@
   <style>
     :root{
       --ink:#0b1220;
-      --muted:#596579;
+      --muted:#687386;
       --primary-teal:#0e7c86;
       --soft-teal:#e6f4f5;
-      --page-background:#f6f8fb;
-      --border:#e4e8ef;
+      --page-background:#f7f8fa;
+      --border:#dfe4ea;
       --white:#fff;
-      --max:1120px;
-      --article:760px;
-      --radius:16px;
+      --max:1180px;
+      --article:748px;
+      --radius:10px;
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
+
     body{
       margin:0;
       background:var(--page-background);
       color:var(--ink);
       font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      line-height:1.72;
+      line-height:1.76;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
     }
 
     a{color:var(--primary-teal);text-decoration:none}
@@ -63,36 +66,55 @@
       position:sticky;
       top:0;
       z-index:20;
-      background:rgba(255,255,255,.92);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid rgba(228,232,239,.9);
+      background:rgba(255,255,255,.96);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid var(--border);
     }
 
     .nav{
       max-width:var(--max);
       margin:0 auto;
-      min-height:68px;
-      padding:0 24px;
+      min-height:76px;
+      padding:0 28px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:24px;
+      gap:32px;
     }
 
     .brand{
       display:inline-flex;
       align-items:center;
-      gap:10px;
       color:var(--ink);
-      font-weight:800;
-      letter-spacing:-.02em;
+      line-height:0;
+      flex:0 0 auto;
     }
 
-    .brand img{width:34px;height:34px;object-fit:contain}
-    .nav-links{display:flex;align-items:center;gap:22px;font-size:14px;font-weight:600}
-    .nav-links a{color:#354052}
+    .brand img{
+      display:block;
+      width:142px;
+      height:auto;
+      max-height:38px;
+      object-fit:contain;
+    }
 
-    main{padding:54px 20px 80px}
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:28px;
+      font-size:12px;
+      letter-spacing:.01em;
+      font-weight:600;
+    }
+
+    .nav-links a{
+      color:#465164;
+      white-space:nowrap;
+    }
+
+    .nav-links a:first-child{color:var(--ink)}
+
+    main{padding:46px 20px 92px}
 
     .article-wrap{
       max-width:var(--article);
@@ -100,122 +122,161 @@
     }
 
     .breadcrumbs{
-      font-size:13px;
-      color:#697487;
-      margin-bottom:22px;
+      font-size:12px;
+      line-height:1.4;
+      color:#7a8493;
+      margin-bottom:30px;
+      letter-spacing:.005em;
     }
 
-    .breadcrumbs a{color:#697487}
-    .breadcrumbs span{margin:0 7px;color:#a1a9b5}
+    .breadcrumbs a{color:#7a8493}
+    .breadcrumbs span{margin:0 9px;color:#b2bac4}
 
     .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      min-height:30px;
-      padding:5px 10px;
-      border:1px solid #cfe7e9;
-      border-radius:999px;
-      background:var(--soft-teal);
+      display:inline-block;
+      padding:0 0 9px;
+      border:0;
+      border-bottom:2px solid var(--primary-teal);
+      border-radius:0;
+      background:transparent;
       color:#0b6871;
-      font:600 12px/1 "JetBrains Mono",monospace;
-      letter-spacing:.02em;
+      font:600 11px/1 "JetBrains Mono",monospace;
+      letter-spacing:.07em;
       text-transform:uppercase;
     }
 
     h1{
-      margin:18px 0 18px;
-      font-size:clamp(38px,6vw,58px);
-      line-height:1.06;
-      letter-spacing:-.045em;
+      margin:18px 0 19px;
+      max-width:735px;
+      font-size:clamp(40px,6vw,61px);
+      line-height:1.035;
+      letter-spacing:-.052em;
+      font-weight:800;
     }
 
     .dek{
-      margin:0 0 22px;
-      color:#465266;
-      font-size:19px;
-      line-height:1.6;
+      margin:0 0 21px;
+      max-width:720px;
+      color:#4d596b;
+      font-size:18px;
+      line-height:1.62;
+      letter-spacing:-.012em;
     }
 
     .meta{
       display:flex;
       flex-wrap:wrap;
-      gap:10px 18px;
-      color:#697487;
-      font-size:13px;
-      margin-bottom:32px;
+      align-items:center;
+      gap:0;
+      color:#778193;
+      font-size:12px;
+      margin-bottom:34px;
+      padding-bottom:24px;
+      border-bottom:1px solid var(--border);
     }
 
-    .card{
-      background:var(--white);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      box-shadow:0 10px 30px rgba(11,18,32,.04);
+    .meta span+span:before{
+      content:"";
+      display:inline-block;
+      width:3px;
+      height:3px;
+      margin:0 10px 3px;
+      border-radius:50%;
+      background:#9da6b3;
     }
 
     .tldr{
-      padding:24px 26px;
-      margin:0 0 38px;
-      background:var(--soft-teal);
-      border:1px solid #cce7e9;
-      border-radius:var(--radius);
+      padding:21px 23px 22px;
+      margin:0 0 40px;
+      background:#f0f8f8;
+      border:1px solid #cfe7e9;
+      border-radius:9px;
+      box-shadow:none;
     }
 
     .tldr-label{
-      font:600 12px/1 "JetBrains Mono",monospace;
+      font:600 10px/1 "JetBrains Mono",monospace;
       text-transform:uppercase;
       color:#0b6871;
-      letter-spacing:.04em;
-      margin-bottom:10px;
+      letter-spacing:.08em;
+      margin-bottom:9px;
     }
 
-    .tldr p{margin:0;color:#18353a}
+    .tldr p{
+      margin:0;
+      color:#20363a;
+      font-size:15px;
+      line-height:1.68;
+    }
 
-    article p{font-size:17px;color:#263244}
+    article p{
+      font-size:17px;
+      color:#293445;
+      letter-spacing:-.004em;
+    }
+
     article h2{
-      margin:48px 0 14px;
-      font-size:30px;
+      margin:54px 0 14px;
+      font-size:29px;
       line-height:1.2;
-      letter-spacing:-.025em;
+      letter-spacing:-.034em;
+      font-weight:750;
     }
 
     article h3{
-      margin:30px 0 10px;
-      font-size:21px;
+      margin:28px 0 9px;
+      font-size:20px;
       line-height:1.3;
+      letter-spacing:-.018em;
     }
 
     article ul,article ol{padding-left:25px}
-    article li{margin:9px 0;color:#263244}
+    article li{
+      margin:8px 0;
+      color:#293445;
+      font-size:16px;
+    }
 
     .step{
-      margin:22px 0;
-      padding:22px 24px;
-      background:var(--white);
-      border:1px solid var(--border);
-      border-radius:14px;
+      margin:25px 0;
+      padding:0 0 25px;
+      background:transparent;
+      border:0;
+      border-bottom:1px solid var(--border);
+      border-radius:0;
+      box-shadow:none;
     }
+
+    .step:last-of-type{border-bottom:0}
 
     .step-number{
       display:inline-flex;
-      width:30px;
-      height:30px;
+      width:27px;
+      height:27px;
       align-items:center;
       justify-content:center;
       margin-right:8px;
       border-radius:50%;
       background:var(--ink);
-      color:white;
-      font:600 13px/1 "JetBrains Mono",monospace;
-      vertical-align:middle;
+      color:#fff;
+      font:600 11px/1 "JetBrains Mono",monospace;
+      vertical-align:1px;
     }
 
+    .step h3{margin-top:0}
+
     .callout{
-      margin:30px 0;
-      padding:22px 24px;
-      border-left:4px solid var(--primary-teal);
+      margin:32px 0;
+      padding:18px 21px;
+      border-left:3px solid var(--primary-teal);
       background:#fff;
-      border-radius:0 12px 12px 0;
-      box-shadow:0 7px 24px rgba(11,18,32,.035);
+      border-top:1px solid var(--border);
+      border-right:1px solid var(--border);
+      border-bottom:1px solid var(--border);
+      border-radius:0 8px 8px 0;
+      box-shadow:none;
+      color:#334052;
+      font-size:15px;
     }
 
     .callout strong{color:var(--ink)}
@@ -223,57 +284,104 @@
     .decision-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:14px;
-      margin:24px 0 10px;
+      gap:0 28px;
+      margin:24px 0 12px;
     }
 
     .decision{
-      padding:20px;
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:14px;
+      padding:18px 0 19px;
+      background:transparent;
+      border:0;
+      border-top:1px solid var(--border);
+      border-radius:0;
     }
 
-    .decision h3{margin:0 0 7px;font-size:18px}
-    .decision p{margin:0;font-size:15px}
+    .decision h3{
+      margin:0 0 6px;
+      font-size:17px;
+    }
+
+    .decision p{
+      margin:0;
+      font-size:15px;
+      line-height:1.62;
+    }
 
     .related{
-      margin-top:50px;
-      padding:24px;
+      margin-top:55px;
+      padding:0;
+      background:transparent;
+      border:0;
+      border-radius:0;
+      box-shadow:none;
     }
 
-    .related h2{margin:0 0 16px;font-size:22px}
-    .related-grid{display:grid;gap:10px}
+    .related h2{
+      margin:0;
+      padding:17px 0 13px;
+      border-top:2px solid var(--ink);
+      border-bottom:1px solid var(--border);
+      font-size:20px;
+      letter-spacing:-.02em;
+    }
+
+    .related-grid{display:grid;gap:0}
+
     .related a{
       display:flex;
+      align-items:center;
       justify-content:space-between;
       gap:16px;
-      padding:14px 16px;
-      border:1px solid var(--border);
-      border-radius:12px;
-      background:#fff;
-      color:var(--ink);
+      padding:13px 0;
+      border:0;
+      border-bottom:1px solid var(--border);
+      border-radius:0;
+      background:transparent;
+      color:#1f2b3b;
+      font-size:14px;
       font-weight:600;
     }
-    .related a span{color:var(--primary-teal)}
 
-    .faq{
-      margin-top:48px;
+    .related a:hover{
+      text-decoration:none;
+      color:var(--primary-teal);
+    }
+
+    .related a span:last-child{
+      color:var(--primary-teal);
+      font-size:16px;
+    }
+
+    .faq{margin-top:52px}
+
+    .faq h2{
+      border-top:2px solid var(--ink);
+      padding-top:17px;
     }
 
     .faq-item{
-      padding:20px 0;
+      padding:18px 0 19px;
       border-top:1px solid var(--border);
     }
 
-    .faq-item h3{margin:0 0 8px;font-size:19px}
-    .faq-item p{margin:0;font-size:16px}
+    .faq-item h3{
+      margin:0 0 7px;
+      font-size:18px;
+      line-height:1.4;
+    }
+
+    .faq-item p{
+      margin:0;
+      font-size:15px;
+      line-height:1.68;
+    }
 
     .author-note{
       margin-top:48px;
-      padding:18px 20px;
-      color:#5d6879;
-      font-size:13px;
+      padding:18px 0 0;
+      color:#707b8b;
+      font-size:12px;
+      line-height:1.65;
       border-top:1px solid var(--border);
     }
 
@@ -281,20 +389,64 @@
       max-width:var(--article);
       margin:0 auto;
       padding:0 20px 50px;
-      color:#697487;
-      font-size:13px;
+      color:#788292;
+      font-size:12px;
+    }
+
+    footer div{
+      padding-top:20px;
+      border-top:1px solid var(--border);
     }
 
     @media(max-width:700px){
-      .nav{padding:0 16px}
-      .nav-links{gap:12px}
+      .nav{
+        min-height:64px;
+        padding:0 16px;
+      }
+
+      .brand img{
+        width:118px;
+        max-height:32px;
+      }
+
+      .nav-links{
+        gap:13px;
+        font-size:11px;
+      }
+
       .nav-links a:nth-child(n+2){display:none}
-      main{padding:38px 16px 64px}
-      h1{font-size:39px}
+
+      main{padding:34px 16px 66px}
+
+      .article-wrap{max-width:100%}
+
+      .breadcrumbs{
+        margin-bottom:25px;
+        font-size:11px;
+      }
+
+      h1{
+        font-size:40px;
+        letter-spacing:-.045em;
+      }
+
       .dek{font-size:17px}
+
       article p{font-size:16px}
-      .decision-grid{grid-template-columns:1fr}
-      .tldr,.step,.callout,.related{padding:20px}
+
+      article h2{
+        margin-top:46px;
+        font-size:27px;
+      }
+
+      .decision-grid{
+        grid-template-columns:1fr;
+        gap:0;
+      }
+
+      .tldr{padding:18px 19px}
+
+      .step{padding-bottom:21px}
     }
   </style>
 
@@ -345,12 +497,12 @@
 <body>
 <header class="site-header">
   <nav class="nav" aria-label="Primary navigation">
-    <a class="brand" href="/">
-      <img src="/logo-horizontal.png" alt="Digital Footprint Scan">
+    <a class="brand" href="/" aria-label="Digital Footprint Scan home">
+      <img src="/blog/logo-horizontal.png" alt="Digital Footprint Scan">
     </a>
     <div class="nav-links">
-      <a href="/digital-footprint-check/">Digital Footprint Check</a>
-      <a href="/data-broker-removal/">Data Broker Removal</a>
+      <a href="/digital-footprint-check/">Digital Footprint</a>
+      <a href="/data-broker-removal/">Privacy &amp; Removal</a>
       <a href="/about.html">About</a>
     </div>
   </nav>
