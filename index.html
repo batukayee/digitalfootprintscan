@@ -781,147 +781,6 @@
       max-width: 34ch;
     }
 
-    /* Guides */
-
-    .guide-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-
-    .guide {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 20px;
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 24px 26px;
-      text-decoration: none;
-      box-shadow: var(--shadow-sm);
-      transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
-    }
-
-    .guide:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-      border-color: #d6dce6;
-    }
-
-    .guide strong {
-      display: block;
-      margin-bottom: 5px;
-      font-size: 16px;
-      font-weight: 600;
-      letter-spacing: -.01em;
-    }
-
-    .guide span {
-      color: var(--slate);
-      font-size: 14px;
-    }
-
-    .guide .chev {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      border: 1px solid var(--line);
-      display: grid;
-      place-items: center;
-      color: var(--slate);
-      flex-shrink: 0;
-      transition: background .3s var(--ease), color .3s var(--ease), border-color .3s var(--ease);
-    }
-
-    .guide:hover .chev {
-      background: var(--ink);
-      border-color: var(--ink);
-      color: #fff;
-    }
-
-    /* Commercial */
-
-    .commercial {
-      background: var(--paper);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .commercial-box {
-      max-width: 720px;
-      text-align: center;
-      margin: 0 auto;
-    }
-
-    .commercial-box .mono {
-      display: inline-block;
-      color: var(--slate-2);
-      margin-bottom: 18px;
-      padding: 6px 12px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-    }
-
-    .commercial-box h2 {
-      margin: 0 0 16px;
-      font-size: clamp(28px, 3vw, 36px);
-      line-height: 1.15;
-      letter-spacing: -.03em;
-      font-weight: 700;
-      text-wrap: balance;
-    }
-
-    .commercial-box p {
-      margin: 0;
-      color: var(--slate);
-      font-size: 17px;
-      text-wrap: pretty;
-    }
-
-    /* Mission */
-
-    .mission-section {
-      padding-top: 0;
-    }
-
-    .mission-box {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 42px;
-      text-align: center;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: var(--paper);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .mission-box .mono {
-      display: inline-block;
-      margin-bottom: 16px;
-      color: var(--signal);
-    }
-
-    .mission-box h2 {
-      margin: 0 0 14px;
-      font-size: clamp(28px, 3vw, 36px);
-      line-height: 1.15;
-      letter-spacing: -.03em;
-    }
-
-    .mission-box p {
-      max-width: 620px;
-      margin: 0 auto 20px;
-      color: var(--slate);
-      font-size: 16px;
-    }
-
-    .mission-box strong {
-      color: var(--ink);
-      font-size: 14px;
-      font-weight: 600;
-    }
-
     /* Privacy note */
 
     .privacy-note {
@@ -1036,6 +895,170 @@
       line-height: 1.6;
     }
 
+    /* ---------- Compare services ---------- */
+
+    .compare {
+      background: var(--paper);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .offer {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 30px 28px 28px;
+      box-shadow: var(--shadow-sm);
+      transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
+    }
+
+    .offer:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: #d6dce6;
+    }
+
+    .offer.featured {
+      border-color: var(--signal);
+      box-shadow: var(--shadow-md);
+    }
+
+    .offer-flag {
+      position: absolute;
+      top: -11px;
+      left: 28px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--signal);
+      color: #fff;
+    }
+
+    .offer-name {
+      margin: 0 0 6px;
+      font-size: 20px;
+      letter-spacing: -.02em;
+      font-weight: 600;
+    }
+
+    .offer-role {
+      display: block;
+      margin-bottom: 18px;
+      color: var(--signal);
+    }
+
+    .offer-price {
+      display: flex;
+      align-items: baseline;
+      gap: 7px;
+      padding-bottom: 18px;
+      margin-bottom: 18px;
+      border-bottom: 1px solid var(--line-2);
+    }
+
+    .offer-price strong {
+      font-size: 30px;
+      letter-spacing: -.03em;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .offer-price span {
+      color: var(--slate);
+      font-size: 14px;
+    }
+
+    .offer-list {
+      margin: 0 0 26px;
+      padding: 0;
+      list-style: none;
+      flex: 1;
+    }
+
+    .offer-list li {
+      position: relative;
+      padding: 0 0 10px 26px;
+      color: var(--slate);
+      font-size: 14.5px;
+      line-height: 1.5;
+    }
+
+    .offer-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: var(--signal-soft);
+    }
+
+    .offer-list li::after {
+      content: '';
+      position: absolute;
+      left: 4.5px;
+      top: 11px;
+      width: 6px;
+      height: 3px;
+      border-left: 1.6px solid var(--signal);
+      border-bottom: 1.6px solid var(--signal);
+      transform: rotate(-45deg);
+    }
+
+    .offer .button {
+      width: 100%;
+      justify-content: center;
+      padding: 13px 20px;
+      font-size: 14.5px;
+    }
+
+    .offer .button.ghost {
+      background: var(--paper);
+      color: var(--ink);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .offer .button.ghost:hover {
+      background: var(--line-2);
+      border-color: #d6dce6;
+    }
+
+    .compare-foot {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px 18px;
+      flex-wrap: wrap;
+      margin-top: 26px;
+      padding: 15px 20px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--paper-2);
+      color: var(--slate);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .compare-foot a {
+      color: var(--ink);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .compare-foot a:hover { border-color: var(--ink); }
+
     /* ---------- Reveal ---------- */
 
     .reveal {
@@ -1074,6 +1097,8 @@
       }
 
       .checks { grid-template-columns: 1fr 1fr; }
+
+      .compare-grid { grid-template-columns: 1fr; }
 
       .steps {
         grid-template-columns: 1fr 1fr;
@@ -1145,16 +1170,14 @@
 
       .section-heading { margin-bottom: 36px; }
 
-      .checks, .steps, .guide-list { grid-template-columns: 1fr; }
+      .checks, .steps, .compare-grid { grid-template-columns: 1fr; }
+
+      .offer { padding: 28px 22px 24px; }
 
       .steps { gap: 32px; }
       .step::before { right: 0; }
 
       .privacy-note { padding: 52px 24px; border-radius: 18px; }
-
-      .mission-box {
-        padding: 32px 24px;
-      }
 
       .footer-top, .footer-bottom { flex-direction: column; }
 
@@ -1179,19 +1202,15 @@
     <div class="nav-links">
 
       <a href="/digital-footprint-check/">
-        Digital Footprint
+        Digital Footprint Check
       </a>
 
       <a href="/data-broker-removal/">
-        Data Brokers
+        Data Broker Removal
       </a>
 
-      <a href="/email-exposure-check/">
-        Email Exposure
-      </a>
-
-      <a href="/phone-number-exposure-check/">
-        Phone Exposure
+      <a href="/compare-removal-services/">
+        Compare Services
       </a>
 
       <a href="/blog/">
@@ -1217,19 +1236,15 @@
     <div class="nav-menu" id="site-menu">
 
       <a href="/digital-footprint-check/">
-        Digital Footprint
+        Digital Footprint Check
       </a>
 
       <a href="/data-broker-removal/">
-        Data Brokers
+        Data Broker Removal
       </a>
 
-      <a href="/email-exposure-check/">
-        Email Exposure
-      </a>
-
-      <a href="/phone-number-exposure-check/">
-        Phone Exposure
+      <a href="/compare-removal-services/">
+        Compare Services
       </a>
 
       <a href="/blog/">
@@ -1562,198 +1577,137 @@
 </section>
 
 
-<section class="section">
-
-  <div class="section-heading reveal">
-
-    <span class="mono">Resources</span>
-
-    <h2>
-      Privacy guides
-    </h2>
-
-    <p>
-      Practical guides to help you understand and manage different
-      parts of your online presence.
-    </p>
-
-  </div>
-
-
-  <div class="guide-list">
-
-
-    <a
-      class="guide reveal"
-      href="/digital-footprint-check/"
-    >
-      <div>
-        <strong>
-          How to Check Your Digital Footprint
-        </strong>
-
-        <span>
-          A practical starting point for discovering your online presence.
-        </span>
-      </div>
-      <span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </a>
-
-
-    <a
-      class="guide reveal"
-      data-delay="1"
-      href="/personal-information-exposure/"
-    >
-      <div>
-        <strong>
-          Personal Information Exposed Online
-        </strong>
-
-        <span>
-          Understand what personal information can appear publicly.
-        </span>
-      </div>
-      <span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </a>
-
-
-    <a
-      class="guide reveal"
-      href="/data-broker-removal/"
-    >
-      <div>
-        <strong>
-          Data Broker Removal
-        </strong>
-
-        <span>
-          Learn how data brokers work and how information can be removed.
-        </span>
-      </div>
-      <span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </a>
-
-
-    <a
-      class="guide reveal"
-      data-delay="1"
-      href="/email-exposure-check/"
-    >
-      <div>
-        <strong>
-          Email Exposure Check
-        </strong>
-
-        <span>
-          Explore what may be associated with an exposed email address.
-        </span>
-      </div>
-      <span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </a>
-
-
-    <a
-      class="guide reveal"
-      href="/phone-number-exposure-check/"
-    >
-      <div>
-        <strong>
-          Phone Number Exposure Check
-        </strong>
-
-        <span>
-          Learn what may be discoverable from a phone number online.
-        </span>
-      </div>
-      <span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </a>
-
-
-    <a
-      class="guide reveal"
-      data-delay="1"
-      href="/people-search-sites/"
-    >
-      <div>
-        <strong>
-          People Search Sites
-        </strong>
-
-        <span>
-          Understand how people-search websites can expose personal information.
-        </span>
-      </div>
-      <span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </a>
-
-
-    <a
-      class="guide reveal"
-      href="/remove-personal-information-from-the-internet/"
-    >
-      <div>
-        <strong>
-          Remove Personal Information From the Internet
-        </strong>
-
-        <span>
-          Learn how to find and reduce personal information exposed online.
-        </span>
-      </div>
-      <span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </a>
-
-
-  </div>
-
-</section>
-
-
-<section class="commercial">
+<section class="compare">
 
   <div class="section">
 
-    <div class="commercial-box reveal">
+    <div class="section-heading reveal">
 
-      <span class="mono">Optional help</span>
+      <span class="mono">Removal services</span>
 
       <h2>
-        When you’re ready to go further
+        Compare the services that remove your data for you
       </h2>
 
       <p>
-        Understanding your exposure is the first step. For people who want help
-        finding and removing information from data brokers and people-search sites,
-        there are services that can handle parts of this process for you. We’re
-        evaluating these services so we can explain what they do, what they cost,
-        and who they may be suitable for.
+        Finding your exposure is free. Removing it from hundreds of data brokers
+        and people-search sites by hand takes months. These services do it for you —
+        here is how the main options differ.
       </p>
 
     </div>
 
-  </div>
 
-</section>
+    <div class="compare-grid">
 
 
-<section class="section mission-section">
+      <article class="offer reveal">
 
-  <div class="mission-box reveal">
+        <h3 class="offer-name">Scan My Shadow</h3>
+        <span class="offer-role mono">Best for a one-time look</span>
 
-    <span class="mono">Our purpose</span>
+        <p class="offer-price">
+          <strong>$9.99</strong>
+          <span>one-time</span>
+        </p>
 
-    <h2>
-      Why Digital Footprint Scan exists
-    </h2>
+        <ul class="offer-list">
+          <li>One-off exposure report for your email and phone number</li>
+          <li>Customised do-it-yourself removal kit</li>
+          <li>No subscription and no recurring charge</li>
+          <li>Good starting point before committing to a monthly service</li>
+        </ul>
 
-    <p>
-      Your personal information can spread across the internet without you
-      realizing it. Digital Footprint Scan exists to make online exposure
-      easier to understand without complicated privacy jargon or scare tactics.
+        <a
+          class="button ghost"
+          href="https://www.scanmyshadow.com/"
+          target="_blank"
+          rel="sponsored nofollow noopener"
+        >
+          Get the one-time scan
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+      </article>
+
+
+      <article class="offer featured reveal" data-delay="1">
+
+        <span class="offer-flag mono">Most popular</span>
+
+        <h3 class="offer-name">Incogni</h3>
+        <span class="offer-role mono">Best value for ongoing removal</span>
+
+        <p class="offer-price">
+          <strong>From $7.99</strong>
+          <span>per month, billed annually</span>
+        </p>
+
+        <ul class="offer-list">
+          <li>Automated removal requests across hundreds of data brokers</li>
+          <li>Repeats removals when your data reappears</li>
+          <li>Unlimited custom removal requests on the higher tier</li>
+          <li>30-day money-back guarantee</li>
+        </ul>
+
+        <a
+          class="button"
+          href="AFFILIATE_LINK_INCOGNI"
+          target="_blank"
+          rel="sponsored nofollow noopener"
+        >
+          See Incogni pricing
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+      </article>
+
+
+      <article class="offer reveal" data-delay="2">
+
+        <h3 class="offer-name">DeleteMe</h3>
+        <span class="offer-role mono">Best for hands-on reporting</span>
+
+        <p class="offer-price">
+          <strong>From $129</strong>
+          <span>per year</span>
+        </p>
+
+        <ul class="offer-list">
+          <li>Removal requests reviewed by human privacy agents</li>
+          <li>Detailed periodic privacy reports</li>
+          <li>Broad coverage of people-search and broker sites</li>
+          <li>Individual, couple and family plans available</li>
+        </ul>
+
+        <a
+          class="button ghost"
+          href="AFFILIATE_LINK_DELETEME"
+          target="_blank"
+          rel="sponsored nofollow noopener"
+        >
+          See DeleteMe pricing
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+      </article>
+
+
+    </div>
+
+    <p class="compare-foot reveal">
+      <span>
+        Pricing shown is indicative and set by each provider — check the current price before you buy.
+        We may earn a commission from these links at no extra cost to you.
+      </span>
+      <a href="/compare-removal-services/">Read the full comparison →</a>
     </p>
-
-    <strong>Independent. Practical. Privacy-first.</strong>
 
   </div>
 
