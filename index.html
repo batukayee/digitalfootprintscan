@@ -71,6 +71,48 @@
         "publisher": {
           "@id": "https://digitalfootprintscan.com/#organization"
         }
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://digitalfootprintscan.com/#tool",
+        "name": "Digital Footprint Scan",
+        "alternateName": "Free Email Exposure Check",
+        "url": "https://digitalfootprintscan.com/",
+        "applicationCategory": "SecurityApplication",
+        "applicationSubCategory": "Privacy tool",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript",
+        "description": "A free digital footprint scan that checks whether your email address appears in known data breaches and explains what the exposure means.",
+        "featureList": [
+          "Free email data breach check",
+          "Breach severity rating",
+          "List of breached services and exposed data types",
+          "Guidance on reducing online exposure"
+        ],
+        "isAccessibleForFree": true,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "provider": {
+          "@id": "https://digitalfootprintscan.com/#organization"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://digitalfootprintscan.com/#webpage",
+        "url": "https://digitalfootprintscan.com/",
+        "name": "Digital Footprint Scan | Check Your Online Exposure",
+        "isPartOf": {
+          "@id": "https://digitalfootprintscan.com/#website"
+        },
+        "mainEntity": {
+          "@id": "https://digitalfootprintscan.com/#tool"
+        },
+        "about": {
+          "@id": "https://digitalfootprintscan.com/#tool"
+        }
       }
     ]
   }
@@ -461,31 +503,6 @@
 
     .scan-bar .mono { color: var(--slate-2); }
 
-    .scan-disclaimer {
-      margin: 0;
-      padding: 14px 20px 15px;
-      color: var(--slate);
-      background: #fbfcfd;
-      border-bottom: 1px solid var(--line-2);
-      font-size: 13px;
-      line-height: 1.45;
-    }
-
-    .scan-disclaimer strong {
-      display: block;
-      margin-bottom: 2px;
-      color: var(--ink);
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: -.01em;
-    }
-
-    .scan-disclaimer span {
-      display: block;
-      color: var(--slate);
-      font-size: 13px;
-    }
-
     .scan-status {
       display: inline-flex;
       align-items: center;
@@ -501,86 +518,23 @@
       background: currentColor;
     }
 
-    .scan-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr 1fr 1fr;
-      border-bottom: 1px solid var(--line-2);
-    }
-
-    .scan-cell {
-      padding: 22px 20px 26px;
-      border-right: 1px solid var(--line-2);
-    }
-
-    .scan-cell:last-child { border-right: none; }
-
-    .scan-cell .mono { color: var(--slate-2); display: block; margin-bottom: 10px; }
-
-    .scan-cell strong {
-      display: block;
-      font-size: 26px;
-      letter-spacing: -.03em;
-      font-weight: 600;
-      line-height: 1.1;
-    }
-
-    .scan-cell span { display: block; margin-top: 6px; font-size: 13px; color: var(--slate); }
-
-    .scan-rows { padding: 6px 0 2px; }
-
-    .scan-row {
-      display: grid;
-      grid-template-columns: 1.2fr 3fr auto;
-      align-items: center;
-      gap: 20px;
-      padding: 12px 20px;
-      font-size: 13.5px;
-      border-bottom: 1px solid var(--line-2);
-    }
-
-    .scan-row:last-child { border-bottom: none; }
-
-    .scan-row .label { color: var(--ink); font-weight: 500; }
-
-    .scan-track {
-      height: 6px;
-      border-radius: 999px;
-      background: var(--line-2);
-      overflow: hidden;
-    }
-
-    .scan-fill {
-      height: 100%;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--signal), #3aa9b1);
-      transform-origin: left;
-      animation: grow 1.6s var(--ease) both;
-    }
-
-    @keyframes grow {
-      from { transform: scaleX(0); }
-      to   { transform: scaleX(1); }
-    }
-
-    .scan-row .mono { color: var(--slate-2); }
-
     .scan-line {
       position: absolute;
       left: 1px;
       right: 1px;
       top: 0;
       height: 1px;
+      z-index: 2;
       background: linear-gradient(90deg, transparent, var(--signal), transparent);
-      opacity: .7;
-      animation: sweep 4.5s linear infinite;
+      animation: sweep 1.7s var(--ease) infinite;
       pointer-events: none;
     }
 
     @keyframes sweep {
-      0%   { transform: translateY(0); opacity: 0; }
-      8%   { opacity: .7; }
-      92%  { opacity: .7; }
-      100% { transform: translateY(300px); opacity: 0; }
+      0%   { top: 0; opacity: 0; }
+      10%  { opacity: .8; }
+      90%  { opacity: .8; }
+      100% { top: 100%; opacity: 0; }
     }
 
     /* ---------- Sections ---------- */
@@ -895,6 +849,260 @@
       line-height: 1.6;
     }
 
+    /* ---------- Scan box (hero tool) ---------- */
+
+    .scanbox {
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .scanbox-label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--slate);
+      font-size: 13px;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .scanbox-row {
+      display: flex;
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .scanbox-input {
+      flex: 1;
+      min-width: 0;
+      padding: 15px 16px;
+      font-family: inherit;
+      font-size: 15px;
+      color: var(--ink);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      box-shadow: var(--shadow-sm);
+      transition: border-color .2s var(--ease), box-shadow .2s var(--ease);
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .scanbox-input::placeholder { color: var(--slate-2); }
+
+    .scanbox-input:focus {
+      outline: none;
+      border-color: var(--signal);
+      box-shadow: 0 0 0 3px var(--signal-soft);
+    }
+
+    .scanbox-input:disabled { background: var(--paper-2); color: var(--slate); }
+
+    .scanbox-hp {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .scanbox .button { flex: 0 0 auto; white-space: nowrap; }
+
+    .scanbox .button[disabled] {
+      opacity: .6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .scanbox-note {
+      margin: 12px 0 0;
+      color: var(--slate-2);
+      font-size: 12.5px;
+      text-align: center;
+    }
+
+    .scanbox-error {
+      margin: 12px 0 0;
+      padding: 11px 14px;
+      color: #8a3324;
+      background: #fdf3f1;
+      border: 1px solid #f4d9d3;
+      border-radius: 9px;
+      font-size: 13.5px;
+      text-align: center;
+    }
+
+    /* Live result panel */
+
+    .scan-body { padding: 0; }
+
+    .scan-attrib {
+      margin: 0;
+      padding: 13px 20px 14px;
+      border-top: 1px solid var(--line-2);
+      background: #fbfcfd;
+      color: var(--slate-2);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .scan-attrib a { color: var(--slate); font-weight: 500; }
+
+    .scan-summary {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 20px;
+      border-bottom: 1px solid var(--line-2);
+      background: #fbfcfd;
+    }
+
+    .scan-badge {
+      flex: 0 0 auto;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      border: 1px solid transparent;
+    }
+
+    .scan-badge.clear    { background: var(--signal-soft); color: var(--signal); border-color: #c9e6e8; }
+    .scan-badge.low      { background: var(--signal-soft); color: var(--signal); border-color: #c9e6e8; }
+    .scan-badge.moderate { background: #fdf6e8; color: #8a6412; border-color: #f2e3c2; }
+    .scan-badge.high     { background: #fdf3f1; color: #8a3324; border-color: #f4d9d3; }
+
+    .scan-summary-text { min-width: 0; }
+
+    .scan-summary-text strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -.01em;
+    }
+
+    .scan-summary-text span {
+      display: block;
+      color: var(--slate);
+      font-size: 13.5px;
+      line-height: 1.5;
+    }
+
+    .breach-list { padding: 6px 0 2px; }
+
+    .breach {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--line-2);
+    }
+
+    .breach:last-child { border-bottom: none; }
+
+    .breach-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 8px;
+    }
+
+    .breach-name {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -.01em;
+    }
+
+    .breach-name em {
+      display: block;
+      margin-top: 1px;
+      color: var(--slate-2);
+      font-size: 12.5px;
+      font-style: normal;
+      font-weight: 400;
+    }
+
+    .breach-meta {
+      flex: 0 0 auto;
+      color: var(--slate-2);
+      text-align: right;
+    }
+
+    .breach-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      padding: 4px 9px;
+      border-radius: 6px;
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      color: var(--slate);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .tag.alert {
+      background: #fdf3f1;
+      border-color: #f4d9d3;
+      color: #8a3324;
+      font-weight: 500;
+    }
+
+    .breach-more {
+      display: block;
+      width: 100%;
+      padding: 13px 20px;
+      border: none;
+      border-top: 1px solid var(--line-2);
+      background: #fbfcfd;
+      color: var(--ink);
+      font-family: inherit;
+      font-size: 13.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .2s var(--ease);
+    }
+
+    .breach-more:hover { background: var(--line-2); }
+
+    .scan-next {
+      padding: 22px 20px 24px;
+      border-top: 1px solid var(--line-2);
+      text-align: center;
+    }
+
+    .scan-next p {
+      max-width: 46ch;
+      margin: 0 auto 16px;
+      color: var(--slate);
+      font-size: 14.5px;
+    }
+
+    .scan-skeleton { padding: 22px 20px; }
+
+    .scan-skeleton div {
+      height: 12px;
+      margin-bottom: 12px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--line-2) 25%, #f9fafc 50%, var(--line-2) 75%);
+      background-size: 240% 100%;
+      animation: shimmer 1.3s linear infinite;
+    }
+
+    .scan-skeleton div:nth-child(1) { width: 56%; }
+    .scan-skeleton div:nth-child(2) { width: 84%; }
+    .scan-skeleton div:nth-child(3) { width: 68%; margin-bottom: 0; }
+
+    @keyframes shimmer {
+      from { background-position: 120% 0; }
+      to   { background-position: -120% 0; }
+    }
+
     /* ---------- Compare services ---------- */
 
     .compare {
@@ -1080,7 +1288,8 @@
 
     @media (prefers-reduced-motion: reduce) {
       .reveal { opacity: 1; transform: none; transition: none; }
-      .scan-fill, .scan-line, .eyebrow .dot::after { animation: none; }
+      .scan-line, .eyebrow .dot::after { animation: none; }
+      .scan-skeleton div { animation: none; }
       html { scroll-behavior: auto; }
     }
 
@@ -1110,18 +1319,6 @@
         right: 0;
       }
 
-      .scan-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .scan-cell:nth-child(2) {
-        border-right: none;
-      }
-
-      .scan-cell:nth-child(1),
-      .scan-cell:nth-child(2) {
-        border-bottom: 1px solid var(--line-2);
-      }
     }
 
     @media (max-width: 720px) {
@@ -1155,16 +1352,17 @@
         text-align: left;
       }
 
-      .scan-disclaimer {
-        padding: 13px 16px 14px;
-      }
+      .scanbox-row { flex-direction: column; }
 
-      .button { width: 100%; justify-content: center; text-align: center; }
+      .scanbox .button { width: 100%; justify-content: center; }
 
-      .scan { margin-top: 56px; }
+      .scan { margin-top: 40px; }
 
-      .scan-row { grid-template-columns: 1fr; gap: 8px; }
-      .scan-row .mono { display: none; }
+      .scan-summary { flex-direction: column; gap: 10px; }
+
+      .breach-head { flex-direction: column; gap: 4px; }
+
+      .breach-meta { text-align: left; }
 
       .section { padding: 72px 20px; }
 
@@ -1264,7 +1462,7 @@
 
     <div class="eyebrow reveal in">
       <span class="dot" aria-hidden="true"></span>
-      Understand your online exposure
+      Free email exposure check
     </div>
 
     <h1 class="reveal in" data-delay="1">
@@ -1272,82 +1470,86 @@
     </h1>
 
     <p class="reveal in" data-delay="2">
-      Your name, email address, phone number and old accounts can leave traces
-      across the internet. Learn where your information may appear — and what
-      you can do about it.
+      Your email address, phone number and old accounts leave traces across the
+      internet. Run a free digital footprint scan to see which known data
+      breaches your email appears in — and what to do next.
     </p>
 
-    <a
-      class="button reveal in"
-      data-delay="3"
-      href="/digital-footprint-check/"
-    >
-      Start Your Digital Footprint Check
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
+    <div class="scanbox reveal in" data-delay="3">
+
+      <label class="scanbox-label" for="scanEmail">
+        Enter your email address
+      </label>
+
+      <div class="scanbox-row">
+
+        <input
+          id="scanEmail"
+          class="scanbox-input"
+          type="email"
+          name="email"
+          inputmode="email"
+          autocomplete="email"
+          spellcheck="false"
+          placeholder="you@example.com"
+          aria-describedby="scanNote"
+        >
+
+        <input
+          class="scanbox-hp"
+          type="text"
+          id="scanHp"
+          name="hp"
+          tabindex="-1"
+          autocomplete="off"
+          aria-hidden="true"
+        >
+
+        <button class="button" type="button" id="scanSubmit">
+          Scan my footprint
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+      </div>
+
+      <p class="scanbox-note" id="scanNote">
+        We don’t store your email address, and we never sell or share it.
+      </p>
+
+      <p class="scanbox-error" id="scanError" role="alert" hidden></p>
+
+    </div>
 
   </div>
 
-  <div class="scan reveal in" data-delay="4" aria-hidden="true">
-    <div class="scan-frame">
-      <div class="scan-line"></div>
+  <div class="scan" id="scanPanel" hidden>
+    <div class="scan-frame" id="scanFrame">
+      <div class="scan-line" id="scanLine" hidden></div>
+
       <div class="scan-bar">
         <span class="mono">Exposure overview</span>
-        <span class="mono scan-status">Example exposure overview</span>
+        <span class="mono scan-status" id="scanStatus">Scanning</span>
       </div>
-      <p class="scan-disclaimer">
-        <strong>Example exposure overview</strong>
-        <span>Shows the types of information a digital footprint check may uncover.</span>
+
+      <div class="scan-body" id="scanBody" aria-live="polite"></div>
+
+      <p class="scan-attrib">
+        Breach data via
+        <a href="https://haveibeenpwned.com" target="_blank" rel="noopener">Have I Been Pwned</a>,
+        licensed under
+        <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>.
       </p>
-      <div class="scan-grid">
-        <div class="scan-cell">
-          <span class="mono">Sources checked</span>
-          <strong>6 categories</strong>
-          <span>Search, social, directories, brokers</span>
-        </div>
-        <div class="scan-cell">
-          <span class="mono">Name</span>
-          <strong>Visible</strong>
-          <span>People-search sites</span>
-        </div>
-        <div class="scan-cell">
-          <span class="mono">Email</span>
-          <strong>Partial</strong>
-          <span>2 associations found</span>
-        </div>
-        <div class="scan-cell">
-          <span class="mono">Phone</span>
-          <strong>Low</strong>
-          <span>1 directory listing</span>
-        </div>
-      </div>
-      <div class="scan-rows">
-        <div class="scan-row">
-          <span class="label">Data brokers</span>
-          <div class="scan-track"><div class="scan-fill" style="width: 72%"></div></div>
-          <span class="mono">High</span>
-        </div>
-        <div class="scan-row">
-          <span class="label">People-search sites</span>
-          <div class="scan-track"><div class="scan-fill" style="width: 58%; animation-delay: .1s"></div></div>
-          <span class="mono">Medium</span>
-        </div>
-        <div class="scan-row">
-          <span class="label">Search engines</span>
-          <div class="scan-track"><div class="scan-fill" style="width: 34%; animation-delay: .2s"></div></div>
-          <span class="mono">Low</span>
-        </div>
-      </div>
+
     </div>
   </div>
 
   <div class="hero-reassurance reveal" data-delay="5">
     <strong>Private by design</strong>
     <span>
-      You can learn how to check your online exposure without giving us your
-      personal information.
+      Your email is checked against known breach records and never stored,
+      logged or shared.
     </span>
   </div>
 
@@ -1577,7 +1779,7 @@
 </section>
 
 
-<section class="compare">
+<section class="compare" id="compare">
 
   <div class="section">
 
@@ -1841,6 +2043,269 @@
       });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.1 });
     els.forEach(function (el) { io.observe(el); });
+  })();
+
+  /* ---------- Free email exposure check (HIBP) ---------- */
+
+  (function () {
+
+    var HIBP_ENDPOINT = 'https://sms-hibp-teaser-180556751015.asia-south1.run.app';
+    var MIN_LOADING_MS = 1300;
+    var VISIBLE_BREACHES = 5;
+
+    var input   = document.getElementById('scanEmail');
+    var hp      = document.getElementById('scanHp');
+    var submit  = document.getElementById('scanSubmit');
+    var errorEl = document.getElementById('scanError');
+    var panel   = document.getElementById('scanPanel');
+    var body    = document.getElementById('scanBody');
+    var status  = document.getElementById('scanStatus');
+    var line    = document.getElementById('scanLine');
+
+    if (!input || !submit || !panel || !body) { return; }
+
+    var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+    function esc(value) {
+      return String(value == null ? '' : value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function showError(message) {
+      errorEl.textContent = message;
+      errorEl.hidden = false;
+    }
+
+    function clearError() {
+      errorEl.textContent = '';
+      errorEl.hidden = true;
+    }
+
+    function setBusy(busy) {
+      submit.disabled = busy;
+      input.disabled = busy;
+      submit.firstChild.nodeValue = busy ? ' Scanning… ' : ' Scan my footprint ';
+    }
+
+    function formatNumber(n) {
+      if (typeof n !== 'number' || !isFinite(n)) { return null; }
+      return n.toLocaleString('en-US');
+    }
+
+    function formatYear(dateString) {
+      if (!dateString) { return null; }
+      var year = String(dateString).slice(0, 4);
+      return /^\d{4}$/.test(year) ? year : null;
+    }
+
+    function severityCopy(severity, count) {
+      if (severity === 'clear' || count === 0) {
+        return {
+          title: 'No known breaches found',
+          text: 'This email address does not appear in the public breach records we checked. That is a good sign, but it does not cover data brokers or people-search listings.'
+        };
+      }
+      if (severity === 'high') {
+        return {
+          title: count + (count === 1 ? ' breach found' : ' breaches found'),
+          text: 'This email appears in breaches that exposed sensitive data. Change reused passwords, turn on two-factor authentication, and consider removing your details from data brokers.'
+        };
+      }
+      if (severity === 'moderate') {
+        return {
+          title: count + (count === 1 ? ' breach found' : ' breaches found'),
+          text: 'This email appears in several known breaches. Review the accounts below, change any reused passwords and check what else is exposed about you online.'
+        };
+      }
+      return {
+        title: count + (count === 1 ? ' breach found' : ' breaches found'),
+        text: 'This email appears in known breach records. The exposure looks limited, but it is worth reviewing the accounts below.'
+      };
+    }
+
+    function renderBreach(b) {
+      var year = formatYear(b.date);
+      var accounts = formatNumber(b.accounts);
+      var html = '<div class="breach">';
+
+      html += '<div class="breach-head">';
+      html += '<span class="breach-name">' + esc(b.name || 'Unnamed source');
+      if (b.domain) { html += '<em>' + esc(b.domain) + '</em>'; }
+      html += '</span>';
+
+      if (year || accounts) {
+        html += '<span class="breach-meta mono">';
+        html += year ? esc(year) : '';
+        if (year && accounts) { html += ' · '; }
+        html += accounts ? esc(accounts) + ' accounts' : '';
+        html += '</span>';
+      }
+      html += '</div>';
+
+      var tags = [];
+      if (b.stealerLog) { tags.push('<span class="tag alert">Stealer log</span>'); }
+      if (b.malware)    { tags.push('<span class="tag alert">Malware</span>'); }
+      if (b.spamList)   { tags.push('<span class="tag">Spam list</span>'); }
+      if (b.unverified) { tags.push('<span class="tag">Unverified</span>'); }
+
+      var classes = Array.isArray(b.dataClasses) ? b.dataClasses.slice(0, 6) : [];
+      classes.forEach(function (c) {
+        tags.push('<span class="tag">' + esc(c) + '</span>');
+      });
+
+      if (tags.length) {
+        html += '<div class="breach-tags">' + tags.join('') + '</div>';
+      }
+
+      html += '</div>';
+      return html;
+    }
+
+    function renderResult(data) {
+      var count = data.count || 0;
+      var severity = data.severity || 'clear';
+      var copy = severityCopy(severity, count);
+      var breaches = Array.isArray(data.breaches) ? data.breaches : [];
+
+      var html = '';
+
+      html += '<div class="scan-summary">';
+      html += '<span class="scan-badge ' + esc(severity) + '">' + esc(severity) + '</span>';
+      html += '<span class="scan-summary-text">';
+      html += '<strong>' + esc(copy.title) + '</strong>';
+      html += '<span>' + esc(copy.text) + '</span>';
+      html += '</span>';
+      html += '</div>';
+
+      if (breaches.length) {
+        var shown = breaches.slice(0, VISIBLE_BREACHES);
+        var hidden = breaches.slice(VISIBLE_BREACHES);
+
+        html += '<div class="breach-list">';
+        html += shown.map(renderBreach).join('');
+        html += '</div>';
+
+        if (hidden.length) {
+          html += '<div class="breach-list" id="breachRest" hidden>';
+          html += hidden.map(renderBreach).join('');
+          html += '</div>';
+          html += '<button class="breach-more" type="button" id="breachMore">';
+          html += 'Show ' + hidden.length + ' more';
+          html += '</button>';
+        }
+      }
+
+      html += '<div class="scan-next">';
+      html += '<p>Breach records are only part of your footprint. Data brokers and people-search sites publish your details separately.</p>';
+      html += '<a class="button" href="#compare">See how to get your data removed';
+      html += '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">';
+      html += '<path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>';
+      html += '</svg></a>';
+      html += '</div>';
+
+      body.innerHTML = html;
+      status.textContent = severity === 'clear' ? 'Scan complete' : 'Exposure found';
+      line.hidden = true;
+
+      var more = document.getElementById('breachMore');
+      var rest = document.getElementById('breachRest');
+      if (more && rest) {
+        more.addEventListener('click', function () {
+          rest.hidden = false;
+          more.remove();
+        });
+      }
+    }
+
+    function startLoading() {
+      panel.hidden = false;
+      line.hidden = false;
+      status.textContent = 'Scanning';
+      body.innerHTML =
+        '<div class="scan-skeleton"><div></div><div></div><div></div></div>';
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function run() {
+      var email = (input.value || '').trim();
+      clearError();
+
+      if (!EMAIL_RE.test(email)) {
+        showError('Please enter a valid email address.');
+        input.focus();
+        return;
+      }
+
+      setBusy(true);
+      startLoading();
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'free_breach_check_start', {});
+      }
+
+      var began = Date.now();
+
+      function finish(fn) {
+        var wait = Math.max(0, MIN_LOADING_MS - (Date.now() - began));
+        setTimeout(function () { setBusy(false); fn(); }, wait);
+      }
+
+      fetch(HIBP_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email, hp: hp ? hp.value : '' })
+      })
+      .then(function (r) {
+        return r.json().then(function (data) {
+          return { ok: r.ok, statusCode: r.status, data: data };
+        });
+      })
+      .then(function (result) {
+        finish(function () {
+          if (!result.ok) {
+            panel.hidden = true;
+            line.hidden = true;
+            if (result.statusCode === 429) {
+              showError('You have run a few checks already. Please wait a minute and try again — or read the removal guides below in the meantime.');
+            } else if (result.statusCode === 400) {
+              showError('That email address does not look valid. Please check it and try again.');
+            } else {
+              showError('The check service is busy right now. Please try again in a moment.');
+            }
+            return;
+          }
+
+          renderResult(result.data || {});
+
+          if (typeof gtag === 'function') {
+            gtag('event', 'free_breach_check_complete', {
+              severity: (result.data && result.data.severity) || 'unknown',
+              breach_count: (result.data && result.data.count) || 0
+            });
+          }
+        });
+      })
+      .catch(function () {
+        finish(function () {
+          panel.hidden = true;
+          line.hidden = true;
+          showError('We could not reach the check service. Please try again in a moment.');
+        });
+      });
+    }
+
+    submit.addEventListener('click', run);
+
+    input.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        run();
+      }
+    });
+
   })();
 </script>
 
