@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://digitalfootprintscan.com/sitemap.xml
+Sitemap: https://digitalfootprintscan.com/blog-sitemap.xml
