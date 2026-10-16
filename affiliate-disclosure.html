@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <!-- Consent defaults: must run before the Google tag -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'granted'});
+    gtag('consent', 'default', {ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied', wait_for_update: 500, region: ['GB','IE','FR','DE','ES','PT','IT','NL','BE','LU','AT','DK','SE','FI','EE','LV','LT','PL','CZ','SK','HU','SI','HR','RO','BG','GR','CY','MT','IS','LI','NO','CH']});
+    try { if (localStorage.getItem('dfs_consent') === 'granted') { gtag('consent', 'update', {analytics_storage: 'granted'}); } } catch (e) {}
+  </script>
+  <script src="/consent.js" defer></script>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6654C66QXK"></script>
 <script>
@@ -10,7 +20,6 @@
 
   gtag('config', 'G-6654C66QXK');
 </script>
-  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Affiliate Disclosure | Digital Footprint Scan</title>
