@@ -812,6 +812,11 @@
 
     .footer-brand .tag {
       display: block;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: none;
+      line-height: 1.6;
       margin-top: 6px;
       color: var(--slate);
       font-size: 14px;
@@ -937,7 +942,8 @@
 
     .scan-body { padding: 0; }
 
-    .scan-attrib {
+    .scan .scan-attrib {
+      max-width: none;
       margin: 0;
       padding: 13px 20px 14px;
       border-top: 1px solid var(--line-2);
@@ -1071,16 +1077,71 @@
     .breach-more:hover { background: var(--line-2); }
 
     .scan-next {
-      padding: 22px 20px 24px;
+      padding: 20px 20px 18px;
       border-top: 1px solid var(--line-2);
-      text-align: center;
     }
 
-    .scan-next p {
-      max-width: 46ch;
-      margin: 0 auto 16px;
+    .scan .scan-next-title {
+      max-width: none;
+      font-size: 11px;
+      line-height: 1.5;
+      margin: 0 0 12px;
+      color: var(--signal);
+    }
+
+    .next-step {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 16px 0;
+      border-top: 1px solid var(--line-2);
+    }
+
+    .next-step:first-of-type { border-top: none; padding-top: 4px; }
+
+    .next-step-text { min-width: 0; }
+
+    .next-step-text strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -.01em;
+    }
+
+    .next-step-text span {
+      display: block;
       color: var(--slate);
-      font-size: 14.5px;
+      font-size: 13.5px;
+      line-height: 1.5;
+    }
+
+    .next-step .button {
+      flex: 0 0 auto;
+      padding: 12px 18px;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .next-step .button.ghost {
+      background: var(--paper);
+      color: var(--ink);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .next-step .button.ghost:hover {
+      background: var(--line-2);
+      border-color: #d6dce6;
+    }
+
+    .scan .scan-next-note {
+      max-width: none;
+      line-height: 1.5;
+      margin: 4px 0 0;
+      color: var(--slate);
+      font-size: 12px;
     }
 
     .scan-skeleton { padding: 22px 20px; }
@@ -1364,6 +1425,10 @@
 
       .breach-meta { text-align: left; }
 
+      .next-step { flex-direction: column; align-items: stretch; gap: 12px; }
+
+      .next-step .button { justify-content: center; }
+
       .section { padding: 72px 20px; }
 
       .section-heading { margin-bottom: 36px; }
@@ -1407,7 +1472,7 @@
         Data Broker Removal
       </a>
 
-      <a href="/compare-removal-services/">
+      <a href="/best-digital-footprint-removal-services/">
         Compare Services
       </a>
 
@@ -1441,7 +1506,7 @@
         Data Broker Removal
       </a>
 
-      <a href="/compare-removal-services/">
+      <a href="/best-digital-footprint-removal-services/">
         Compare Services
       </a>
 
@@ -1803,30 +1868,27 @@
     <div class="compare-grid">
 
 
-      <article class="offer reveal">
+      <article class="offer featured reveal">
 
-        <h3 class="offer-name">Scan My Shadow</h3>
-        <span class="offer-role mono">Best for a one-time look</span>
+        <span class="offer-flag mono">Our top pick</span>
+
+        <h3 class="offer-name">Incogni</h3>
+        <span class="offer-role mono">Best for most people</span>
 
         <p class="offer-price">
-          <strong>$9.99</strong>
-          <span>one-time</span>
+          <strong>$7.99/mo</strong>
+          <span>billed yearly</span>
         </p>
 
         <ul class="offer-list">
-          <li>One-off exposure report for your email and phone number</li>
-          <li>Customised do-it-yourself removal kit</li>
-          <li>No subscription and no recurring charge</li>
-          <li>Good starting point before committing to a monthly service</li>
+          <li>Removal requests to 420+ data brokers and people-search sites</li>
+          <li>Repeats requests when your details reappear</li>
+          <li>Works in the US, Canada, UK and Europe</li>
+          <li>30-day money-back guarantee</li>
         </ul>
 
-        <a
-          class="button ghost"
-          href="https://www.scanmyshadow.com/"
-          target="_blank"
-          rel="sponsored nofollow noopener"
-        >
-          Get the one-time scan
+        <a class="button" href="/best-digital-footprint-removal-services/#incogni">
+          Compare Incogni
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -1835,32 +1897,25 @@
       </article>
 
 
-      <article class="offer featured reveal" data-delay="1">
+      <article class="offer reveal" data-delay="1">
 
-        <span class="offer-flag mono">Most popular</span>
-
-        <h3 class="offer-name">Incogni</h3>
-        <span class="offer-role mono">Best value for ongoing removal</span>
+        <h3 class="offer-name">DeleteMe</h3>
+        <span class="offer-role mono">Best for human-reviewed removals</span>
 
         <p class="offer-price">
-          <strong>From $7.99</strong>
-          <span>per month, billed annually</span>
+          <strong>$129/yr</strong>
+          <span>per person</span>
         </p>
 
         <ul class="offer-list">
-          <li>Automated removal requests across hundreds of data brokers</li>
-          <li>Repeats removals when your data reappears</li>
-          <li>Unlimited custom removal requests on the higher tier</li>
-          <li>30-day money-back guarantee</li>
+          <li>Removal requests handled by privacy staff</li>
+          <li>Quarterly reports showing what was removed</li>
+          <li>Couple and family plans available</li>
+          <li>Also offered in the UK, Canada and Australia</li>
         </ul>
 
-        <a
-          class="button"
-          href="AFFILIATE_LINK_INCOGNI"
-          target="_blank"
-          rel="sponsored nofollow noopener"
-        >
-          See Incogni pricing
+        <a class="button ghost" href="/best-digital-footprint-removal-services/#deleteme">
+          Compare DeleteMe
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -1871,28 +1926,31 @@
 
       <article class="offer reveal" data-delay="2">
 
-        <h3 class="offer-name">DeleteMe</h3>
-        <span class="offer-role mono">Best for hands-on reporting</span>
+        <h3 class="offer-name">Scan My Shadow</h3>
+        <span class="offer-role mono">Our sister service · one-time report</span>
 
         <p class="offer-price">
-          <strong>From $129</strong>
-          <span>per year</span>
+          <strong>$9.99</strong>
+          <span>one-time</span>
         </p>
 
         <ul class="offer-list">
-          <li>Removal requests reviewed by human privacy agents</li>
-          <li>Detailed periodic privacy reports</li>
-          <li>Broad coverage of people-search and broker sites</li>
-          <li>Individual, couple and family plans available</li>
+          <li>One-off exposure report for your email and phone number</li>
+          <li>Plain-English PDF report with a do-it-yourself removal kit</li>
+          <li>No subscription and no recurring charge</li>
+          <li>Good starting point before committing to a yearly service</li>
         </ul>
 
         <a
           class="button ghost"
-          href="AFFILIATE_LINK_DELETEME"
+          href="https://www.scanmyshadow.com/"
           target="_blank"
-          rel="sponsored nofollow noopener"
+          rel="noopener"
+          data-partner="scanmyshadow"
+          data-placement="home_compare"
+          data-link-type="sister"
         >
-          See DeleteMe pricing
+          Get the one-time report
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -1905,10 +1963,10 @@
 
     <p class="compare-foot reveal">
       <span>
-        Pricing shown is indicative and set by each provider — check the current price before you buy.
-        We may earn a commission from these links at no extra cost to you.
+        Prices checked October 16, 2026 and set by each provider. Availability differs by country.
+        Scan My Shadow is run by the same team as Digital Footprint Scan.
       </span>
-      <a href="/compare-removal-services/">Read the full comparison →</a>
+      <a href="/best-digital-footprint-removal-services/">Compare all 7 services by country →</a>
     </p>
 
   </div>
@@ -1975,9 +2033,9 @@
     <div class="footer-bottom">
 
       <p class="footer-note">
-        Some links on this website may eventually be affiliate links.
-        If you purchase through them, we may receive a commission at no
-        additional cost to you.
+        Some links on this website are affiliate links. If you buy through
+        them, we may earn a commission at no extra cost to you.
+        <a href="/affiliate-disclosure.html" style="font-size:inherit;">Learn more</a>.
       </p>
 
       <p class="footer-note">
@@ -2052,6 +2110,8 @@
     var HIBP_ENDPOINT = 'https://sms-hibp-teaser-180556751015.asia-south1.run.app';
     var MIN_LOADING_MS = 1300;
     var VISIBLE_BREACHES = 5;
+    var NORDPASS_URL = 'https://go.nordpass.io/aff_c?offer_id=488&aff_id=156258&url_id=9356';
+    var NORDVPN_URL  = 'https://go.nordvpn.net/aff_c?offer_id=15&aff_id=156258&url_id=902';
 
     var input   = document.getElementById('scanEmail');
     var hp      = document.getElementById('scanHp');
@@ -2164,6 +2224,67 @@
       return html;
     }
 
+    function hasPasswordExposure(breaches) {
+      return breaches.some(function (b) {
+        if (b && b.stealerLog) { return true; }
+        var classes = Array.isArray(b && b.dataClasses) ? b.dataClasses : [];
+        return classes.some(function (c) { return /password/i.test(String(c)); });
+      });
+    }
+
+    function nextStep(title, text, href, label, ghost, partner, placement) {
+      var external = !!partner;
+      var html = '<div class="next-step">';
+      html += '<div class="next-step-text">';
+      html += '<strong>' + esc(title) + '</strong>';
+      html += '<span>' + esc(text) + '</span>';
+      html += '</div>';
+      html += '<a class="button' + (ghost ? ' ghost' : '') + '" href="' + esc(href) + '"';
+      if (external) {
+        html += ' target="_blank" rel="sponsored nofollow noopener"';
+        html += ' data-partner="' + esc(partner) + '" data-placement="' + esc(placement) + '" data-link-type="affiliate"';
+      }
+      html += '>' + esc(label);
+      html += '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">';
+      html += '<path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>';
+      html += '</svg></a>';
+      html += '</div>';
+      return html;
+    }
+
+    function renderNextSteps(severity, breaches) {
+      var passwords = hasPasswordExposure(breaches);
+      var html = '<div class="scan-next">';
+      html += '<p class="scan-next-title mono">What to do next</p>';
+
+      if (passwords) {
+        html += nextStep(
+          'Change the exposed passwords',
+          'At least one of these breaches exposed passwords. NordPass flags weak and reused passwords, and its Premium plan alerts you if your details leak again.',
+          NORDPASS_URL + '&aff_sub=home_result_passwords',
+          'See NordPass', false, 'nordpass', 'home_result_passwords'
+        );
+      } else {
+        html += nextStep(
+          severity === 'clear' ? 'Get alerted if that changes' : 'Get alerted to the next breach',
+          'This check is a snapshot of known breaches. Every NordVPN plan includes Dark Web Monitor, which alerts you if your email appears in new leaks.',
+          NORDVPN_URL + '&aff_sub=home_result_dwm',
+          'See NordVPN', false, 'nordvpn', 'home_result_dwm'
+        );
+      }
+
+      html += nextStep(
+        'Remove your details from data brokers',
+        'Breach records are only part of your footprint. Data brokers and people-search sites publish your details separately.',
+        '/best-digital-footprint-removal-services/',
+        'Compare removal services', true, '', ''
+      );
+
+      html += '<p class="scan-next-note">' + (passwords ? 'NordPass' : 'NordVPN') + ' link is an affiliate link. We may earn a commission at no extra cost to you.</p>';
+      html += '</div>';
+      return html;
+    }
+
     function renderResult(data) {
       var count = data.count || 0;
       var severity = data.severity || 'clear';
@@ -2198,13 +2319,7 @@
         }
       }
 
-      html += '<div class="scan-next">';
-      html += '<p>Breach records are only part of your footprint. Data brokers and people-search sites publish your details separately.</p>';
-      html += '<a class="button" href="#compare">See how to get your data removed';
-      html += '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">';
-      html += '<path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>';
-      html += '</svg></a>';
-      html += '</div>';
+      html += renderNextSteps(severity, breaches);
 
       body.innerHTML = html;
       status.textContent = severity === 'clear' ? 'Scan complete' : 'Exposure found';
@@ -2306,6 +2421,21 @@
       }
     });
 
+  })();
+
+  /* ---------- Partner click tracking (GA4) ---------- */
+
+  (function () {
+    document.addEventListener('click', function (event) {
+      var link = event.target.closest ? event.target.closest('a[data-partner]') : null;
+      if (!link || typeof gtag !== 'function') { return; }
+      gtag('event', 'affiliate_click', {
+        partner: link.getAttribute('data-partner'),
+        placement: link.getAttribute('data-placement') || '',
+        link_type: link.getAttribute('data-link-type') || '',
+        page_path: location.pathname
+      });
+    });
   })();
 </script>
 
