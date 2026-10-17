@@ -1186,6 +1186,7 @@ html[data-theme="dark"] .scan-badge.clear,html[data-theme="dark"] .scan-badge.lo
 html[data-theme="dark"] .scan-skeleton div{background:linear-gradient(90deg,var(--line-2) 25%,#223049 50%,var(--line-2) 75%)}
 html[data-theme="dark"] .offer-flag{color:#06262a}
 html[data-theme="dark"] .offer:hover,html[data-theme="dark"] .next-step .button.ghost:hover,html[data-theme="dark"] .offer .button.ghost:hover{border-color:#3a4a60}
+#scanEmail{scroll-margin-top:130px}
 html[data-theme="dark"] .hero::before{background-image:linear-gradient(to right,rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,.04) 1px,transparent 1px)}
 </style>
 
@@ -2009,6 +2010,21 @@ html[data-theme="dark"] .hero::before{background-image:linear-gradient(to right,
         run();
       }
     });
+
+    /* ---------- Auto-run when a blog free-check box sent an email here ---------- */
+
+    try {
+      var raw = sessionStorage.getItem('dfs_prefill');
+      if (raw) {
+        sessionStorage.removeItem('dfs_prefill');
+        var pf = JSON.parse(raw);
+        if (pf && typeof pf.e === 'string' && EMAIL_RE.test(pf.e.trim()) && (Date.now() - (Number(pf.t) || 0)) < 600000) {
+          input.value = pf.e.trim();
+          if (hp && typeof pf.hp === 'string') { hp.value = pf.hp; }
+          setTimeout(run, 200);
+        }
+      }
+    } catch (e) {}
 
   })();
 </script>
