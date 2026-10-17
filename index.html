@@ -2011,21 +2011,6 @@ html[data-theme="dark"] .hero::before{background-image:linear-gradient(to right,
     });
 
   })();
-
-  /* ---------- Partner click tracking (GA4) ---------- */
-
-  (function () {
-    document.addEventListener('click', function (event) {
-      var link = event.target.closest ? event.target.closest('a[data-partner]') : null;
-      if (!link || typeof gtag !== 'function') { return; }
-      gtag('event', 'affiliate_click', {
-        partner: link.getAttribute('data-partner'),
-        placement: link.getAttribute('data-placement') || '',
-        link_type: link.getAttribute('data-link-type') || '',
-        page_path: location.pathname
-      });
-    });
-  })();
 </script>
 
 <script src="/assets/dfs-site.js" defer></script>
