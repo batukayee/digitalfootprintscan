@@ -68,7 +68,7 @@
         "headline": "Best Data Removal Services in 2026, Compared by Country",
         "description": "An honest comparison of the main data removal services: prices, coverage and which ones work in your country.",
         "datePublished": "2026-10-16",
-        "dateModified": "2026-10-16",
+        "dateModified": "2026-10-30",
         "mainEntityOfPage": "https://digitalfootprintscan.com/best-digital-footprint-removal-services/",
         "image": "https://digitalfootprintscan.com/og-image.png",
         "author": {
@@ -1662,10 +1662,10 @@ html[data-theme="dark"] .privacy-note .button{color:#0b1220!important}
     </div>
 
     <p class="disclosure">
-      <strong>How we make money:</strong> NordVPN and NordPass links on this page are
+      <strong>How we make money:</strong> NordVPN, NordPass and DeleteMe links on this page are
       affiliate links, so we may earn a commission if you buy through them, at no extra
       cost to you. Scan My Shadow is our sister service. We have no affiliate relationship
-      with Incogni, DeleteMe, Optery, Aura or EasyOptOuts, and links to them are plain links.
+      with Incogni, Optery, Aura or EasyOptOuts, and links to them are plain links.
       Rankings are our own. <a href="/affiliate-disclosure.html">Affiliate disclosure</a>
     </p>
 
@@ -1757,7 +1757,7 @@ html[data-theme="dark"] .privacy-note .button{color:#0b1220!important}
         </tr>
         <tr data-row="deleteme">
           <th scope="row"><a href="#deleteme">DeleteMe</a></th>
-          <td>Human-reviewed removals</td>
+          <td>A personal expert on every plan</td>
           <td>$129/yr per person</td>
           <td>Major US brokers, plus custom requests</td>
           <td>US, plus UK, Canada, Australia and some EU countries</td>
@@ -1869,23 +1869,22 @@ html[data-theme="dark"] .privacy-note .button{color:#0b1220!important}
       </article>
 
 
-      <article class="pick" id="deleteme" data-id="deleteme" data-avail="US CA UK AU BE FR DE IE IT NL">
+      <article class="pick" id="deleteme" data-id="deleteme" data-avail="US CA UK AU BE FR DE IE IT NL ES">
 
         <div class="pick-main">
           <span class="pick-rank mono"><span class="pick-num">No. 2</span> <span class="pick-flag mono">Top pick for you</span></span>
           <h3>DeleteMe</h3>
-          <p class="pick-best">Best if you want people, not just software, handling removals</p>
+          <p class="pick-best">Best if you want a personal expert and custom removal requests included</p>
           <p>
-            DeleteMe has privacy staff submit removal requests to the major data brokers and
-            people-search sites, and sends you a detailed privacy report each quarter showing
-            what was found and removed. You can also ask them to handle sites outside their
-            standard list.
+            DeleteMe's experts find and remove your personal information from major data
+            brokers and people-search sites, and you get a privacy report each quarter.
+            Custom removal requests are included in every plan.
           </p>
           <div class="pick-cols">
             <div>
               <h4>Good</h4>
               <ul class="pros">
-                <li>Human-reviewed removal requests</li>
+                <li>A personal DeleteMe expert on every plan</li>
                 <li>Quarterly reports that show what was removed</li>
                 <li>Couple and family plans available</li>
                 <li>Offered in Australia, where Incogni is not</li>
@@ -1903,10 +1902,10 @@ html[data-theme="dark"] .privacy-note .button{color:#0b1220!important}
         </div>
 
         <div class="pick-side">
-          <p class="pick-price"><strong>$129/yr</strong><span>One person. $229/yr for two, $329/yr for a family of up to four. Two-year plans cost less per year.</span></p>
+          <p class="pick-price"><strong>$129/yr</strong><span>One person. $229/yr for two, $329/yr for a family of up to four. Two-year plans cost less per year. US prices.</span></p>
           <span class="avail-badge"></span>
           <p class="pick-avail"><strong>Works in:</strong> US, plus the UK, Canada, Australia and some European countries.</p>
-          <a class="button ghost" href="https://joindeleteme.com/" target="_blank" rel="nofollow noopener" data-partner="deleteme" data-placement="compare_card" data-link-type="plain">
+          <a class="button ghost" href="https://www.de33watrk.com/23186J2/KMKS9/?source_id=dfs&amp;sub1=compare_card" data-href-us="https://www.de33watrk.com/23186J2/KMKS9/?source_id=dfs&amp;sub1=compare_card" data-href-intl="https://www.de33watrk.com/23186J2/KMKS9/?uid=6&amp;source_id=dfs&amp;sub1=compare_card" target="_blank" rel="sponsored nofollow noopener" data-partner="deleteme" data-placement="compare_card" data-link-type="affiliate">
             Visit DeleteMe
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -2206,9 +2205,9 @@ html[data-theme="dark"] .privacy-note .button{color:#0b1220!important}
     </ul>
 
     <p>
-      Prices come from each provider's own pricing pages on the date shown at the top, apart
-      from DeleteMe, whose prices we took from its published plan list as reported by
-      independent reviewers. Providers change prices often, so the price at checkout is the
+      Prices come from each provider's own pricing pages on the date shown at the top.
+      DeleteMe's prices are its US prices, checked on its own pricing page on October 30, 2026.
+      Providers change prices often, so the price at checkout is the
       one that counts. Rankings are editorial and are not paid for.
     </p>
 
@@ -2417,6 +2416,11 @@ html[data-theme="dark"] .privacy-note .button{color:#0b1220!important}
     }
 
     function apply(code) {
+      var dm = document.querySelector('#deleteme a[data-partner="deleteme"]');
+      if (dm) {
+        var dmUrl = dm.getAttribute(code === 'US' || code === 'ALL' ? 'data-href-us' : 'data-href-intl');
+        if (dmUrl) { dm.setAttribute('href', dmUrl); }
+      }
       var cards = Array.prototype.slice.call(list.querySelectorAll('.pick'));
       var byId = {};
       cards.forEach(function (c) { byId[c.getAttribute('data-id')] = c; });
