@@ -26,17 +26,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script>(function(){try{var t=localStorage.getItem("dfs-theme");if(!t){t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 
-  <title>Digital Footprint Scan | Check Your Online Exposure</title>
+  <title>Digital Footprint Scan: Free Online Exposure Check (2026)</title>
 
   <meta
     name="description"
-    content="Digital Footprint Scan helps you understand what personal information may be exposed online, where it appears, and how to reduce your digital footprint."
+    content="Free digital footprint scan: check if your email was in a data breach, see what personal information may be exposed online, and learn how to reduce it."
   >
 
   <link rel="canonical" href="https://digitalfootprintscan.com/">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Digital Footprint Scan | Check Your Online Exposure">
+  <meta property="og:title" content="Digital Footprint Scan: Free Online Exposure Check (2026)">
   <meta
     property="og:description"
     content="Understand what personal information may be exposed online and learn practical ways to reduce your digital footprint."
@@ -48,7 +48,7 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Digital Footprint Scan | Check Your Online Exposure">
+  <meta name="twitter:title" content="Digital Footprint Scan: Free Online Exposure Check (2026)">
   <meta
     name="twitter:description"
     content="Understand what personal information may be exposed online and learn practical ways to reduce your digital footprint."
@@ -113,7 +113,7 @@
         "@type": "WebPage",
         "@id": "https://digitalfootprintscan.com/#webpage",
         "url": "https://digitalfootprintscan.com/",
-        "name": "Digital Footprint Scan | Check Your Online Exposure",
+        "name": "Digital Footprint Scan: Free Online Exposure Check (2026)",
         "isPartOf": {
           "@id": "https://digitalfootprintscan.com/#website"
         },
@@ -1213,8 +1213,23 @@ html[data-theme="dark"] .offer-flag{color:#06262a}
 html[data-theme="dark"] .offer:hover,html[data-theme="dark"] .next-step .button.ghost:hover,html[data-theme="dark"] .offer .button.ghost:hover{border-color:#3a4a60}
 #scanEmail{scroll-margin-top:130px}
 html[data-theme="dark"] .hero::before{background-image:linear-gradient(to right,rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,.04) 1px,transparent 1px)}
-@font-face{font-family:Inter;font-style:normal;font-weight:100 900;font-display:swap;src:url(/fonts/inter-var-latin.woff2) format("woff2")}@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:100 800;font-display:swap;src:url(/fonts/jetbrains-mono-var-basic.woff2) format("woff2")}</style>
+@font-face{font-family:Inter;font-style:normal;font-weight:100 900;font-display:swap;src:url(/fonts/inter-var-latin.woff2) format("woff2")}@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:100 800;font-display:swap;src:url(/fonts/jetbrains-mono-var-basic.woff2) format("woff2")}
+    /* Scan levels and Q&A */
+    .levels { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .level { background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--signal); border-radius: var(--radius); padding: 24px 22px; }
+    .level-clear { border-top-color: #15803d; }
+    .level-moderate { border-top-color: #b45309; }
+    .level-high { border-top-color: #b91c1c; }
+    .level h3, .qa h3 { margin: 0 0 8px; font-size: 18px; line-height: 1.3; letter-spacing: -.015em; font-weight: 600; }
+    .level p, .qa p { margin: 0; color: var(--slate); font-size: 15px; }
+    .levels-note { margin: 28px 0 0; max-width: 760px; color: var(--slate); font-size: 15px; }
+    .levels-note a, .qa a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+    .qa-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 56px; }
+    @media (max-width: 900px) { .levels { grid-template-columns: 1fr 1fr; } .qa-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 560px) { .levels { grid-template-columns: 1fr; } }
+  </style>
 
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a digital footprint?", "acceptedAnswer": {"@type": "Answer", "text": "It is everything about you that can be found online. Your active footprint is what you share, such as posts and profiles. Your passive footprint is what others collect or publish about you, such as people-search profiles, data broker records and breach data. See examples of each."}}, {"@type": "Question", "name": "How do I check my digital footprint?", "acceptedAnswer": {"@type": "Answer", "text": "Search your name, emails, phone numbers and usernames in a private browser window, run the free breach scan above and look yourself up on the big people-search sites. Our digital footprint check guide walks you through it in about 30 minutes."}}, {"@type": "Question", "name": "Is the scan free, and do you keep my email?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, it is free with no sign-up, and the email you check is not stored or logged. The scan only looks up known breach records."}}, {"@type": "Question", "name": "Where does the breach data come from?", "acceptedAnswer": {"@type": "Answer", "text": "From Have I Been Pwned, the widely used breach database run by security researcher Troy Hunt. Its breach data is licensed under CC BY 4.0."}}, {"@type": "Question", "name": "How do I get my information off people-search sites?", "acceptedAnswer": {"@type": "Answer", "text": "Almost every site has a free opt-out form. Our data broker removal guide lists 25 sites with step-by-step instructions, starting with the biggest."}}, {"@type": "Question", "name": "Can a service remove my information for me?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Data removal services send opt-out requests for you and keep checking that your details stay off. They differ by country and coverage, so compare data removal services by country before you choose."}}]}</script>
 </head>
 
 <body>
@@ -1545,6 +1560,40 @@ html[data-theme="dark"] .hero::before{background-image:linear-gradient(to right,
 </section>
 
 
+<section class="section">
+
+  <div class="section-heading reveal">
+
+    <span class="mono">Your free scan</span>
+
+    <h2>
+      What your free scan result means
+    </h2>
+
+    <p>
+      The scan at the top of this page checks your email address against known data breaches
+      using Have I Been Pwned data. It is free, needs no sign-up and we do not store the email
+      you check. Every result comes with a plain-English rating.
+    </p>
+
+  </div>
+
+  <div class="levels">
+    <div class="level level-clear reveal"><h3>Clear</h3><p>No known breaches found. A good sign, though it does not cover data brokers or people-search listings.</p></div>
+    <div class="level level-low reveal" data-delay="1"><h3>Low</h3><p>Your email appears in breach records, but the exposure looks limited. Review the accounts listed.</p></div>
+    <div class="level level-moderate reveal" data-delay="2"><h3>Moderate</h3><p>Your email appears in several known breaches. Change any reused passwords and check what else is exposed.</p></div>
+    <div class="level level-high reveal" data-delay="3"><h3>High</h3><p>Breaches exposed sensitive data. Change reused passwords, turn on two-factor sign-in and consider removing your details from data brokers.</p></div>
+  </div>
+
+  <p class="levels-note reveal">
+    For each breach you see the site, the year, how many accounts were affected and what kinds of
+    data leaked, such as passwords or phone numbers. If your email shows up, read
+    <a href="/blog/your-email-was-in-a-data-breach-what-to-do-next/">what to do next</a>.
+  </p>
+
+</section>
+
+
 <section class="compare" id="compare">
 
   <div class="section">
@@ -1664,12 +1713,36 @@ html[data-theme="dark"] .hero::before{background-image:linear-gradient(to right,
 
     <p class="compare-foot reveal">
       <span>
-        Prices checked October 16, 2026 and set by each provider. Availability differs by country.
+        Prices checked November 10, 2026 and set by each provider. Availability differs by country.
         Scan My Shadow is run by the same team as Digital Footprint Scan.
       </span>
       <a href="/best-digital-footprint-removal-services/">Compare all 7 services by country →</a>
     </p>
 
+  </div>
+
+</section>
+
+
+<section class="section">
+
+  <div class="section-heading reveal">
+
+    <span class="mono">Questions</span>
+
+    <h2>
+      Digital footprint questions, answered
+    </h2>
+
+  </div>
+
+  <div class="qa-grid">
+    <div class="qa reveal"><h3>What is a digital footprint?</h3><p>It is everything about you that can be found online. Your active footprint is what you share, such as posts and profiles. Your passive footprint is what others collect or publish about you, such as people-search profiles, data broker records and breach data. <a href="/blog/active-vs-passive-digital-footprint-with-examples/">See examples of each</a>.</p></div>
+    <div class="qa reveal" data-delay="1"><h3>How do I check my digital footprint?</h3><p>Search your name, emails, phone numbers and usernames in a private browser window, run the free breach scan above and look yourself up on the big people-search sites. Our <a href="/digital-footprint-check/">digital footprint check guide</a> walks you through it in about 30 minutes.</p></div>
+    <div class="qa reveal"><h3>Is the scan free, and do you keep my email?</h3><p>Yes, it is free with no sign-up, and the email you check is not stored or logged. The scan only looks up known breach records.</p></div>
+    <div class="qa reveal" data-delay="1"><h3>Where does the breach data come from?</h3><p>From Have I Been Pwned, the widely used breach database run by security researcher Troy Hunt. Its breach data is licensed under CC BY 4.0.</p></div>
+    <div class="qa reveal"><h3>How do I get my information off people-search sites?</h3><p>Almost every site has a free opt-out form. Our <a href="/data-broker-removal/">data broker removal guide</a> lists 25 sites with step-by-step instructions, starting with the biggest.</p></div>
+    <div class="qa reveal" data-delay="1"><h3>Can a service remove my information for me?</h3><p>Yes. Data removal services send opt-out requests for you and keep checking that your details stay off. They differ by country and coverage, so <a href="/best-digital-footprint-removal-services/">compare data removal services by country</a> before you choose.</p></div>
   </div>
 
 </section>
