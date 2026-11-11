@@ -127,6 +127,20 @@
     }
   });
 
+  /* ---------- data set (CSV) downloads ---------- */
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href$=".csv"]') : null;
+    if (!a) { return; }
+    var u;
+    try { u = new URL(a.href, location.href); } catch (err) { return; }
+    ga('data_download', {
+      file_name: u.pathname.split('/').pop(),
+      file_extension: 'csv',
+      link_url: u.origin + u.pathname,
+      page_path: location.pathname
+    });
+  }, true);
+
   /* ---------- phone sticky bar ---------- */
   var top = document.querySelector('.dfs-cta[data-cta="tldr"]');
   if (top && 'IntersectionObserver' in window) {
